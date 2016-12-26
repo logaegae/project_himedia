@@ -1,0 +1,9 @@
+.noticeView{
+	.noticeview_bg{
+		background:@base-color;
+		padding:70px 0;
+	}
+	.view_table table tbody .view_cont {
+	    padding: 50px 50px;
+	}
+}

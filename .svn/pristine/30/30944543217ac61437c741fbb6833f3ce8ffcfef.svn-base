@@ -1,0 +1,118 @@
+.allTeacher{
+    word-break: keep-all;
+    b{
+        color:@title-color;
+        font-weight: @title-weight;
+    }
+    .sm-rect-btns-wrapper{
+        padding: 0 55px;
+        text-align: left;
+    }
+    .allTeacher-basebox-wrapper{
+        width:100%;
+        margin-top:70px;
+        padding:70px 0;
+        background-color: @base-color;
+
+        &>div{
+            width:1024px;
+            margin:0 auto;
+
+            ul{
+                text-align: justify;
+                font-size:0;
+
+                .teacher-box{
+                    width:315px;
+                    height:470px;
+                    margin-bottom:75px;
+                    margin-right:39px;
+
+                    position:relative;
+
+                    .teacher-pic{
+                        width:315px;
+                        height:405px;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center center;
+                        overflow: hidden;
+                    }
+
+                    .teacher-info{
+                        width:245px;
+                        height:140px;
+
+                        background-color: @sub-color;
+                        color:@white-color;
+                        padding:32px 22px 26px;
+                        position:absolute;
+                        bottom:0;
+                        left:50%;
+                        transform: translateX(-50%);
+
+                        .teacher-name{
+                            font-size: @summery-size;
+                            font-weight: @gnb-weight;
+                            text-align: justify;
+                            position:relative;
+                            margin-bottom:34px;
+                            display:block;
+
+                            &:after{
+                                content:"";
+                                .inlineblock();
+                                background-color: #fff;
+                                width:30px;
+                                height:2px;
+                                position:absolute;
+                                left:0;
+                                bottom:-26px;
+                            }
+                        }
+                        .teacher-class{
+                            font-size:13px;
+                            text-align: justify;
+                        }
+                    }
+
+                    &:hover{
+                        .teacher-info{
+                            background-color : @main-color;
+                        }
+                    }
+                }
+            }
+        }
+        .btn-seemore{
+            margin-bottom:0;
+        }
+    }
+    .modalPopup{
+        .modal-body {
+            padding:40px;
+        }
+        .teacher_img{
+            .inlineblock();
+            width:180px;
+            height:180px;
+            margin: 0 auto 50px;
+        }
+        .body-left,.body-right{
+            padding-top:50px;
+            height:480px;
+        }
+        .body-right{
+            overflow-y: scroll;
+            padding:5px;
+        }
+        strong{
+            margin-bottom:10px;
+        }
+        .br-sm{
+            margin:5px 0;
+        }
+    }
+
+
+}

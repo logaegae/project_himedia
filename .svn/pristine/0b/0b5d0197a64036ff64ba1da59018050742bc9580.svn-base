@@ -1,0 +1,398 @@
+var express = require('express');
+var exRouter = express.Router();
+var router = express.Router();
+var models = require('service/models');
+var async = require('async');
+
+exRouter.use("/", router);
+
+router.all("/:branchCode/findIdPw", function (req,res,next){
+
+	var where ={
+		userName : req.body.userName,
+		userMobile : req.body.userMobile
+	};
+	if(req.body.userId){
+		where.userId = req.body.userId;
+	}
+	if(req.body.userEmail){
+		where.userEmail = req.body.userEmail;
+	}
+
+	models.Member.findAll({
+		where : where
+	})
+	.then(function (result) {
+		if(result.length == 0){
+			res.send({
+				isExist : false
+			});
+		}else{
+			//비밀번호찾기
+			if(req.body.userId){
+				res.send({
+					isExist : true
+				});
+				//메일보내기 >> result.userEmail
+
+
+
+			}
+			//아이디찾기
+			else{
+				res.send({
+					isExist : true,
+					userId : result[0].userId.substring(0,result[0].userId.length-2)+'**',
+					registDate : result[0].registDate
+				});
+			}
+		}
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/checkId", function (req,res,next){
+
+	var where ={
+		userId : req.body.userId
+	};
+
+	models.Member.findAll({
+		where : where
+	})
+	.then(function (result) {
+		if(result.length == 0){
+			res.send({
+				isDuplicate : false
+			});
+		}else{
+			res.send({
+				isDuplicate : true
+			});
+		}
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/joinFinish.html", function(req, res, next){
+
+	var data ={};
+	data.userId = req.body.userId;
+	data.userPwd = req.body.userPwd;
+	data.userName = req.body.userName;
+	data.userEmail = req.body.email1 +'@'+ req.body.email2;
+	data.userPhone = req.body.tel1 +'-'+ req.body.tel2 +'-'+ req.body.tel3;
+	data.userMobile = req.body.cell1 +'-'+ req.body.cell2 +'-'+ req.body.cell3;
+	data.receiptEmailYn = req.body.receiptEmailYn;
+	data.receiptSMSYn = req.body.receiptSMSYn
+	data.registDate = new Date();
+	res.locals.member = data;
+
+	models.Member.create(data)
+	.then(function (result) {
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+router.all("/:branchCode/qnaWrite.html", function(req, res, next){
+
+	var where = {};
+
+	if(req.query.boardId){
+		where = {
+			boardId : req.query.boardId
+		}
+	}
+
+	models.Board.findOne({
+		where : where
+	})
+	.then(function (result) {
+		res.locals.qa = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+router.all("/:branchCode/writeQna", function(req, res, next){
+
+	var data = req.body;
+	data.registDate = new Date();
+	data.groupId = "qa";
+	data.delYn = "N";
+
+	if(data.correction == 'false'){
+		data.boardId = "";
+		models.Board.create(data)
+		.then(function (result) {
+			res.redirect("qna.html");
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+	}else{
+		models.Board.update({
+			branchCode : data.branchCode,
+			title : data.title,
+			content : data.content,
+			updateDate : new Date()
+		},{where:{boardId : data.boardId}})
+		.then(function (result) {
+			res.redirect("qna.html");
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+	}
+});
+router.all("/:branchCode/deleteQna", function(req, res, next){
+
+	var data = req.body;
+
+	models.Board.destroy({
+		where : {
+			boardId : data.boardId
+		}
+	})
+	.then(function (result) {
+		res.redirect("qna.html");
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+router.all("/:branchCode/noticeView.html", function(req, res, next){
+
+	var where = {
+		delYn : 'N',
+		boardId : req.query.boardId
+	}
+
+	models.Board.update({
+		readCount : models.Sequelize.literal('readCount + 1')
+	},{where:where})
+	.then(function (result) {
+
+		models.Board.findOne({
+			where : where,
+			include: [{ all: true, nested: true}]
+		})
+		.then(function (result) {
+			res.locals.notice = result;
+			next();
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+router.all("/:branchCode/qnaView.html", function(req, res, next){
+
+	var where = {
+		delYn : 'N',
+		boardId : req.query.boardId
+	};
+	models.Board.update({
+		readCount : models.Sequelize.literal('readCount + 1')
+	},{where:where})
+	.then(function (result) {
+		models.Board.findOne({
+			where : where,
+			include: [{ all: true, nested: true}]
+		})
+		.then(function (result) {
+			res.locals.qas = result;
+			next();
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+router.all("/:branchCode/notice.html", function(req, res, next){
+
+	var where = {
+		delYn : 'N',
+		groupId : 'notice'
+	};
+	//지점별 게시물
+	if(req.params.branchCode != 'himedia'){
+		where.branchCode = req.params.branchCode;
+	}
+	if(req.query.branchCode && req.query.branchCode != 'himedia') {
+		where.branchCode = req.query.branchCode;
+	}else if(req.query.branchCode && req.query.branchCode == 'himedia'){
+		delete where.branchCode;
+	}
+
+	var page = req.query.page ? parseInt(req.query.page) : 1;
+	var pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 10;
+
+	models.Board.findAndCountAll({
+		where : where,
+		order : "boardId DESC",
+		offset : (page-1)*pageSize,
+		limit : pageSize,
+		include: [{ all: true, nested: true}]
+	})
+	.then(function (result) {
+
+		res.locals.totalCount = result.count;
+		res.locals.notices = result.rows;
+		res.locals.page = page;
+		res.locals.pageSize = pageSize;
+
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/qna.html", function(req, res, next){
+
+	var where = {
+		delYn : 'N',
+		groupId : 'qa'
+	};
+	//지점별 게시물
+	if(req.params.branchCode != 'himedia'){
+		where.branchCode = req.params.branchCode;
+	}
+	if(req.query.branchCode && req.query.branchCode != 'himedia') {
+		where.branchCode = req.query.branchCode;
+	}else if(req.query.branchCode && req.query.branchCode == 'himedia'){
+		delete where.branchCode;
+	}
+	if(req.query.searchText) {
+		where.title = {$like : '%'+req.query.searchText+'%'};
+	}
+
+	var page = req.query.page ? parseInt(req.query.page) : 1;
+	var pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 10;
+
+	models.Board.findAndCountAll({
+		where : where,
+		order : "boardId DESC",
+		offset : (page-1)*pageSize,
+		limit : pageSize,
+		include: [{ all: true, nested: true}]
+	})
+	.then(function (result) {
+
+		res.locals.totalCount = result.count;
+		res.locals.qas = result.rows;
+		res.locals.page = page;
+		res.locals.pageSize = pageSize;
+
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+
+});
+
+router.all("/:branchCode/jobFaq.html", function(req, res, next){
+
+	var where = {
+		delYn : 'N',
+		showYn : 'Y',
+	};
+
+	models.JobFaq.findAll({
+		where : where,
+		order : "showOrder ASC"
+	})
+	.then(function (result) {
+		res.locals.faqs = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+router.all("/:branchCode/comFaq.html", function(req, res, next){
+
+	var where = {
+		delYn : 'N',
+		showYn : 'Y',
+	};
+
+	if(req.query.faqType) {
+		where.faqType = req.query.faqType;
+	}
+
+	models.Faq.findAll({
+		where : where,
+		order : "showOrder ASC"
+	})
+	.then(function (result) {
+		res.locals.faqs = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+router.all("/:branchCode/*.html", function(req, res, next){
+
+console.log(req.params);
+	if(req.params.branchCode) {
+		res.locals.branchCode = req.params.branchCode;
+	} else {
+		res.locals.branchCode = 'himedia';
+	}
+	next();
+});
+
+
+
+router.all("/*.html", function(req, res, next){
+
+	if(req.originalUrl.indexOf("/admin") == 0) {
+		next();
+		return;
+	}
+
+	var path = req.originalUrl.substring(1,req.originalUrl.indexOf(".html"));
+	var paths = path.split("/");
+
+	res.render(paths[paths.length-1], {
+		menuUrl : req.path.substring(1),
+		session : req.session,
+		query : req.query,
+		body : req.body
+	});
+});
+
+module.exports = exRouter;

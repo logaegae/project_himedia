@@ -1,0 +1,150 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="reviewWrite">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>하이커뮤니티</span><span>&gt;</span>
+            <span class="this-page">수강 후기</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Community</div>
+            <div class="text-box">
+                <h1>수강 후기</h1>
+                <p>수강생들이 직접 작성한 리얼 100% 수강 후기!</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="inputtable_write">
+            <form class="input_fromwrap">
+                <fieldset class="input_tablewrap">
+                    <legend>수강료조회 양식테이블입니다.</legend>
+                    <table class="input_table">
+                        <caption>과정명,이름,연락처,이메일,상세내용으로 되어있는표입니다.</caption>
+                        <colgroup>
+                            <col style="width:13%">
+                                <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <label for="aksName">이름</label>
+                                </th>
+                                <td>
+                                    <p class="input_wrap" style="width:20%">
+                                        <input id="aksName" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="campusSelect">캠퍼스</label>
+                                </th>
+                                <td>
+                                    <select id="campusSelect" name="캠퍼스선택" class="">
+                                        <option value="">캠퍼스 선택</option>
+                                        <option value="" label="강남">강남</option>
+                                        <option value="" label="종로1">종로1</option>
+                                        <option value="" label="종로2">종로2</option>
+                                        <option value="" label="신촌">신촌</option>
+                                        <option value="" label="구로">구로</option>
+                                        <option value="" label="노원">노원</option>
+                                        <option value="" label="천호">천호</option>
+                                        <option value="" label="안양">안양</option>
+                                        <option value="" label="안산">안산</option>
+                                        <option value="" label="성남">성남</option>
+                                        <option value="" label="수원">수원</option>
+                                        <option value="" label="인천">인천</option>
+                                        <option value="" label="전주">전주</option>
+                                        <option value="" label="구리">구리</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="interestSelect">분야</label>
+                                </th>
+                                <td>
+                                    <select id="interestSelect" name="관심분야" class="">
+                                        <option value="">관심분야</option>
+                                        <option value="웹 디자인">웹 디자인·웹 퍼블리싱</option>
+                                        <option value="편집디자인">편집디자인</option>
+                                        <option value="영상 ">영상</option>
+                                        <option value="IT/개발">IT/개발</option>
+                                        <option value="게임">게임</option>
+                                        <option value="실내건축">실내건축</option>
+                                        <option value="기계설계">기계설계</option>
+                                        <option value="전산세무회계">전산세무회계</option>
+                                        <option value="ERP">ERP</option>
+                                        <option value="사무자동화/OA">사무자동화/OA</option>
+                                        <option value="자격증">자격증</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="className">과정명</label>
+                                </th>
+                                <td>
+                                    <p class="input_wrap" style="width:100%">
+                                        <input id="className" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="detailCont">내용</label>
+                                </th>
+                                <td>
+                                    <p class="input_wrap" style="width:100%">
+                                        <textarea id="detailCont"></textarea>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="grade">평점</label>
+                                </th>
+                                <td  class="star_wrap">
+                                    <p class="input_wrap" style="width:100%">
+                                        <span class="star on">1점</span>
+                                        <span class="star on">2점</span>
+                                        <span class="star on">3점</span>
+                                        <span class="star on">4점</span>
+                                        <span class="star on">5점</span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <th>
+                                <label for="aksPassword">비밀번호</label>
+                            </th>
+                            <td>
+                                <p class="input_wrap" style="width:20%">
+                                    <input id="aksPassword" type="password" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center btnsr">
+                        <input type="submit" value="확인">
+                        <input type="reset" value="취소" class="modal-closeBtn">
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+
+
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+var express = require('express');
+var exRouter = express.Router();
+var router = express.Router();  
+
+var async = require('async');
+var models = require('service/models');
+
+exRouter.use("/admin/api", router);
+
+/**
+ * 관리자 로그인
+ */
+router.all("/login", function (req, res, next) {
+	
+	console.log(req.body);
+	
+	if(req.body.email == "admin" && req.body.password == "1234") {
+		req.session.isAdmin = true;
+		res.send({
+			isSuccess : true
+		});
+	} else {
+		res.send({
+			isSuccess : false
+		});
+		
+	}
+	
+});
+
+/**
+ * 관리자 로그아웃
+ */
+router.all("/logout", function (req, res, next) {
+	req.session.isAdmin = false;
+	res.redirect("/admin");
+});
+
+router.all("/*", function (req, res, next) {
+	if(req.session.isAdmin) {
+		next();
+	} else {
+		res.status(401).end();
+	}
+});
+
+
+router.use(function (err, req, res, next) {
+	res.status(500).send("error");
+});
+
+module.exports = exRouter;

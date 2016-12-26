@@ -1,0 +1,626 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+
+<!---->
+<div class="main">
+    <!-- 메인베너 -->
+
+    <!-- <div class="swiper-container mainbanner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/img/etc/@main-banner.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="/img/etc/@main-banner2.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="/img/etc/@main-banner.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="/img/etc/@main-banner2.jpg" alt="" /></div>
+        </div>
+        add page
+        <div class="swiper-pagination"></div>
+    </div> -->
+
+    <!-- <div class="mainbanner" id="mySwipe">
+        <div class="innner">
+            <ul>
+                <li class="on"><a href="" title="이벤트1">이벤트1</a>
+                    <div>
+                        <img src="/img/etc/@main-banner.jpg" alt="" />
+                    </div>
+                  </li>
+                <li><a href="" title="이벤트2">이벤트1</a>
+                    <div>
+                        <img src="/img/etc/main-banner2.jpg" alt="" />
+                    </div>
+                </li>
+                <li><a href="" title="이벤트3">이벤트1</a>
+                    <div>
+                        <img src="/img/etc/@main-banner.jpg" alt="" />
+                    </div>
+                </li>
+                <li><a href="" title="이벤트3">이벤트1</a>
+                    <div>
+                        <img src="/img/etc/main-banner2.jpg" alt="" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <div id="main_banner" class="carousel slide main_banner" data-ride="pause">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active video_banner" style="position:relative;">
+            <!-- <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="/vedio/main.mp4"></iframe>
+            </div> -->
+            <video id="my-video" style="position:relative; bottom:180px;z-index:0;width:100%" autoplay width="100%" class="video-js vjs-default-skin" data-setup="{}">
+               <source src="/vedio/main.mp4" type='video/mp4'>
+               <source src="/vedio/main.ogg" type='video/ogg'>
+                <object>
+                    <embed style="position:relative; bottom:180px;z-index:0;width:100%" src="/vedio/main.mp4" type= "application/x-shockwave-flash" allowfullscreen="false" allowscriptaccess="always" />
+                </object>
+             </video>
+             <div class="videoBlind"></div>
+        </div>
+        <div class="item ie8_first banner2">
+          <img src="/img/etc/@main-banner2.jpg" alt="...">
+        </div>
+        <div class="item ">
+          <img src="/img/etc/@main-banner.jpg" alt="...">
+        </div>
+        <div class="item">
+          <img src="/img/etc/@main-banner2.jpg" alt="...">
+        </div>
+      </div>
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#main_banner" data-slide-to="0" class="active"></li>
+        <li data-target="#main_banner" data-slide-to="1"></li>
+        <li data-target="#main_banner" data-slide-to="2"></li>
+        <li data-target="#main_banner" data-slide-to="3"></li>
+      </ol>
+    </div>
+
+    <!-- 메인베너 끝 -->
+    <div class="lnb-course ">
+    <!-- LNB -->
+        <div class="inner wow fadeInUp">
+            <ul>
+                {% for field in courseFields %}
+                    <li>
+                        <button href="#">
+                            <span class="img-box"><img src="{{field.AttachFile.url}}" alt="{{field.fieldName}}" /></span>
+                            <span class="txt-box">{{field.fieldNameHTML|safe}}</span>
+                        </button>
+                        <div class="location">
+                            <img src="/img/icon/lnb_position.png" alt="화살표">
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">[NCS] 디지털UI/UX디자인</a></li>
+                        <li><a href="uxuiDesign.html">스마트 UI/UX 디지털디자인 </a></li>
+                        <li><a href="uxuiDesign.html">웹&앱 스마트 콘텐츠 제작</a></li>
+                        <li><a href="uxuiDesign.html">디지털컨버전스 UI/UX사물인터넷</a></li>
+                        <li><a href="uxuiDesign.html">디지털 스마트기기 앱&웹 디자인</a></li>
+                        <li><a href="uxuiDesign.html">스마트 기기 UI/UX 디지털 디자인</a></li>
+                        <li><a href="uxuiDesign.html">UI/UX 디지털컨버전스</a></li>
+                        <li><a href="uxuiDesign.html">스마트웹&콘텐츠개발(웹퍼블리셔)</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]스마트웹&콘텐츠플랫폼개발</a></li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">웹전문가과정</a></li>
+                        <li><a href="uxuiDesign.html">웹그래픽 (Illustrator&Photoshop)</a></li>
+                        <li><a href="uxuiDesign.html">웹표준사이트제작</a></li>
+                        <li><a href="uxuiDesign.html">웹포트폴리오</a></li>
+                        <li><a href="uxuiDesign.html">HTML & CSS3</a></li>
+                        <li><a href="uxuiDesign.html">JavaScript & jQuery</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">디지털퍼블리싱 (전자출판)전문가</a></li>
+                        <li><a href="uxuiDesign.html">편집디자인(디지털퍼블리싱)</a></li>
+                        <li><a href="uxuiDesign.html">인쇄출판편집디자인</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]인쇄출판디지털편집디자인[e-book]</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]시각디자인(e-book) 실무자과정</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]인쇄출판편집디자인[디지털퍼블리싱]</a></li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">출판편집전문과정</a></li>
+                        <li><a href="uxuiDesign.html">2D그래픽(Illustrator & Photoshop)</a></li>
+                        <li><a href="uxuiDesign.html">InDesign(E-book)</a></li>
+                        <li><a href="uxuiDesign.html">레이아웃</a></li>
+                        <li><a href="uxuiDesign.html">색채학</a></li>
+                        <li><a href="uxuiDesign.html">에프터이펙트</a></li>
+                        <li><a href="uxuiDesign.html">프리미어</a></li>
+                        <li><a href="uxuiDesign.html">출판편집포트폴리오</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">JAVA기반 시스템 개발자 양성과정</a></li>
+                        <li><a href="uxuiDesign.html">ICT기반 정보시스템 보안엔지니어 양성</a></li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">자바(JAVA)프로그래밍</a></li>
+                        <li><a href="uxuiDesign.html">C언어</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">모바일 게임콘텐츠제작 전문가</a></li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">[NCS]컴퓨터기계설계</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]3D프린터를 활용한 기계설계제작</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]컴퓨터응용설계(실내건축)취업반</a></li>
+                        <li><a href="uxuiDesign.html">건축설계를 위한BIM활용 실무</a></li>
+                        <li><a href="uxuiDesign.html">스케치업을 활용한 실내건축실무</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]실내건축인테리어</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]실내건축/인테리어 실무</a></li>
+                        <li><a href="uxuiDesign.html">[NCS]환경디자인(실내건축)디자인실무과정</a></li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">실내건축인테리어전문과정</a></li>
+                        <li><a href="uxuiDesign.html">제품디자인전문과정</a></li>
+                        <li><a href="uxuiDesign.html">기계설계전문과정</a></li>
+                        <li><a href="uxuiDesign.html">AutoCAD</a></li>
+                        <li><a href="uxuiDesign.html">3Ds-Max</a></li>
+                        <li><a href="uxuiDesign.html">스케치업</a></li>
+                        <li><a href="uxuiDesign.html">Rhino 3D</a></li>
+                        <li><a href="uxuiDesign.html">Revit(레빗)</a></li>
+                        <li><a href="uxuiDesign.html">색채학</a></li>
+                        <li><a href="uxuiDesign.html">건축, 인테리어 스케치</a></li>
+                        <li><a href="uxuiDesign.html">CATIA(카티아)</a></li>
+                        <li><a href="uxuiDesign.html">3D프린팅</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">전산세무회계전문과정</a></li>
+                        <li><a href="uxuiDesign.html">전산회계1급</a></li>
+                        <li><a href="uxuiDesign.html">전산세무2급</a></li>
+                        <li><a href="uxuiDesign.html">전산세무1급</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">컴퓨터활용능력 1급 실무과정</a></li>
+                        <li><a href="uxuiDesign.html">컴퓨터활용능력 2급 자격증 대비반</a></li>
+                        <li><a href="uxuiDesign.html">ITQ자격증 과정</a></li>
+                        <li><a href="uxuiDesign.html">사무자동화 (OFFICE 기초)</a></li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+                    <ul>
+                        <li><a href="uxuiDesign.html">컴퓨터활용능력 1급</a></li>
+                        <li><a href="uxuiDesign.html">컴퓨터활용능력 2급</a></li>
+                        <li><a href="uxuiDesign.html">MOS(모스)</a></li>
+                        <li><a href="uxuiDesign.html">OA실무(엑셀, 파워포인트)</a></li>
+                        <li><a href="uxuiDesign.html">사무자동화산업기사</a></li>
+                        <li><a href="uxuiDesign.html">정보처리기사/산업기사</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hide_cont">
+            <div class="wrap">
+                <div class="box box1">
+                    <p>구직자 국비지원과정</p>
+
+                </div>
+                <div class="box box2">
+                    <p>직장인 국비지원 · 학생 및 일반 과정</p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Add Arrows -->
+       <div class="lnb_btn_left"></div>
+       <div class="lnb_btn_right"></div>
+    </div>
+    <!-- lnb-course end -->
+
+    <div class="info-bar">
+        <div class="notice">
+            <span>NOTICE &amp; EVENT</span>
+            <ul class="rolling">
+                <li class="on"><a href="#">1.하이미디어의 천호캠퍼스 오픈!</a></li>
+                <li><a href="#">2.하이미디어의 천호캠퍼스 오픈!</a></li>
+                <li><a href="#">3.하이미디어의 천호캠퍼스 오픈!</a></li>
+                <li><a href="#">4.하이미디어의 천호캠퍼스 오픈!</a></li>
+                <li><a href="#">5.하이미디어의 천호캠퍼스 오픈!</a></li>
+            </ul>
+        </div>
+        <div class="online-counsel">
+            <a href="onlineCounsel.html">
+                <span>온라인상담 <span class="fw-normal">바로 가기</span></span>
+            </a>
+        </div>
+        <div class="tel">
+            <dl>
+                {%for branch in branches%}
+                    {%if branchCode == branch.branchCode%}
+                    <dt>{{branch.branchName}} <span class="tel_num">{{branch.tel}}</span></dt>
+                    {%endif%}
+                {%endfor%}
+                {%for branch in branches%}
+                    {%if branchCode != branch.branchCode%}
+                    <dd>{{branch.branchName}}  <span class="tel_num">{{branch.tel}}</span></dd>
+                    {%endif%}
+                {%endfor%}
+            </dl>
+        </div>
+    </div>
+    <!-- info-bar end -->
+
+    <div class="contents">
+        <section class="best">
+            <div class="section-title">
+                <div class="bg"><b>B</b></div>
+                <div class="text-box">
+                    <p class="tit">Best curriculum</p>
+                    <p class="sub">하이미디어의 <span class="bold">베스트 커리큘럼</span>을 소개합니다.</p>
+                </div>
+            </div>
+            <div class="items wow fadeInUp">
+                <a href="uxuiDesign.html" class="hit">
+                    <span class="name">[NCS] 디지털<br>UI/UX디자인</span>
+                    <span class="details">
+                        <span>
+                            <p class="text1">전액무료</p>
+                            <p class="text2">수강료+교재비 무료</p>
+                        </span>
+                        <span>
+                            <p class="text1">41만6천원</p>
+                            <p class="text2">훈련 장려금 월 최대<span>41만 6천원 지원</span></p>
+                        </span>
+                        <span>
+                            <p class="text1">1020h</p>
+                            <p class="text2">7개월</p>
+                        </span>
+                        <span>
+                            <button type="button" class="btn-click">click</button>
+                        </span>
+                    </span>
+                </a>
+                <a href="uxuiDesign.html">
+                    <span class="name">[NCS] 디지털<br>UI/UX디자인</span>
+                    <span class="details">
+                        <span>
+                            <p class="text1">전액무료</p>
+                            <p class="text2">수강료+교재비 무료</p>
+                        </span>
+                        <span>
+                            <p class="text1">41만6천원</p>
+                            <p class="text2">훈련 장려금 월 최대<span>41만 6천원 지원</span></p>
+                        </span>
+                        <span>
+                            <p class="text1">1020h</p>
+                            <p class="text2">7개월</p>
+                        </span>
+                        <span>
+                            <button type="button" class="btn-click">click</button>
+                        </span>
+                    </span>
+                </a>
+                <a href="uxuiDesign.html">
+                    <span class="name">NCS 디지털<br>UI/UX디자인</span>
+                    <span class="details">
+                        <span>
+                            <p class="text1">전액무료</p>
+                            <p class="text2">수강료+교재비 무료</p>
+                        </span>
+                        <span>
+                            <p class="text1">41만6천원</p>
+                            <p class="text2">훈련 장려금 월 최대<span>41만 6천원 지원</span></p>
+                        </span>
+                        <span>
+                            <p class="text1">1020h</p>
+                            <p class="text2">7개월</p>
+                        </span>
+                        <span>
+                            <button type="button" class="btn-click">click</button>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </section>
+        <section class="counting main">
+            <div class="section-title">
+                <p class="tit"><span class="bold">Himedia Computer</span> Institute</p>
+            </div>
+            <div class="items">
+                <div class="campus">
+                    <span class="round">
+                        <canvas class="counting-canvas" id="progress1"></canvas>
+                    </span>
+                    <div class="icon1"></div>
+                    <p class="number">13</p>
+                    <p>하이미디어의 현재 <span class="bold">지점</span> 수</p>
+                </div>
+                <div class="course">
+                    <span class="round">
+                        <canvas class="counting-canvas" id="progress2"></canvas>
+                    </span>
+                    <div class="icon2"></div>
+                    <p class="number">98</p>
+                    <p>하이미디어의 현재 <span class="bold">과정</span> 수</p>
+                </div>
+                <div class="graduate">
+                    <span class="round">
+                        <canvas class="counting-canvas" id="progress3"></canvas>
+                    </span>
+                    <div class="icon3"></div>
+                    <p class="number">103,600</p>
+                    <p>하이미디어 <span class="bold">수료생</span> 수</p>
+                </div>
+                <div class="employee">
+                    <span class="round">
+                        <canvas class="counting-canvas" id="progress4"></canvas>
+                    </span>
+                    <div class="icon4"></div>
+                    <p class="number">5,000</p>
+                    <p>하이미디어 <span class="bold">취업생</span> 수</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="snslink main">
+            <div class="section-title wow fadeInUp">
+                <p class="tit"><span class="bold">PEOPLE<span class="img-love">love</span>US</span></p>
+                <p class="sub">하이미디어 최신 소식을 <span class="bold">소셜네트워크</span>에서 만나보세요!</p>
+            </div>
+            <ul class="wow fadeInUp">
+                <li class="youtube"><a href="#">하이미디어 유튜브로 링크 연결</a></li>
+                <li class="facebook"><a href="#">하이미디어 페이스북으로 링크 연결</a></li>
+                <li class="instagram"><a href="#">하이미디어 인스타그램으로 링크 연결</a></li>
+                <li class="twitter"><a href="#">하이미디어 트위터로 링크 연결</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script>
+
+    // progress canvas
+    window.onload = function(){
+
+    	var bannerTimeout;
+    	$("#main_banner").on('slid.bs.carousel', function () {
+    		clearTimeout(bannerTimeout);
+			if($("#main_banner").find(".active").find("video").length == 0) {
+				bannerTimeout = setTimeout(function () {
+	    	    	$("#main_banner").carousel("next");
+	    	    }, 5000);
+			} else {
+				var video = document.getElementById('my-video');
+				if(video.ended) {
+					video.play();
+				}
+			}
+
+    	});
+
+    	document.getElementById('my-video').addEventListener('ended',function(e){
+    		$("#main_banner").carousel("next");
+    	},false);
+
+
+        function drawProgress(id){
+
+            var canvas = document.getElementById(id);
+            var ctx = canvas.getContext("2d");
+
+            var W = canvas.width;
+            var H = canvas.height;
+
+            var degrees = 0;
+            var new_degrees = 0;
+            var difference = 0;
+            var color = "#FFF";
+            var bgcolor = "transparent";
+            var text;
+            var animation_loop, redraw_loop;
+
+            function init()
+            {
+                ctx.clearRect(0, 0, W, H);
+                //바탕 반원
+                ctx.beginPath();
+                ctx.strokeStyle = bgcolor;
+                ctx.lineWidth = 4;
+                ctx.arc(W/2, H, 140, Math.PI, 0, false);
+                ctx.stroke();
+                //게이지
+                var radians = degrees * Math.PI / 180;
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 5;
+
+                ctx.arc(W/2, H, 140, Math.PI, radians - 180*Math.PI/180, false);
+
+                ctx.stroke();
+            };
+
+            function draw()
+            {
+
+                if(typeof animation_loop != undefined) clearInterval(animation_loop);
+
+                new_degrees = Math.round(181);
+                difference = new_degrees - degrees;
+
+                animation_loop = setInterval(animate_to, 7);
+            };
+
+            function animate_to()
+            {
+                if(degrees == new_degrees)
+                    clearInterval(animation_loop);
+                if(degrees < new_degrees)
+                    degrees = degrees + 3;
+                else
+                    degrees--;
+                init();
+            };
+        // draw();
+    };
+    // counting function
+    function countNum(endnum,target){
+        var aa = 0;
+        var go;
+
+        function plus() {
+            if(endnum - aa <= 99) aa++;
+            else if(endnum - aa <= 999) aa += 12;
+            else if(endnum - aa <= 9999) aa += 132;
+            else if(endnum - aa <= 50000) aa += 3456;
+            else aa += 12345;
+        }
+        function makeComma(target){
+			var len = target.toString().length;
+			var rtnStr = "";
+			if(target != 0 && typeof(target) == 'number'){
+				for(var i=0, j=len; i<len ; i++, j--){
+					if(j % 3 == 0 && j != len){
+						rtnStr+=",";
+					};
+					rtnStr+=target.toString().charAt(i);
+				};
+			return rtnStr;
+			}else{
+				return '-';
+			}
+		}
+        go = setInterval(function(){
+
+            if(aa == endnum){
+                clearInterval(go);
+            }else{
+                plus();
+                target.text(makeComma(aa));
+            }
+        }, 1000/endnum);
+    }
+    // counting score
+    var counting = {
+        canvasCount : 0,
+        counterCount : 0
+    }
+
+    // execution condition
+    function countingStart(){
+        var scTop = $(window).scrollTop();
+        var winHei = $(window).height();
+        var target = $('section.counting.main').offset().top - $('section.counting.main').height() * 1.3;
+        var targetEnd =  $('section.counting.main').offset().top + $('section.counting.main').height();
+        if(scTop > target && scTop + winHei > targetEnd && counting.canvasCount == 0 && counting.counterCount == 0){
+            counting.canvasCount = 1;
+            counting.counterCount = 1;
+            drawProgress('progress1');
+            setTimeout(function(){drawProgress('progress2')},150);
+            setTimeout(function(){drawProgress('progress3')},300);
+            setTimeout(function(){drawProgress('progress4')},450);
+            countNum(13,$('.campus .number'));
+            countNum(98,$('.course .number'));
+            countNum(103600,$('.graduate .number'));
+            countNum(5000,$('.employee .number'));
+        }
+    }
+
+    // execution event
+    $(window).scroll(function(){
+        countingStart();
+    });
+    countingStart();
+
+    }
+
+</script>
+<script>
+// var swiper = new Swiper('.swiper-container', {
+//       pagination: '.swiper-pagination',
+//       nextButton: '.swiper-button-next',
+//       prevButton: '.swiper-button-prev',
+//       paginationClickable: true,
+//       centeredSlides: true,
+//       autoplay: 2500,
+//       autoplayDisableOnInteraction: false
+//   });
+//
+//   $( ".swiper-slide" ).hover(
+//       function() {
+//         swiper .stopAutoplay();
+//       }, function() {
+//         swiper .startAutoplay();
+//       }
+//     );
+
+
+
+
+</script>
+
+{% endblock %}

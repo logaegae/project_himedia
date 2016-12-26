@@ -1,0 +1,84 @@
+.allTeacher {
+    word-break: keep-all;
+    b {
+        color: @title-color;
+        font-weight: @title-weight;
+    }
+    .sm-rect-btns-wrapper {
+        padding: 0 55px;
+        text-align: left;
+    }
+
+    .modalPopup {
+        .close-box {
+            float: right;
+            text-align: bottom;
+        }
+        .modal-body {
+            padding: 40px;
+            text-align: center;
+            .content-title{
+                .sub-title{
+                    white-space: pre-line;
+                }
+            }
+
+            .content-detail{
+                span{
+                    font-size: @summery-size;
+                    font-weight: 400;
+                    color: black;
+                }
+                div
+                {
+                    margin-top:5px;
+                }
+                .field{
+                    white-space: pre-line;
+                }
+
+            }
+
+            p {
+                line-height: 23px;
+                white-space: pre-line;
+                .red-bar {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: black;
+                    line-height: 26px;
+                    &:before {
+                        display:inline-block;
+                        margin-right:10px;
+                        content:" ";
+                        width:4px;
+                        height:21px;
+                        vertical-align:top;
+                        background-color:@main-color;
+                    }
+                }
+            }
+        }
+        .teacher_img {
+            .inlineblock();
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 50px;
+        }
+        .body-left,
+        .body-right {
+            padding-top: 50px;
+            height: 480px;
+        }
+        .body-right {
+            overflow-y: scroll;
+            padding: 5px;
+        }
+        strong {
+            margin-bottom: 10px;
+        }
+        .br-sm {
+            margin: 5px 0;
+        }
+    }
+}

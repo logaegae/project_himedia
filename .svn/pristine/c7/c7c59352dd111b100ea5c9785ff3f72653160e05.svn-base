@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font.css" />
+    <link rel="stylesheet" type="text/css" href="/css/site_style.css" />
+    <title>하이미디어 컴퓨터학원</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- gnb -->
+        <div class="gnb">
+            <div class="innerwrap">
+                <nav>
+                    <ul class="chain">
+                        <li class="on"><a href="">하이미디어</a></li>
+                        <li><a href="#">강남</a></li>
+                        <li><a href="#">종로1</a></li>
+                        <li><a href="#">종로2</a></li>
+                        <li><a href="#">신촌</a></li>
+                        <li><a href="#">구로</a></li>
+                        <li><a href="#">노원</a></li>
+                        <li><a href="#">안양</a></li>
+                        <li><a href="#">안산</a></li>
+                        <li><a href="#">성남</a></li>
+                        <li><a href="#">수원</a></li>
+                        <li><a href="#">인천</a></li>
+                        <li><a href="#">전주</a></li>
+                    </ul>
+                    <ul class="option">
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">회원가입</a></li>
+                        <li>
+                            <fieldset class="search">
+                                <lable for="search"><input type="text" id="search"/></lable><input type="submit" />
+                            </fieldset>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- gnb end -->
+        <div class="lnb">
+            <div class="lnb-header">
+                <div class="innerwrap">
+                    <h1 class="logo"><a href="/"><img src="/img/unit/logo.png" alt="하이미디어 컴퓨터학원"></a></h1>
+
+                    <div class="menu">
+                        <nav>
+                            <ul>
+                                <li class="on"><a href="#">하이미디어</a>
+                                    <ul class="snb1">
+                                        <li><a href="intro.html">하이미디어 소개</a></li>
+                                        <li><a href="campusIntro.html" class="hit">캠퍼스 소개</a></li>
+                                        <li><a href="allTeacher.html">전체 강사 소개</a></li>
+                                        <li><a href="recruit.html">채용안내</a></li>
+                                        <li><a href="franchise.html">프랜차이즈 안내</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">교육과정</a>
+                                    <ul class="snb2">
+                                        <li><a href="">교육과정 소개</a></li>
+                                        <li><a href="">학생 및 일반과정</a></li>
+                                        <li><a href="">직장인 국비지원과정</a></li>
+                                        <li><a href="" class="hit">실업자 국비지원과정</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">포트폴리오</a>
+                                    <ul class="snb3">
+                                        <li><a href="webDesign.html">웹 디자인</a></li>
+                                        <li><a href="webPublishing.html">웹 퍼블리싱</a></li>
+                                        <li><a href="dtpDesign.html">편집/출판 디자인</a></li>
+                                        <li><a href="cad.html">캐드</a></li>
+                                        <li><a href="interior.html">인테리어</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">취업지원센터</a>
+                                    <ul class="snb4">
+                                        <li><a href="">취업지원센터</a></li>
+                                        <li><a href="">FAQ</a></li>
+                                        <li><a href="">채용 정보</a></li>
+                                        <li><a href="">사람인 채용 정보</a></li>
+                                        <li><a href="">인재 정보</a></li>
+                                        <li><a href="">취업 후기</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">하이커뮤니티</a>
+                                    <ul class="snb5">
+                                        <li><a href="">수강 후기</a></li>
+                                        <li><a href="">학생 인터뷰</a></li>
+                                        <li><a href="">강사 인터뷰</a></li>
+                                        <li><a href="">하설루</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">고객센터</a>
+                                    <ul class="snb6">
+                                        <li><a href="notice.html">공지사항/이벤트</a></li>
+                                        <li><a href="askCost.html">수강료 조회</a></li>
+                                        <li><a href="">시간표 조회</a></li>
+                                        <li><a href="">온라인 상담</a></li>
+                                        <li><a href="">FAQ</a></li>
+                                        <li><a href="">Q&amp;A</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="close-snb">
+                                <span>close</span>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- lnb end -->
+
+        {% block content %}{% endblock %}
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="top">
+                <div class="logo">
+                    <a href="/view/main.html"><img src="/img/unit/logo_footer.png" alt="하이미디어 로고"></a>
+                </div>
+                <div class="info-link-box">
+                    <div class="left">
+                        <a href="#">이용약관</a>
+                        <a href="#"><span class="txt-red">개인정보처리방침</span></a>
+                        <a href="#">이메일무단수집거부</a>
+                    </div>
+                    <div class="right">
+                        <a href="#">제휴문의</a>
+                        <a href="#">프랜차이즈모집문의</a>
+                        <a href="#">고객지원</a>
+                    </div>
+                </div>
+                <div class="address">
+                        <address>서울시 구로구 구로동 606-4 삼영빌딩 4층 (주)하이미디어컴퓨터학원</address>
+                        <p>사업자등록번호: 113-81-80177</p>
+                        <p>통신판매업신고 : 제4312호 대표자 : 허미라</p>
+                        <p class="copyright">COPYRIGHT ⓒHIMEDIA COMPUTER INSTITUTE. ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+            <div class="sns-link">
+                <div class="inner">
+                    <a href="#"><img src="/img/icon/icon_footer_youtube.png" alt="유튜브 아이콘"></a>
+                    <a href="#"><img src="/img/icon/icon_footer_facebook.png" alt="페이스북 아이콘"></a>
+                    <a href="#"><img src="/img/icon/icon_footer_instagram.png" alt="인스타그램 아이콘"></a>
+                    <a href="#"><img src="/img/icon/icon_footer_twitter.png" alt="트위터 아이콘"></a>
+                </div>
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+
+</body>
+</html>

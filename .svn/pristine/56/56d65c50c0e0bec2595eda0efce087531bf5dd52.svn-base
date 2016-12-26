@@ -1,0 +1,98 @@
+.qna{
+
+    .notice-wrapper{
+        width:100%;
+        background-color: @base-color;
+        padding:70px;
+        .tab{
+            margin-bottom:30px;
+        }
+        .notice-box{
+            width:1024px;
+            margin:0 auto;
+
+            .list_table{
+                // table-layout: fixed;
+                .new.icon{
+                    margin-left:5px;
+                }
+                .text-left{
+                    a{
+                        width:527px;
+                        overflow: hidden;
+        				white-space: nowrap;
+        				text-overflow: ellipsis;
+                        display:inline-block;
+                        *display:inline;
+                        *zoom:1;
+                    }
+                }
+                .answer{
+                    .line{
+                        width: 9px;
+                        height: 9px;
+                        .inlineblock();
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: @main-color;
+                        border-right:none;
+                        border-top:none;
+                        margin-right: 10px;
+                    }
+                    .apoint{
+                        font-weight: @title-weight;
+                        color: @main-color;
+                        text-transform: uppercase;
+                        margin-right:6px;
+                    }
+                }
+            }
+            .btn-seemore{
+                margin:0 0 20px;
+                button:hover{
+                    span{
+                        background-position: -40px -250px;
+                    }
+                }
+            }
+            .search-wrapper{
+                margin: 0 0 18px;
+                float:left;
+                position:relative;
+
+                input[type="text"]{
+                    border: 0 none;
+                    box-sizing: border-box;
+                    width: 220px;
+                    padding: 6px 46px 6px 16px;
+                    .radius(20px);
+                    color:@content-sub-color;
+                }
+                input[type="submit"] {
+                    position: absolute;
+                    background-color: transparent;
+                    background-image: url(/img/icon/icon_search.png);
+                    width: 17px;
+                    height: 17px;
+                    border: 0 none;
+                    top: 7px;
+                    right: 23px;
+                    text-indent: -9999px;
+                    cursor: pointer;
+                }
+            }
+            .pagination{
+                margin:0 0 70px;
+                span{
+                    a{
+                        background:@white-color;
+                    }
+                    a.on{
+                        background:@main-color;
+                        color:@white-color;
+                    }
+                }
+            }
+        }
+    }
+}

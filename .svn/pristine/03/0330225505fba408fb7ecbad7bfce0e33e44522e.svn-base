@@ -1,0 +1,6 @@
+.campusIntro{
+    b{
+        color:@title-color;
+        font-weight: @title-weight;
+    }
+}

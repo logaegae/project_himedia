@@ -1,0 +1,352 @@
+var express = require('express');
+var exRouter = express.Router();
+var router = express.Router();
+var models = require('service/models');
+var role = require('service/role');
+var async = require('async');
+
+var request = require('request');
+var xml2js = require('xml2js');
+var parser = new xml2js.Parser();
+
+exRouter.use("/", router);
+
+router.all("/:branchCode/condition.html", function(req, res, next){
+
+	var page = req.query.page ? parseInt(req.query.page) : 1;
+	var pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 13;
+	var where = {
+		delYn : 'N'
+	};
+	var years = [2016,2015,2014,2013,2012,2011];
+	var nowDate = new Date();
+	if(nowDate.getFullYear() > 2016){
+		var i = 0;
+		while( nowDate.getFullYear() != (2016 + i) ){
+			i++;
+			years.unshift(2016 + i);
+		}
+	}
+
+
+	if(req.body.branchCode){
+		where.branchCode = req.body.branchCode;
+	}
+	if(req.body.selectedYear && !req.body.selectedMonth){
+		var date1 = req.body.selectedYear+'-1-1';
+		var date2 = (Number(req.body.selectedYear) + 1)+'-1-1';
+		where.jobDate = {$between: [new Date(date1), new Date(date2)]};
+	}
+	else if(req.body.selectedMonth && !req.body.selectedYear){
+		var year = new Date().getFullYear();
+		if(req.body.selectedMonth != 12){
+			var temp = Number(req.body.selectedMonth) + 1;
+			var date2 = new Date(year+'-'+temp+'-1');
+		}else{
+			var temp = Number(year) + 1;
+			var date2 = new Date(temp+'-1-1');
+		}
+		var date1 = new Date(req.body.selectedYear+'-'+req.body.selectedMonth+'-1');
+		where.jobDate = {$between: [new Date(date1), new Date(date2)]};
+		req.body.selectedYear = year;
+	}
+	else if(req.body.selectedMonth && req.body.selectedYear){
+		if(req.body.selectedMonth != 12){
+			var temp = Number(req.body.selectedMonth) + 1;
+			var date2 = new Date(req.body.selectedYear+'-'+temp+'-1');
+		}else{
+			var temp = Number(req.body.selectedYear) + 1;
+			var date2 = new Date(temp+'-1-1');
+		}
+		var date1 = new Date(req.body.selectedYear+'-'+req.body.selectedMonth+'-1');
+		where.jobDate = {$between: [new Date(date1), new Date(date2)]};
+	}
+
+
+	models.JobCondition.findAndCountAll({
+		where : where,
+		order : 'conditionId DESC',
+		offset : (page-1)*pageSize,
+		limit : pageSize,
+		include: [{ model: models.Branch, attributes : ['branchName'], required: true}]
+	})
+	.then(function (result) {
+		res.locals.infos = result;
+
+		res.locals.totalCount = result.count;
+		res.locals.list = result.rows;
+		res.locals.page = page;
+		res.locals.pageSize = pageSize;
+		res.locals.returnBranchCode = req.body.branchCode;
+		res.locals.returnYear = req.body.selectedYear;
+		res.locals.returnMonth = req.body.selectedMonth;
+		res.locals.years = years;
+
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/saramin.html", function(req, res, next){
+	var data = [];
+	var total = 0;
+	var url = '';
+	var page = req.query.page ? parseInt(req.query.page) : 1;
+	var pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 15;
+	switch(req.query.category){
+		case '1':
+			url = 'http://api.saramin.co.kr/job-search?job_category=1201 1202 1203 1204 1208 1209 1207&count=15&start='+(page-1);
+			break;
+		case '2':
+			url = 'http://api.saramin.co.kr/job-search?job_category=412 413 404 407 408 410 414 406 405 401&count=15&start='+(page-1);
+			break;
+		case '3':
+			url = 'http://api.saramin.co.kr/job-search?job_category=108 103 114&count=15&start='+(page-1);
+			break;
+		case '4':
+			url = 'http://api.saramin.co.kr/job-search?job_category=902 902 318 902 1208&count=15&start='+(page-1);
+			break;
+		default:
+			url = 'http://api.saramin.co.kr/job-search?job_category=1201 1202 1203 1204 1208 1209 1207&count=15&start='+(page-1);
+	}
+
+	request.get({
+		url: url
+	}, function(err, httpResponse, body) {
+		parser.parseString(body, function(err, result) {
+			var items = result['job-search'].jobs[0].job;
+			total = result['job-search'].jobs[0].$.total;
+			for(i=0; i<items.length; i++) {
+				data.push({});
+				data[i].name =items[i].company[0].name[0]._;
+				data[i].href =items[i].url[0];
+				data[i].location =items[i].position[0].location[0]._;
+				data[i].title =items[i].position[0].title[0];
+				data[i].category =items[i].position[0]['job-category'][0]._;
+				data[i].salary =items[i].salary[0]._;
+				data[i].position =items[i].position[0]['job-type'][0]._;
+				data[i].expiration = new Date(items[i]['expiration-timestamp']*1000);
+			}
+			res.locals.totalCount = total;
+			res.locals.page = page;
+			res.locals.pageSize = pageSize;
+			res.locals.data = data;
+			next();
+		});
+	});
+});
+
+router.all("/:branchCode/postscriptViewVideo.html", function(req, res, next){
+
+	models.JobInterview.findOne({
+		where : {
+			delYn : 'N',
+			contentType : req.query.contentType,
+			interviewId : req.query.interviewId
+		},
+		include: [{ model: models.Branch, attributes : ['branchName'], required: true}]
+	}).then(function (result) {
+		res.locals.board = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/postscriptViewText.html", function(req, res, next){
+
+	models.JobInterview.findOne({
+		where : {
+			delYn : 'N',
+			contentType : req.query.contentType,
+			interviewId : req.query.interviewId
+		},
+		include: [{ model: models.Branch, attributes : ['branchName'], required: true}]
+	}).then(function (result) {
+		res.locals.board = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/postscript.html", function(req, res, next){
+
+	models.JobInterview.findAll({
+		where : {
+			delYn : 'N'
+		},
+		order: 'interviewId DESC',
+		include: [{ all: true, nested: true}]
+	}).then(function (result) {
+		res.locals.lists = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/recruitInfoView.html", function(req, res, next){
+
+	models.JobRecruit.findOne({
+		where : {
+			recruitId : req.query.recruitId
+		}
+	}).then(function (result) {
+		res.locals.infos = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/register.html", function(req, res, next){
+	if(req.query.correction == 'true'){
+		var where = {
+			recruitId : req.query.recruitId,
+			delYn : 'N'
+		};
+
+		models.JobRecruit.findOne({
+			where : where
+		})
+		.then(function (result) {
+			res.locals.info = result;
+			next();
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+	}else{
+		next();
+	}
+
+});
+
+router.all("/:branchCode/recruitInfo.html", function(req, res, next){
+	var where = {
+		delYn : 'N'
+	};
+	var info = req.body;
+	res.locals.searched = info;
+
+	//입력한 자료가 1개일때 배열화
+	for(i in info){
+		if(info[i].length == 1 ){
+			info[i] = [info[i]];
+		}
+	}
+	if(info.recruitField){
+		where.recruitField = {$in : info.recruitField};
+	}
+	if(info.recruitType){
+		where.recruitType = {$in : info.recruitType};
+	}
+	if(info.workAreaInfo){
+		where.workAreaInfo = {$in : info.workAreaInfo};
+	}
+
+	var page = req.query.page ? parseInt(req.query.page) : 1;
+	var pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 10;
+
+	models.JobRecruit.findAndCountAll({
+		where : where,
+		order : 'recruitId DESC',
+		offset : (page-1)*pageSize,
+		limit : pageSize
+	})
+	.then(function (result) {
+		res.locals.infos = result;
+
+		res.locals.totalCount = result.count;
+		res.locals.qas = result.rows;
+		res.locals.page = page;
+		res.locals.pageSize = pageSize;
+
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+});
+
+router.all("/:branchCode/registRecruit", function(req, res, next){
+	var registIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	var data = req.body;
+	if( data.del == 'true'){
+		models.JobRecruit.update({
+			delYn:'Y',
+			deleteDate : new Date()
+		},{
+			where : {recruitId: req.body.recruitId}
+		})
+		.then(function (result) {
+			res.redirect("recruitInfo.html");
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+
+	}else if( data.correction == 'true'){
+		delete data.correction;
+		data.updateDate = new Date();
+		data.registIP = registIP;
+		models.JobRecruit.update(data,{
+			where : {recruitId : req.body.recruitId}
+		})
+		.then(function (result) {
+			res.redirect("recruitInfo.html");
+		})
+		.catch(function (err) {
+			process.nextTick(function () {throw err});
+		});
+	}else{
+		data.registDate = new Date();
+		data.registIP = registIP;
+		data.delYn = "N";
+
+		models.JobRecruit.create(data)
+	    .then(function(result) {
+	        res.redirect("recruitInfo.html");
+	    })
+	    .catch(function(err) {
+	        process.nextTick(function() {
+	            throw err
+	        });
+	    });
+	}
+});
+
+
+router.all("/:branchCode/deletePwCheckAtJob", function(req, res, next) {
+    var where = {
+        recruitId: req.body.recruitId
+    };
+    models.JobRecruit.findOne({
+            where: where
+        })
+        .then(function(result) {
+            if (result.recruitPass == req.body.recruitPass) {
+				res.send({
+                    isAccess: true
+                });
+            } else {
+                res.send({
+                    isAccess: false
+                });
+            }
+        })
+        .catch(function(err) {
+            process.nextTick(function() {
+                throw err
+            });
+        });
+});
+
+module.exports = exRouter;

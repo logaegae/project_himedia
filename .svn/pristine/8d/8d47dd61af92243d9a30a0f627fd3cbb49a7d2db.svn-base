@@ -1,0 +1,88 @@
+{% extends "./blocks/layout.html" %} {% block content %}
+<div class="haseolru">
+    <!-- 서브 네비 -->
+    <div class="sub-navi">
+        <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+        <span>&#183;</span>
+        <a href="#">하이커뮤니티</a>
+        <span>&#183;</span>
+        <span class="this-page">하설루</span>
+    </div>
+    <!-- // 서브 네비 -->
+
+    <div class="title-l">
+        <div class="bg">
+            <b>Community</b>
+        </div>
+        <div class="text-box">
+            <h1>하설루</h1>
+            <p><b>하</b>이의 <b>설</b>레는 <b>하</b>루, 하이미디어人의 이야기를 들려 드립니다</p>
+        </div>
+    </div>
+
+    <div class="gray-background">
+        <div>
+            <table class="list_table wow fadeInUp" data-wow-duration="1s">
+                <caption class="sr-only"></caption>
+                <colgroup>
+                    <col style="width:8%">
+                        <col style="width:55%">
+                            <col style="width:14%">
+                                <col style="width:14%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>5화</td>
+                        <td class="text-left"><a href="haseolruDetail.html">취업지원시스템</a></td>
+                        <td>2016.10.29</td>
+                        <td>999 </td>
+                    </tr>
+                    <tr>
+                        <td>4화</td>
+                        <td class="text-left"><a href="haseolruDetail.html">국가기간전략산업직종훈련</a></td>
+                        <td>2016.10.29</td>
+                        <td>999 </td>
+                    </tr>
+                    <tr>
+                        <td>3화</td>
+                        <td class="text-left"><a href="haseolruDetail.html">취업지원실</a></td>
+                        <td>2016.10.29</td>
+                        <td>999 </td>
+                    </tr>
+                    <tr>
+                        <td>2화</td>
+                        <td class="text-left"><a href="haseolruDetail.html">재직자근로자카드</a></td>
+                        <td>2016.10.29</td>
+                        <td>999 </td>
+                    </tr>
+                    <tr>
+                        <td>1화</td>
+                        <td class="text-left"><a href="haseolruDetail.html">나좀케어해주쟈나</a></td>
+                        <td>2016.10.29</td>
+                        <td>999 </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <div class="pagination">
+                <a href="#" class="first">처음</a><a href="#" class="prev">이전</a>
+                <span>
+                <a href="#" class="on">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+            </span>
+                <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

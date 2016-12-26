@@ -1,0 +1,72 @@
+.history{
+	.historyWrap{
+		position:relative;
+		overflow:hidden;
+		width:1024px;
+		margin:0 auto;
+		
+		.history_year{
+			width:107px;
+			right:50%;
+			margin-right: -54px;
+			position:absolute;
+			z-index:2;
+			
+			button{
+				display:block;
+				width:107px;
+				height:107px;
+				margin-bottom:37px;
+				text-align:center;
+				line-height:107px;
+				font-size:18px;
+				font-weight:@gnb-weight;
+				background:url('/img/site_img/history_past.png');
+			}
+			button.on{
+				background:url('/img/site_img/history_now.png');
+				color:#fff;
+			}
+		}
+		
+		.history_cont{
+			position:relative;
+			top:0;
+			
+			div.left{
+				text-align: right;
+				margin: 0 616px 30px 0;
+				position:relative;
+			}
+			div.right{
+				text-align: left;
+				margin: 0 0 30px 616px;
+				position:relative;
+			}
+			
+			.blackbar{
+				width:130px;
+				height:2px;
+				display:inline-block;
+				background:#000;
+				margin-bottom:12px;
+			}
+			.year{
+				color:@title-color;
+				font-size:18px;
+				font-weight: @gnb-weight;
+			}
+			.year.on{
+				color:@main-color;
+			}
+			.real_cont{
+				font-size:13px;
+				color:@subject-color;
+				margin-top:10px;
+				span{
+					display:block;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,244 @@
+
+$(function(){
+
+  // gnb
+  $('.menu nav>ul>li>a').click(function(){
+    $('.lnb').css('height','355px');
+    $('.menu nav>ul>li>ul').css('display','block');
+    $('.close-snb').css('display','block');
+  });
+  $('.close-snb').click(function(){
+    $('.lnb').css('height','0');
+    $('.menu nav>ul>li>ul').css('display','none');
+    $(this).css('display','none');
+  });
+
+  $('.option_btn button').click(function(){
+      $(this).parent().css({'display':'none'});
+      $('.option_btn2').addClass('on');
+  });
+
+  // main > 전화번호
+  $('.tel dl dt').click(function() {
+       $('.tel dl dd').toggleClass('on');
+  })
+
+  //main notice
+
+  var noticeidx=0;
+  function main_notice(){
+      $('.notice .rolling li').eq(noticeidx).animate({top:'-100%'}).removeClass('on').next().css({'top':'100%'}).addClass('on').animate({top:0});
+      noticeidx++;
+      if(noticeidx==$('.notice .rolling li').size()){
+          noticeidx=0;
+          $('.notice .rolling li').eq(noticeidx).css('top','100%').addClass('on').animate({top:0});
+      }
+  };
+  var m_notice = setInterval(function(){main_notice('next');},3000);
+
+  $('.notice .rolling li').hover(function(){
+      clearInterval(m_notice);
+  },function(){
+      m_notice = setInterval(function(){main_notice('next');},3000);
+  });
+
+  //main banner
+  // var mainidx=0;
+  // function main_banner(){
+  //     $('.mainbanner .innner li').eq(mainidx).children().find('img').animate({left:'-100%'},2000).parent().parent().next().addClass('on').children().find('img').css({'left':'100%'}).animate({left:0},2000);
+  //     mainidx++
+  //     if(mainidx==$('.mainbanner li').size()){
+  //         mainidx=0;
+  //         $('.notice .rolling li').eq(mainidx).children().find('img').css('top','100%').addClass('on').animate({left:0});
+  //     }
+  // }
+  //   var banner = setInterval(function(){main_banner('next');},3000);
+
+  //modal object
+    var modalPopup = {
+        currentScroll : 0,
+        lockscroll : function(){
+            $(window).scrollTop(modalPopup.currentScroll);
+        },
+        makeBlind : function(){
+            modalPopup.currentScroll=$(window).scrollTop();
+            $(window).bind('scroll',modalPopup.lockscroll);
+            $('body').append('<div class="modalBlind"></div>');
+        },
+        closeFn : function(){
+            $('.modalBlind').remove();
+            $('.modalPopup').removeClass('showOn');
+            $(window).unbind('scroll');
+        },
+        btnFn : function(target){
+            if(target){
+                if(target == '.modalPopup'){
+                    $('body').find(target).addClass('showOn');
+                }
+                else if(target.attr("modallink").length != 0 ){
+                    var addr = target.attr("modallink");
+                    if(addr) $('#'+addr).addClass('showOn');
+                }
+            }else{
+                $('body').append('<div class="onlinePay"</div>')
+                $('.onlinePay').load('ajax/onlinePay.html .modalPopup',function(){
+                    $('body').find('.modalPopup').addClass('showOn');
+                });
+            }
+
+            this.makeBlind();
+            return false;
+          }
+    };
+    //modal click, close event
+    $('.modallink').click(function(e){
+        modalPopup.btnFn($(this));
+        e.preventDefault();
+    });
+    $('body').on("click", ".modalBlind",  function(){
+      modalPopup.closeFn();
+      }
+    );
+    $('body').on("click",".modal-closeBtn", function(e){
+        modalPopup.closeFn();
+        e.preventDefault();
+    });
+
+    //tab-campus auto width calculator
+    function fixTabWidth(target){
+        this.tabObject = target;
+        this.wide = this.tabObject.innerWidth();
+    };
+    fixTabWidth.prototype.divide = function(wide,tabObject){
+        if(wide > 1024) wide = 1024;
+
+        for(i=0;i<tabObject.length;i++){
+            var num = tabObject.eq(i).find('li').length;
+            tabObject.eq(i).find('li').css('width',(wide - 1) / num);
+        }
+    };
+
+    function tabCampusWidth(){
+        var obj = new fixTabWidth($('.tab.tab-campus'));
+        obj.prototype = fixTabWidth.prototype;
+        obj.divide(obj.wide,obj.tabObject);
+    };
+    tabCampusWidth();
+
+    //tab-customer-campus auto width calculator
+    function tabCustomerCampusWidth(){
+        var obj = new fixTabWidth($('.tab.tab-customer-campus'));
+        obj.prototype = fixTabWidth.prototype;
+        obj.divide(obj.wide,obj.tabObject);
+    };
+    tabCustomerCampusWidth();
+
+    //window resize
+    $(window).resize(function(){
+        tabCampusWidth();
+        tabCustomerCampusWidth();
+    })
+
+
+
+
+    //input delbutton
+    $('.input_del').click(function(){
+        var input_id = $(this).siblings().attr('id');
+        $(this).siblings().addClass(input_id);
+        $('.input_fromwrap input').each(function(){
+             if($(this).hasClass(input_id)) $(this).val('');
+        });
+    });
+
+    //onlineCounsel btn
+    $('.page1_tab ul li button').click(function(){
+        $(this).parent().addClass('on').siblings().removeClass('on');
+    })
+
+    // onlinePay
+    $('a[href="onlinePay.html"]').click(function(e){
+        if(!$('.onlinePay').length){
+            modalPopup.btnFn();
+            e.preventDefault();
+        }else{
+            modalPopup.btnFn('.modalPopup');
+            e.preventDefault();
+        }
+    });
+
+    //myCourse
+    $('.myCourse .modallink').mouseover(function(){
+        $(this).find('span').removeClass('red').addClass('white');
+    });
+    $('.myCourse .modallink').mouseleave(function(){
+        $(this).find('span').removeClass('white').addClass('red');
+    });
+
+    $( '.star_wrap .star' ).click(function() {
+         $(this).parent().children('span').removeClass("on");
+         $(this).addClass("on").prevAll('span').addClass("on");
+         return false;
+    })
+
+    //색깔바뀌는 btn
+    $('.chage_color_btn').mouseover(function(){
+        $(this).find('span').removeClass('red').addClass('white');
+        $(this).css({'background':'#e62e2e'});
+    });
+    $('.chage_color_btn').mouseleave(function(){
+        $(this).find('span').removeClass('white').addClass('red');
+        $(this).css({'background':'#252e33'});
+    });
+
+    //See More button
+    function seeMoreBtn(targetClass,showNum){
+        for(j=0;j<$(targetClass).length;j++){
+            if($(targetClass).eq(j).length && j >= showNum){
+                $(targetClass).eq(j).removeClass('showOn').css('display','none');
+            }else if($(targetClass).eq(j).length && j < showNum){
+                $(targetClass).eq(j).addClass('showOn');
+            }
+        }
+    }
+        //showNum으로 display
+    if($('.btn-seemore').length){
+        $('.btn-seemore').each(function(i,e){
+            var showNum = $(e).attr("showNum");
+            var targetClass = '.'+$(e).attr("targetClass");
+            seeMoreBtn(targetClass,showNum);
+        });
+    }
+        //event
+    $('.btn-seemore').click(function(){
+        var showNum = $(this).attr("showNum");
+        var plusNum = $(this).attr("plusNum");
+        var targetClass = '.'+$(this).attr("targetClass");
+        if(plusNum != 'all'){
+            showNum = Number(showNum) + Number(plusNum);
+            $(this).attr("showNum",showNum);
+        }else{
+            showNum = $(targetClass).length;
+        }
+        seeMoreBtn(targetClass,showNum);
+        if($(this).attr("showNum") >= $(targetClass).length) $('.btn-seemore').css('display','none')
+    });
+
+    $('.footerFranchise').click(function(){
+        $('.modal_body').load('ajax/footerFranchise.html .footerFranchise',function(){
+            $('body').find('.moadl_foot').addClass('showOn');
+        })
+    });
+
+    $('.footerEmail').click(function(){
+        $('.modal_body').load('ajax/footerEmail.html .footerEmail',function(){
+            $('body').find('.moadl_foot').addClass('showOn');
+        })
+    });
+
+    $('.footerCooperate').click(function(){
+        $('.modal_body').load('ajax/footerCooperate.html .footerCooperate',function(){
+            $('body').find('.moadl_foot').addClass('showOn');
+        })
+    });
+})

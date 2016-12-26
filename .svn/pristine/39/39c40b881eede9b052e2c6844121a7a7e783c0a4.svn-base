@@ -1,0 +1,37 @@
+.notice{
+	.notice_bg{
+		background:@base-color;
+		padding-top:70px;
+
+		.tab{
+			margin-bottom:30px;
+		}
+		.list_table{
+			// table-layout: fixed;
+			.text-left{
+				// overflow: hidden;
+				// white-space: nowrap;
+				// text-overflow: ellipsis;
+				a{
+					display: block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					width:527px;
+				}
+			}
+		}
+		.pagination{
+			span{
+				a{
+					background:@white-color;
+				}
+				a.on{
+					background:@main-color;
+					color:@white-color;
+				}
+			}
+		}
+	}
+
+}

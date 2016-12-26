@@ -1,0 +1,127 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+	<div class="portfolio">
+		<div class="contents">
+			<!-- 서브 네비 -->
+			<div class="sub-navi">
+				<a href="#">HOME</a> 
+				<span>&gt;</span> 
+				<span>포트폴리오</span> 
+				<span>&gt;</span>
+				<span class="this-page">캐드/인테리어/제품3D</span>
+			</div>
+			<!-- // 서브 네비 -->
+	
+			<div class="title-l">
+				<div class="bg">
+					<b>Portfolio</b>
+				</div>
+				<div class="text-box">
+					<h1>캐드/인테리어/제품3D</h1>
+					<p>Himedia Computer Design Institute CAD/Interior 3D/product 3D Design Portfolio</p>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists">
+					<a href="#"> <img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+					<div class="box">캐드</div>
+				</div>
+			</div>
+	
+			<div class="portfolio-list">
+				<div class="lists">
+					<a href="#"> <img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+					<div class="box">인테리어</div>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists">
+					<a href="#"> <img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+					<div class="box">제품3D</div>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists">
+					<a href="#"> <img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+					<div class="box">인테리어</div>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists">
+					<a href="#"> <img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+					<div class="box">캐드</div>
+				</div>
+			</div>
+	
+			<div class="pagination">
+				<a href="#" class="first">처음</a> <a href="#" class="prev">이전</a> <span>
+					<a href="#" class="on">1</a> <a href="#">2</a> <a href="#">3</a>
+				</span> <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

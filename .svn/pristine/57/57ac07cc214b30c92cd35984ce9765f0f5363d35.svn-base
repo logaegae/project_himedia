@@ -1,0 +1,28 @@
+.qnaWrite{
+    .notice-wrapper{
+        padding:70px 0;
+    }
+    .btns{
+        font-size: 0;
+        vertical-align: top;
+        font-size: @menu-size;
+        text-align: center;
+
+        input{
+            height:44px;
+            line-height: 44px;
+            padding:0 20px;
+        }
+        input[type="submit"]{
+            color:@white-color;
+            background-color: @sub-color;
+            font-weight: @subject-weight;
+            margin-right:10px;
+            border:none;
+        }
+        input[type="reset"]{
+            background-color: #FFF;
+            border:1px @sub-color-second solid;
+        }
+    }
+}

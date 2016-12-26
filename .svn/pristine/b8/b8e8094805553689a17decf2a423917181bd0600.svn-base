@@ -1,0 +1,102 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="postscriptViewVedio">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">취업 후기</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>취업 후기</h1>
+                <p>하이미디어에서 알려 드리는 취업 후기</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="tab tab-sub">
+            <ul>
+                <li class="on"><a href="postscript.html">취업생 인터뷰</a></li>
+                <li><a href="condition.html">취업 현황</a></li>
+            </ul>
+        </div>
+        <div class="postscriptViewVedio_bg">
+            <div class="view_wrap">
+                <p class="view_top"><span class="name">김영재</span>님의 취업생 인터뷰입니다.</p>
+                <div class="view_cont">
+                    <table class="view_table">
+                       <caption>과정명,이름,연락처,이메일,상세내용으로 되어있는표입니다.</caption>
+                       <colgroup>
+                           <col style="width:10%">
+                           <col style="width:40%">
+                           <col style="width:10%">
+                           <col style="width:40%">
+                       </colgroup>
+                       <tbody>
+                           <tr>
+                               <th>
+                                   이름
+                               </th>
+                               <td>
+                                    김영재
+                               </td>
+                               <th>
+                                    수료캠퍼스
+                                </th>
+                                <td>
+                                    수원캠퍼스
+                                </td>
+                           </tr>
+                           <tr>
+                               <th>
+                                   회사명
+                               </th>
+                               <td>
+                                   선진GN
+                               </td>
+                               <th>
+                                   수료과정
+                               </th>
+                               <td>
+                                    JAVA기반 시스템 개발자 양성과정
+                               </td>
+                           </tr>
+                           <tr>
+                               <th>
+                                   취업일
+                               </th>
+                               <td>
+                                  2016.00.00
+                               </td>
+                               <th>
+                                   교육기간
+                               </th>
+                               <td>
+                                    2016.00.00 ~ 2016.00.00
+                               </td>
+                           </tr>
+                       </tbody>
+                   </table>
+                   <div class="vieo_wrap">
+                       <iframe width="100%" height="451" src="https://www.youtube.com/embed/XZqoLX8Gq78" frameborder="0" allowfullscreen></iframe>
+                   </div>
+                </div>
+                <div class="view_bottom">
+                     <a class="prev" href=""><span class="icon arrow_left red">왼쪽 화살표</span>이전</a>
+                     <a class="list" href="">목록<span class="icon list red">리스트(목록)</span></a>
+                     <a class="next" href="">다음<span class="icon arrow red">오른쪽 화살표</span></a>
+                 </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

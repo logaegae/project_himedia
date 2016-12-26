@@ -1,0 +1,194 @@
+.uxuiDesign{
+    color:@content-color;
+
+    .class-info{
+        width:1024px;
+        margin:70px auto;
+        font-size:0;
+
+        .left-box{
+            width:350px;
+            .inlineblock();
+            float:left;
+        }
+        .right-box{
+            width:674px;
+            text-align: justify;
+            padding-left:45px;
+            .inlineblock();
+            float:right;
+
+            .class-title{
+                font-size:@title-size;
+                font-weight: @title-weight;
+                padding-bottom:20px;
+                padding-left: 22px;
+                position:relative;
+                vertical-align: text-bottom;
+                border-bottom:2px @sub-color-second solid;
+
+                &:before{
+                    content:"";
+                    width:11px;
+                    height:44px;
+                    background-color: @main-color;
+                    position: absolute;
+                    left:0;
+                    top:2px;
+                }
+            }
+            .info_list{
+                font-size:14px;
+                padding: 22px 0;
+                border-bottom: 1px @sub-color-second solid;
+                .info_left{
+                    font-weight: @subject-weight;
+                    width:115px;
+                    .inlineblock();
+                }
+                .info_right{
+                    width:512px;
+                    padding:0 15px;
+                    float:right;
+
+                    &.open{
+                         color:@content-sub-color;
+                    }
+                    &.last{
+                        padding: 0 0 0 10px;
+                    }
+                }
+                &.last{
+                    border-bottom:none;
+                }
+            }
+            #campusSelect{
+                width:235px;
+                height:40px;
+            }
+            .next_btn{
+                font-size:16px;
+                font-weight:@gnb-weight;
+                width:235px;
+                .inlineblock();
+                text-align: justify;
+                padding:9px 25px 9px 20px;
+                float:right;
+
+                span.icon{
+                    float:right;
+                    margin-top:2px;
+                }
+
+                &.sub_color{
+                    background-color: @sub-color;
+                    color:@white-color;
+                }
+                &.white_color{
+                    margin-top:10px;
+                    border:1px #000 solid;
+                    color:@content-color;
+                }
+            }
+        }
+    }
+    .color-red{
+        color:@main-color;
+    }
+    .img-mid{
+        text-align: center;
+        margin-bottom:70px;
+    }
+    .intro-title{
+        padding:0 140px;
+        text-align: center;
+
+        .img-wrapper{
+            border-top:1px @sub-color-second solid;
+            border-bottom:1px @sub-color-second solid;
+            width:750px;
+            height:315px;
+            padding:1px;
+            .inlineblock();
+
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+    .intro-detail{
+        width:1024px;
+        padding:135px 140px 0;
+        text-align: center;
+        margin:0 auto;
+
+        .detail-subtitle{
+            padding-left:18px;
+            position:relative;
+            .inlineblock();
+            color:@title-color;
+            margin-bottom:45px;
+            font-size:@subject-size;
+            font-weight: @gnb-weight;
+
+            &:before{
+                content:"";
+                width:4px;
+                height:27px;
+                background-color: @main-color;
+                position:absolute;
+                left:0;
+                top:5px;
+            }
+        }
+    }
+    .sm-rect-btns-wrapper{
+        margin-bottom:140px;
+
+        .sm-rect-btns{
+            width:246px;
+            height:50px;
+        }
+        &.last{
+            margin-right:0;
+        }
+    }
+
+    .link{
+        background-color: @sub-color;
+        margin-bottom:70px;
+        width:1024px;
+        margin:0 auto 70px;
+
+        a{
+            color:@white-color;
+            font-size:16px;
+            text-align: center;
+            width:100%;
+            height: 100%;
+            .inlineblock();
+            line-height: 65px;
+        }
+        span.icon{
+            margin-left: 18px;
+        }
+    }
+    .title-m{
+        width:1024px;
+        padding:135px 140px 0;
+        margin:0 auto;
+
+        h2{
+            font-size:@summery-size;
+        }
+        div{
+            margin-top:48px;
+            color:@content-color;
+            font-size:@menu-size;
+        }
+        &.portfolio{
+            padding:70px;
+        }
+    }
+}

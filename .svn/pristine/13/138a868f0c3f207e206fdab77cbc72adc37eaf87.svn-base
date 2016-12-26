@@ -1,0 +1,156 @@
+.recruitInfoView{
+    .recruitInfoView_top{
+        background:@base-color;
+        padding:70px;
+        text-align: center;
+        .title{
+            font-size:@summery-size;
+            color:@content-color;
+        }
+        .company{
+            font-size:@menu-size;
+            color:@subject-color;
+        }
+        .red_bar{
+            display:block;
+            margin:25px auto 20px;
+            width: 31px;
+            height:2px;
+            background:@main-color;
+        }
+        .short_intro{
+            font-size:@menu-size;
+            color:@content-color;
+        }
+    }
+    .cont{
+        width:1024px;
+        margin:0 auto;
+        .cont_head{
+            width:100%;
+            height:50px;
+            line-height: 50px;
+            background:@sub-color;
+            color:@white-color;
+            fon-size:16px;
+            font-weight: @gnb-weight;
+            text-align: center;
+            margin-top:70px;
+        }
+        caption{
+            width:0;
+            height:0;
+            padding:0;
+            margin:0;
+        }
+        table{
+            border-bottom:2px solid #7E7D87;
+            width:100%;
+            margin:0 0 70px 0;
+            font-size:13px;
+            tr{
+                height:65px;
+                border-top:1px solid #7E7D87;
+                &&:first-child{border-top:0}
+                td{
+                    padding:20px;
+                }
+            }
+        }
+        div{
+            textarea{
+                width:100%;
+                height:245px;
+                padding:10px;
+                resize:none;
+            }
+        }
+        .button_wrap{
+            text-align: left;
+            margin:40px 0 70px;
+            .notice_hide{
+                padding-left:10px;
+                display:none;
+            }
+            .enter{
+                width:180px;
+                height:40px;
+                color:@white-color;
+                background: @sub-color;
+                span{
+                    margin-left:20px;
+                }
+                &&:hover{
+                    background:@main-color;
+                    span{
+                        background-position: -80px 0;
+                    }
+                }
+            }
+            .btns_wrap{
+                float:right;
+                color:@white-color;
+                button,input{
+                    margin-left:10px;
+                }
+                .change{
+                    background:@main-color;
+                    border:none;
+                    width:80px;
+                    height:40px;
+                }
+                .delete{
+                    background:@main-color url('/img/icon/icon_del.png') no-repeat;
+                    border:none;
+                    width:80px;
+                    height:40px;
+                    font-size:0;
+                    background-position: 50%;
+                }
+                .list{
+                    background:@sub-color;
+                    border:none;
+                    width:80px;
+                    height:40px;
+                }
+            }
+        }
+    }
+    .recruitInfo_footer{
+        background:@base-color;
+        padding:70px;
+        >div{
+            width:1024px;
+            margin:0 auto;
+            .info{
+                display:inline-block;
+                *display:inline;
+                *zoom:1;
+                text-align: center;
+                font-size:0;
+                width:49%;
+                padding:0 85px;
+                .info1{
+                    font-size:@menu-size;
+                }
+                .info2{
+                    font-size:@subject-size;
+                    font-weight:@title-weight
+                }
+                .red_bar{
+                    display:block;
+                    margin:15px auto 10px;
+                    background: @main-color;
+                    width:31px;
+                    height:2px;
+                }
+                .info3{
+                    font-size:13px;
+                    line-height:20px;
+                    color:@subject-color;
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.haseolru {
+    .gray-background {
+        width: 100%;
+        height: auto;
+        background-color: @base-color;
+        vertical-align: middle;
+        position: relative;
+        div {
+            padding-top: 50px;
+        }
+    }
+    .pagination{
+        span{
+            a{
+                background:@white-color;
+            }
+            a.on{
+                background:@main-color;
+                color:@white-color;
+            }
+        }
+    }
+}

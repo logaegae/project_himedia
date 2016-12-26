@@ -1,0 +1,188 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="notice">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="main.html">HOME</a><span>&gt;</span>
+            <span>고객센터</span><span>&gt;</span>
+            <span class="this-page">공지사항/이벤트</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Customer</div>
+            <div class="text-box">
+                <h1>공지사항/이벤트</h1>
+                <p>하이미디어 컴퓨터학원 공지사항 및 이벤트! 많은 이벤트가 있으니 기회를 놓치지 마세요</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+
+        <!-- 탭부분1 -->
+        <div class="tab tab-customer">
+		    <ul>
+		        <li class="on"><a href="#">공지사항/<br>이벤트</a></li>
+		        <li><a href="askCost.html">수강료<br>조회</a></li>
+		        <li><a href="askTime.html">시간표<br>조회</a></li>
+		        <li><a href="onlineCounsel.html">온라인<br>상담</a></li>
+		        <li><a href="onlinePay.html">온라인<br>결제</a></li>
+		        <li><a href="comFaq.html">FAQ</a></li>
+		        <li><a href="qna.html">Q&amp;A</a></li>
+		    </ul>
+		</div>
+        <!-- //탭부분 -->
+        <!-- 컨텐츠영역 -->
+        <div class="notice_bg">
+	        <div class="tab tab-customer-campus">
+			    <ul>
+                    {% for branch in branches %}
+                        {% if branch.branchCode == 'himedia' %}
+                            <li><button type="button" onclick="location.href='notice.html?branchCode=himedia'">전체</button></li>
+                        {% else %}
+                            <li><button type="button" onclick="location.href='notice.html?branchCode={{branch.branchCode}}'">{{branch.branchName}}</button></li>
+                        {% endif %}
+                    {% endfor %}
+			    </ul>
+			</div>
+
+			<!--list영역-->
+	        <table class="list_table">
+		        <caption class="sr-only"></caption>
+		        <colgroup>
+		        	<col style="width:8%">
+		        	<col style="width:9%">
+		        	<col style="width:55%">
+		        	<col style="width:14%">
+		        	<col style="width:14%">
+		        </colgroup>
+		        <tbody>
+			        <tr>
+			        	<td>10</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!스마트물류 ERP정보시스템 개강!스마트물류 ERP정보시스템 개강!스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>9</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>8</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>7</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>6</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>5</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>4</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>3</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>2</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+			        <tr>
+			        	<td>1</td>
+			        	<td>종로</td>
+			        	<td class="text-left"><a href="noticeView.html">스마트물류 ERP정보시스템 개강!</a></td>
+			        	<td>2016.10.29</td>
+			        	<td>4885</td>
+			        </tr>
+		        </tbody>
+	        </table>
+	        <!-- //list영역 -->
+
+	        <!-- 페이지-->
+			<div class="pagination">
+			    <a href="#" class="first">처음</a><a href="#" class="prev">이전</a>
+			    <span>
+			        <a href="#" class="on">1</a>
+			        <a href="#">2</a>
+			        <a href="#">3</a>
+			        <a href="#">4</a>
+			        <a href="#">5</a>
+			        <a href="#">6</a>
+			        <a href="#">7</a>
+			        <a href="#">8</a>
+			        <a href="#">9</a>
+			        <a href="#">10</a>
+			    </span>
+			    <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+			</div>
+        </div>
+        <!-- //컨텐츠영역 -->
+    </div>
+    <!-- // 본문 -->
+</div>
+<script>
+    //게시판 지점 탭 on
+    var data = {{JSON.stringify(branches)}};
+    var page = '{{branchCode}}';
+    var temp ='';
+
+    if(location.href.indexOf('branchCode=') != -1){
+        var compare = '{{query.branchCode}}';
+
+        for( i in data){
+            if(data[i].branchCode == compare) temp = data[i].branchName;
+            if(temp == '하이미디어') temp = '전체';
+        };
+        $('.tab.tab-customer-campus li').each(function(i,e){
+            if($(e).children('button').text() == temp){
+                $(e).addClass('on').siblings().removeClass('on');
+            };
+        });
+    }else{
+        for( i in data){
+            if(data[i].branchCode == page) temp = data[i].branchName;
+            if(temp == '하이미디어') temp = '전체';
+        };
+        $('.tab.tab-customer-campus li').each(function(i,e){
+            if($(e).children('button').text() == temp){
+                $(e).addClass('on').siblings().removeClass('on');
+            };
+        });
+    }
+</script>
+{% endblock %}

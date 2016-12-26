@@ -1,0 +1,136 @@
+$(function(){
+
+  // gnb
+  $('.menu nav>ul>li>a').click(function(){
+    $('.lnb').css('height','355px');
+    $('.menu nav>ul>li>ul').css('display','block');
+    $('.close-snb').css('display','block');
+  });
+  $('.close-snb').click(function(){
+    $('.lnb').css('height','0');
+    $('.menu nav>ul>li>ul').css('display','none');
+    $(this).css('display','none');
+  });
+
+
+  // main > 전화번호
+  $('.tel dl dt').click(function() {
+       $('.tel dl dd').toggleClass('on');
+  })
+
+  //modal object
+    var modalPopup = {
+        currentScroll : 0,
+        lockscroll : function(){
+            $(window).scrollTop(modalPopup.currentScroll);
+        },
+        makeBlind : function(){
+            modalPopup.currentScroll=$(window).scrollTop();
+            $(window).bind('scroll',modalPopup.lockscroll);
+            $('body').append('<div class="modalBlind"></div>');
+        },
+        closeFn : function(){
+            $('.modalBlind').remove();
+            $('.modalPopup').removeClass('showOn');
+            $(window).unbind('scroll');
+        },
+        btnFn : function(target){
+            if(target){
+                if(target == '.modalPopup'){
+                    $('body').find(target).addClass('showOn');
+                }
+                else if(target.attr("modallink").indexOf("") != -1 ){
+
+                    var addr = target.attr("modallink");
+                    if(addr) $('#'+addr).addClass('showOn');
+                }
+
+            }else{
+
+                $('body').append('<div class="onlinePay"</div>')
+                $('.onlinePay').load('ajax/onlinePay.html .modalPopup',function(){
+                    $('body').find('.modalPopup').addClass('showOn');
+                });
+            }
+
+            this.makeBlind();
+            return false;
+          }
+    };
+    //modal click, close event
+    $('.modallink').click(function(e){
+        modalPopup.btnFn($(this));
+        e.preventDefault();
+    });
+    $('body').on("click", ".modalBlind",  function(){
+      modalPopup.closeFn();
+      }
+    );
+    $('body').on("click",".modal-closeBtn", function(e){
+        modalPopup.closeFn();
+        e.preventDefault();
+    });
+
+    //tab-campus auto width calculator
+    function tabCampusWidth(){
+        var tabObject = $('.tab.tab-campus');
+        var wide = tabObject.innerWidth();
+        if(wide > 1024) wide = 1024;
+
+        for(i=0;i<tabObject.length;i++){
+            var num = tabObject.eq(i).find('li').length;
+            tabObject.eq(i).find('li').css('width',(wide - 1) / num);
+        }
+    };
+    tabCampusWidth();
+
+    //tab-customer-campus auto width calculator
+    function tabCustomerCampusWidth(){
+        var tabObject = $('.tab.tab-customer-campus');
+        var wide = tabObject.innerWidth();
+        if(wide > 1024) wide = 1024;
+
+        for(i=0;i<tabObject.length;i++){
+            var num = tabObject.eq(i).find('li').length;
+            tabObject.eq(i).find('li').css('width',(wide - 1) / num);
+        }
+    };
+    tabCustomerCampusWidth();
+
+    //window resize
+    $(window).resize(function(){
+        tabCampusWidth();
+        tabCustomerCampusWidth();
+    })
+
+    //input delbutton
+
+    $('.input_table .input_del').click(function(){
+        var input_id = $(this).siblings().attr('id');
+        $(this).siblings().addClass(input_id);
+        $('.input_fromwrap input').each(function(){
+             if($(this).hasClass(input_id)) $(this).val('');
+        });
+    });
+
+    //onlineCounsel btn
+    $('.page1_tab ul li button').click(function(){
+        $(this).parent().addClass('on').siblings().removeClass('on');
+    })
+
+    // onlinePay
+    $('a[href="onlinePay.html"]').click(function(e){
+        if(!$('.onlinePay').length){
+            modalPopup.btnFn();
+            e.preventDefault();
+        }else{
+            modalPopup.btnFn('.modalPopup');
+            e.preventDefault();
+        }
+    });
+
+
+    //datepicker
+    $('#datepicker').datepicker();
+
+})

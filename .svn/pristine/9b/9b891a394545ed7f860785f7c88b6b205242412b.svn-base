@@ -1,0 +1,134 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="general">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>교육과정</span><span>&gt;</span>
+            <span class="this-page">직장인 국비지원과정</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Course</div>
+            <div class="text-box">
+                <h1>학생 및 일반과정</h1>
+                <p>학생 및 일반 수강생을 위한 과정입니다.</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="type">
+            <!-- 재직자 근로카드 컨텐츠 -->
+            <div class="type1">
+                <div class="type_top">
+                    <img src="/img/site_img/general_img.png" alt="학생 및 일반과정">
+                    <h2>'학생 및 일반과정'이란?</h2>
+                    <p><span>'학생 및 일반과정'</span>은 국비지원과정이 아닌 기간이 짧은 과정을 위주로
+                        <br/>저녁반, 단과반, 방학특강 등으로 이루어져있으며,
+                        <br>'재직자근로자카드'가 발급되지 않은 직장인을 포함한 모든 일반인과 재학생에게 열려있는 과정입니다.
+                        <br>하단 '개설 과정'에서 원하는 과정을 검색하시거나 학원에 직접 문의해보세요.
+                    </p>
+
+                </div>
+
+            </div>
+            <!-- // 재직자 근로카드 컨텐츠 -->
+        </div>
+        <div class="type_bottom">
+            <h3>개설 과정</h3>
+            <span class="red_bar"></span>
+            <p>
+                하이미디어컴퓨터학원에 개설되어 있는 과정들입니다.<br>
+                <span>각 과정명을 클릭하시면 해당 과정 소개 페이지로 이동합니다.</span>
+            </p>
+            <form>
+                <div class="check_box_wrap">
+                    <div class="title">캠퍼스</div>
+                    <div class="check_box campus_box">
+                        {% for branch in branches %}
+                            {% if branch.branchCode != 'himedia' %}
+                                <span class="checks"><input id="location{{loop.index}}" type="checkbox" name="branchCode" value="{{branch.branchCode}}"><label for="location{{loop.index}}">{{branch.branchName}}</label></span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="check_box_wrap">
+                    <div class="title">분야</div>
+                    <div class="check_box field_box">
+                        {% for field in courseFields %}
+                            <span class="checks"><input id="filed{{loop.index}}" type="checkbox" name="fieldName" value="{{field.fieldName}}"><label for="filed{{loop.index}}">{{field.fieldName}}</label></span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <input type="submit" name="name" value="검색">
+                </div>
+                <div class="class_btn_wrap">
+                    <a href="">[NCS]스마트웹&콘텐츠개발 <span>모집중</span></a>
+                    <a href="">웹에이전시 전문가 취업반 <span>모집중</span></a>
+                    <a href="">웹퍼블리셔전문가 <span>모집중</span></a>
+                    <br>
+                    <a href="">웹&앱 스마트 콘텐츠 제작</a>
+                    <a href="">스마트웹&콘텐츠플렛폼개발</a>
+                    <a href="">웹퍼블리셔전문가</a>
+                </div>
+            </form>
+        </div>
+        <div class="field_Wrap">
+            <div class="show_box">
+                <div class="round off">
+                    <span class="ncs">'NCS'</span><span>란</span> <br>
+                    <img src="/img/icon/question.png" alt="물음표">
+                </div>
+                <p>
+                    국가직무능력표준(<span>NCS</span>, National Competency Standards)은 산업현장에서 직무를<br> 수행하기 위해 요구되는 지식·기술·태도 등의 내용을 국가가 체계화한 것입니다.<br>
+                    <a href="http://www.ncs.go.kr/ncs/page.do?sk=P1A1_PG01_001" target="_blank" title="새창열림">더 자세히 알아보기 <span class="icon arrow red">오른쪽 화살표</span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- // 본문 -->
+</div>
+<script>
+// 상단탭
+$('.sm-rect-btns').click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    var curri_index=$(this).index();
+    $('.type>div').eq(curri_index).addClass('on').siblings().removeClass('on')
+});
+
+// 중간컨텐츠탭
+$('.type1 .inner_tab li').click(function(){
+    $(this).addClass('on').siblings().removeClass('on');
+    var inner_index=$(this).index();
+    $('.type1 .inner_tab_cont>div').eq(inner_index).addClass('on').siblings().removeClass('on');
+});
+$('.type2 .inner_tab li').click(function(){
+    $(this).addClass('on').siblings().removeClass('on');
+    var inner_index=$(this).index();
+    $('.type2 .inner_tab_cont>div').eq(inner_index).addClass('on').siblings().removeClass('on');
+});
+
+//하단 동그라미
+$('.show_box .off').click(function(){
+    console.log('aa')
+    $(this).removeClass('off').addClass('active');
+    $('.field_Wrap p').animate({'right':0});
+    $('.field_Wrap').css({'height':'226px'});
+});
+
+$('.show_box .active').click(function(){
+    console.log('bb')
+    $(this).addClass('off').removeClass('on')
+    // $('.field_Wrap p').animate({'right':'-1000px'},function(){
+    //     $('.field_Wrap').css({'height':'70px'});
+    // })
+
+});
+
+
+</script>
+{% endblock %}

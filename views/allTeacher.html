@@ -1,0 +1,157 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="allTeacher">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a><span>·</span>
+            <span>하이미디어</span><span>·</span>
+            <span class="this-page">전체 강사 소개</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Teacher</div>
+            <div class="text-box">
+                <h1>전체 강사 소개</h1>
+                <p>하이미디어의 강사진을 소개합니다.</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="sm-rect-btns-wrapper common_wrap">
+
+            <button class="sm-rect-btns {% if !query.field %}active{% endif %}"  onclick="javascript:location.href='allTeacher.html'">전체 보기</button>
+            {% for course in courseFields %}
+                <button class="sm-rect-btns {% if query.field == course.fieldId %}active{% endif %}" onclick="javascript:location.href='allTeacher.html?field={{course.fieldId}}'">{{course.fieldName}}</button>
+            {% endfor %}
+        </div>
+        <div class="allTeacher-basebox-wrapper">
+            <div class="common_wrap">
+                {% if teachers.length == 0 %}
+                    <p class="text-center" style="margin: 50px 0; font-size:15px; color:#333;">해당 분류에는 강사님이 없습니다</p>
+                {% else %}
+                <ul>
+                    {% for teacher in teachers %}
+                        <li class="teacher-box seeMore wow fadeInUp">
+                            <div class="teacher-pic" style="background-image:url('{{teacher.AttachFile.url}}');"></div>
+                            <div class="teacher-info">
+                                <span class="teacher-name">{{teacher.name}} 강사님</span>
+                                <span class="teacher-class">{{teacher.CourseField.fieldName}}</span>
+                                <div class="modal_btn_Wrap">
+                                    <a href="#" class="modallink profile_btn" modallink="teacher1" data-toggle="tooltip" data-placement="top"title="프로필보기"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                                    <a href="#" class="modallink video_btn ie8DisplayNone" modallink="teacher2" data-toggle="tooltip" data-placement="top"title="영상보기"><span class="glyphicon glyphicon-expand" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="btn-seemore" showNum="9" plusNum="6" targetClass="seeMore">
+                <button type="button">See more<span class="icon plus red"></span></button>
+            </div>
+        </div>
+    </div>
+    <!-- // 본문 -->
+    <!-- Modal -->
+    <div class="modalPopup" style="width:900px;" id="teacher1">
+        <div class="modal-title text-right">
+            <span class="title-box text-left">강사 프로필</span>
+            <span class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></span>
+            <div class="clearfix"></div>
+        </div>
+        <div class="modal-body">
+            <div class="col-xs-5 body-left">
+                <div class="teacher_img" style="overflow:hidden;"><img src="" style="width:100%" alt=""></div>
+                <div class="content-title">
+                    <div class="sub-title"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="content-detail">
+                    <span>강의분야</span><br>
+                       <div class="field">
+                        OA 실무 및 자격증(컴퓨터 활용능력,<br>
+                        사무자동화, MOS, ITQ...) WEB DESIGN
+                        </div>
+                </div>
+            </div>
+            <div class="col-xs-7 body-right">
+                <p>
+                    <span class="red-bar">경력 사항</span>
+                    <span class="motto">
+
+                    </span>
+
+                    <span class="red-bar">주요 이력</span>
+                    <span class="profile">
+
+                    </span>
+
+                    <span class="red-bar">저서</span>
+                    <span class="books">
+
+                    </span>
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="modalPopup" style="width:900px;" id="teacher2">
+        <div class="modal-title text-right">
+            <span class="title-box text-left">강사 인터뷰 영상</span>
+            <span class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></span>
+            <div class="clearfix"></div>
+        </div>
+        <div class="modal-body">
+            <video id="modal_video" class="video-js" controls height="400">
+               <source class="mp" src="/video/postscriptViewVideo2.mp4" type='video/mp4'>
+               <source class="og" src="/video/postscriptViewVideo2.ogg" type='video/ogg'>
+               <p class="vjs-no-js">
+                 To view this video please enable JavaScript, and consider upgrading to a web browser that
+               </p>
+             </video>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script>
+    //margin 보정
+    for(i=0;i<$('.teacher-box').length;i++){
+        if( i%3 == 2 && i != 0){
+            $('.teacher-box').eq(i).css('marginRight',0);
+        }
+    }
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    //modal
+    var data = {{JSON.stringify(teachers,0,4)}};
+    var branches = {{JSON.stringify(branches,0,4)}};
+    $('.profile_btn').click(function(){
+        var idx = $(this).parents('li.teacher-box').index();
+        var temp = '';
+        for(i in data[idx].BranchTeachers){
+            for(j in branches){
+                if(branches[j].branchCode == data[idx].BranchTeachers[i].branchCode){
+                    temp += branches[j].branchName+"캠퍼스";
+                    if(i != data[idx].BranchTeachers.length - 1) temp += '\n';
+                }
+            }
+        }
+        $('#teacher1 .sub-title').text(temp);
+        $('#teacher1 .teacher_img img').attr('src',data[idx].AttachFile.url);
+        $('#teacher1 .name').text(data[idx].name+' 강사님');
+        $('#teacher1 .field').text(data[idx].field);
+        $('#teacher1 .motto').text(data[idx].motto);
+        $('#teacher1 .profile').text(data[idx].profile);
+        $('#teacher1 .books').text(data[idx].books);
+    });
+    $('.video_btn').click(function(){
+
+    });
+</script>
+{% endblock %}

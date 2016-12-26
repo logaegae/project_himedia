@@ -1,0 +1,267 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="condition">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">취업 후기</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>취업 후기</h1>
+                <p>하이미디어에서 알려 드리는 취업 후기</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="tab tab-sub">
+            <ul>
+                <li><a href="postscript.html">취업생 인터뷰</a></li>
+                <li class="on"><a href="#">취업 현황</a></li>
+            </ul>
+        </div>
+        <p class="title">2016년 9월 하이미디어 전 지점 <span class="people">취업자</span>는 총 <span class="num">00</span>명입니다.</p>
+        <span class="red_bar"></span>
+        <p class="accumulate">누적 취업자는 총 XXXXX명입니다.</p>
+        <form>
+            <fieldset>
+                <div class="condition_top">
+                        <label for="campus_select" class="text-hide">캠퍼스 선택</label>
+                        <select id="campus_select" class="campus">
+                            <option selected="" value="캠퍼스 선택">캠퍼스 선택</option>
+                            <option value="전체">전체</option>
+                            <option value="강남">강남</option>
+                            <option value="종로">종로</option>
+                            <option value="신촌">신촌</option>
+                            <option value="구로">구로</option>
+                            <option value="노원">노원</option>
+                            <option value="안산">안산</option>
+                            <option value="안양">안양</option>
+                            <option value="인천">인천</option>
+                            <option value="수원">수원</option>
+                            <option value="성남">성남</option>
+                            <option value="종로2">종로2</option>
+                            <option value="천호">천호</option>
+                            <option value="전주">전주</option>
+                            <option value="구리">구리</option>
+                        </select>
+                        <label for="year_select" class="text-hide">년도 선택</label>
+                        <select id="year_select">
+                            <option value="캠퍼스 선택">년도 선택</option>
+                            <option selected="" value="2016">2016</option>
+                            <option value="2015년">2015년</option>
+                            <option value="2014년">2014년</option>
+                            <option value="2013년">2013년</option>
+                            <option value="2012년">2012년</option>
+                            <option value="2011년">2011년</option>
+                        </select>
+                        <label for="year_month" class="text-hide">월별 선택</label>
+                        <select id="year_month">
+                            <option value="월별 선택">월별 선택</option>
+                            <option selected="" value="01월">01월</option>
+                            <option value="02월">02월</option>
+                            <option value="03월">03월</option>
+                            <option value="04월">04월</option>
+                            <option value="05월">05월</option>
+                            <option value="06월">06월</option>
+                            <option value="07월">07월</option>
+                            <option value="08월">08월</option>
+                            <option value="09월">09월</option>
+                            <option value="10월">10월</option>
+                            <option value="11월">11월</option>
+                            <option value="12월">12월</option>
+                        </select>
+                </div>
+                <div class="condition_bg">
+                    <table class="condition_table">
+                        <caption></catpion>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>캠퍼스</th>
+                                <th>제목</th>
+                                <th>수료과정명</th>
+                                <th>취업일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>64</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>63</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+
+                            <tr>
+                                <td>62</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>61</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>59</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>58</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>57</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>56</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>55</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>54</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>53</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>52</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>51</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>49</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>48</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>47</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>46</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>45</td>
+                                <td>안산</td>
+                                <td>박*화님의 취업현황입니다.</td>
+                                <td>실무에필요한전산세무회계</td>
+                                <td>2016.09.01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <a href="#" class="first">처음</a><a href="#" class="prev">이전</a>
+                        <span>
+                            <a href="#" class="on">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                        </span>
+                        <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- // 본문 -->
+</div>
+
+{% endblock %}

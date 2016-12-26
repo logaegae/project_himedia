@@ -1,0 +1,141 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="courseMain">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span교육과정</span><span>&gt;</span>
+            <span class="this-page">교육과정 소개</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Course</div>
+            <div class="text-box">
+                <h1>교육과정 소개</h1>
+                <p>하이미디어의 다양하고 전문적인 교육과정을 소개합니다.</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="lnb-course">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <a href="#" class="hover-red">
+                            <span class="img-box"><img src="/img/icon/icon_lnb1.png" alt="웹 디자인 아이콘" /></span>
+                            <span class="txt-box">웹 디자인</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-navy">
+                            <span class="img-box"><img src="/img/icon/icon_lnb2.png" alt="웹 퍼블리싱 아이콘" /></span>
+                            <span class="txt-box">웹 퍼블리싱</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-grey">
+                            <span class="img-box"><img src="/img/icon/icon_lnb3.png" alt="웹 개발 아이콘" /></span>
+                            <span class="txt-box">웹 개발</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-green">
+                            <span class="img-box"><img src="/img/icon/icon_lnb4.png" alt="전산세무/회계 아이콘" /></span>
+                            <span class="txt-box">전산세무/회계</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-red">
+                            <span class="img-box"><img src="/img/icon/icon_lnb5.png" alt="편집/출판디자인 아이콘" /></span>
+                            <span class="txt-box">편집/출판디자인</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-navy">
+                            <span class="img-box"><img src="/img/icon/icon_lnb6.png" alt="영상 아이콘" /></span>
+                            <span class="txt-box">영상</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-grey">
+                            <span class="img-box"><img src="/img/icon/icon_lnb7.png" alt="캐드 아이콘" /></span>
+                            <span class="txt-box">캐드</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-green">
+                            <span class="img-box"><img src="/img/icon/icon_lnb8.png" alt="인테리어 아이콘" /></span>
+                            <span class="txt-box">인테리어</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover-red">
+                            <span class="img-box"><img src="/img/icon/icon_lnb9.png" alt="OA 아이콘" /></span>
+                            <span class="txt-box">OA</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="course_title">
+            하이미디어의 과정들은 체계적이고 전문적인 교육을 통해<br>
+            실무에 최적화된  인재로서 그 역할을 다 할 수 있도록<br>
+            <span>전문성을 극대화시킨 과정들로 구성되어 있습니다.</span>
+        </p>
+        <div class="course_cont">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon course_icon1"></span>
+                        <p class="title">자격확인 시스템</p>
+                        <p class="sub_title">자신이 어떤 과정을 진행할 수 있는지 간단하게 확인할 수 있는<br><span>하이미디어만의 확인시스템입니다.</span></p>
+
+                        <button>확인하러가기 <span class="icon arrow red">오른쪽 화살표</span> </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon course_icon2"></span>
+                        <p class="title">학생 및 일반과정</p>
+                        <p class="sub_title">하이미디어에는 국비지원 사업 외에도 학생, 일반과정들이 있습니다. <br><span>직장인, 실업자가 아니더라도 문의해 보세요.</span></p>
+
+                        <button>확인하러가기 <span class="icon arrow red">오른쪽 화살표</span> </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon course_icon3"></span>
+                        <p class="title">직장인 국비지원과정</p>
+                        <p class="sub_title">
+                            정규직, 비정규직 직장인이면 누구나 지원받을 수 있는 프로그램입니다.<br>
+                            재직자근로자카드 및 사업주위탁훈련에 관심이 있으신 분은<br>
+                            <span>꼭 확인해보세요.</span>
+                        </p>
+
+                        <button>확인하러가기 <span class="icon arrow red">오른쪽 화살표</span> </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon course_icon4">실업자 국비지원과정</span>
+                        <p class="title">학생 및 일반과정</p>
+                        <p class="sub_title">
+                            구직활동을 하고 있는 실업자 중 만 15세 이상이면 진행 가능합니다.<br>
+                            국가기간전략사업직종훈련, 취업성공패키지, 내일배움카드제로<br>
+                            <span>새로운 배움과 함께 취업까지 진행해보세요.</span>
+                        </p>
+
+                        <button>확인하러가기 <span class="icon arrow red">오른쪽 화살표</span> </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

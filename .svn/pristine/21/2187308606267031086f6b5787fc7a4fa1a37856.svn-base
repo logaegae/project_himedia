@@ -1,0 +1,164 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="askCost">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>고객센터</span><span>&gt;</span>
+            <span class="this-page">수강료 조회</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Customer</div>
+            <div class="text-box">
+                <h1>수강료 조회</h1>
+                <p>원하는 커리큘럼의 수강료를 알아보세요!</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+
+		<!-- 탭부분1 -->
+        <div class="tab tab-customer">
+		    <ul>
+		        <li><a href="notice.html">공지사항/<br>이벤트</a></li>
+		        <li class="on"><a href="#">수강료<br>조회</a></li>
+		        <li><a href="askTime.html">시간표<br>조회</a></li>
+		        <li><a href="onlineCounsel.html">온라인<br>상담</a></li>
+		        <li><a href="onlinePay.html">온라인<br>결제</a></li>
+		        <li><a href="comFaq.html">FAQ</a></li>
+		        <li><a href="qna.html">Q&amp;A</a></li>
+		    </ul>
+		</div>
+        <!-- //탭부분 -->
+
+        <div class="inputtable_wrap">
+			<form class="input_fromwrap">
+
+			    <fieldset class="select_wrap">
+				    <legend>캠퍼스선택,대상분류선택,관심분야 선택부분</legend>
+				    <label for="campusSelect">캠퍼스 선택</label>
+				    <select id="campusSelect" name="캠퍼스선택" class="">
+					    <option value="">캠퍼스 선택</option>
+		                <option value="" label="강남">강남</option>
+		                <option value="" label="종로1">종로1</option>
+				    </select>
+
+				    <label for="targetSelect">대상분류</label>
+				    <select id="targetSelect" name="대상분류" class="">
+					    <option value="">대상분류</option>
+						<option value="학생 및 일반과정">학생 및 일반과정</option>
+						<option value="직장인국비지원과정">직장인국비지원과정</option>
+						<option value="실업자국비지원과정">실업자국비지원과정</option>
+				    </select>
+
+				    <label for="interestSelect">관심분야</label>
+				    <select id="interestSelect" name="관심분야" class="">
+					    <option value="">관심분야</option>
+						<option value="웹 디자인">웹 디자인</option>
+			            <option value="웹 퍼블리싱">웹 퍼블리싱</option>
+			            <option value="웹 개발">웹 개발</option>
+			            <option value="편집디자인">편집디자인</option>
+			            <option value="회계/세무">회계/세무</option>
+			            <option value="인테리어">인테리어</option>
+			            <option value="캐드">캐드</option>
+			            <option value="영상 ">영상 </option>
+			            <option value="OA">OA</option>
+				    </select>
+			    </fieldset>
+
+			    <fieldset class="input_tablewrap">
+				    <legend>수강료조회 양식테이블입니다.</legend>
+				    <table class="input_table">
+					    <caption>과정명,이름,연락처,이메일,상세내용으로 되어있는표입니다.</caption>
+					    <colgroup>
+					    	<col style="13%">
+					    	<col>
+					    </colgroup>
+					    <tbody>
+						    <tr>
+							    <th>
+								    <label for="className">과정명</label>
+							    </th>
+							    <td>
+                                    <div class="input_wrap" style="width:100%">
+    								    <input id="className" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </div>
+							    </td>
+						    </tr>
+                            <tr>
+							    <th>
+								    <label for="aksName">이름</label>
+							    </th>
+							    <td>
+                                    <div class="input_wrap" style="width:20%">
+    								    <input id="aksName" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </div>
+							    </td>
+						    </tr>
+                            <tr>
+							    <th>
+								    연락처
+							    </th>
+							    <td>
+                                    <div class="input_wrap" style="width:20%">
+    								    <input title="연락처 맨앞번호" id="" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </div>
+                                    <span>-</span>
+                                    <div class="input_wrap" style="width:20%">
+    								    <input title="연락처 중간번호" id="" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </div>
+                                    <span>-</span>
+                                    <div class="input_wrap" style="width:20%">
+    								    <input title="연락처 마지막번호" id="" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </div>
+							    </td>
+						    </tr>
+                            <tr>
+							    <th>
+								    <label for="email">이메일</label>
+							    </th>
+							    <td>
+                                    <div class="input_wrap" style="width:25%">
+    								    <input id="email" type="text" />
+                                        <button type="button" class="input_del">삭제버튼</button>
+                                    </div>
+                                    <span>@</span>
+                                    <label for="email_adress" class="text-hide">이메일주소</label>
+                                    <select id="email_adress">
+                                        <option value="">이메일을 선택해 주세요.</option>
+                                        <option value="naver.com">네이버</option>
+                                        <option value="daum.net">다음</option>
+                                    </select>
+							    </td>
+						    </tr>
+                            <tr>
+							    <th>
+								    <label for="detailCont">상세내용</label>
+							    </th>
+							    <td>
+                                    <div class="input_wrap" style="width:100%">
+                                        <textarea id="detailCont"></textarea>
+                                    </div>
+							    </td>
+						    </tr>
+					    </tbody>
+				    </table>
+			    </fieldset>
+			</form>
+
+        </div>
+
+
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

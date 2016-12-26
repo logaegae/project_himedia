@@ -1,0 +1,136 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+	<div class="portfolio">
+		<div class="contents">
+			<!-- 서브 네비 -->
+			<div class="sub-navi">
+				<a href="#">HOME</a>
+				<span>&gt;</span> 
+				<span>포트폴리오</span>
+				<span>&gt;</span>
+				<span class="this-page">웹 퍼블리싱</span>
+			</div>
+			<!-- // 서브 네비 -->
+
+			<div class="title-l">
+				<div class="bg">
+					<b>Portfolio</b>
+				</div>
+				<div class="text-box">
+					<h1>웹 퍼블리싱</h1>
+					<p>Himedia Computer Design Institute Web Design Portfolio</p>
+				</div>
+			</div>
+
+			
+			<div class="portfolio-list">
+				<a target="_blank" href="http://www.himedia.co.kr"><span>원본사이트 : 하이미디어 컴퓨터학원 (http://www.himedia.co.kr)</span></a>
+				<div class="lists">
+				<a href="#"> 
+				<img src="/img/icon/img_portfolio.jpg" alt="" />
+				<img class="pofo_on" src="/img/icon/over.png" alt="" />
+					<div class="portfolio-name">
+						<span class="campus-name">강남캠퍼스</span> 
+						<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+						</span>
+					</div>
+				</a>
+				</div>
+			</div>
+
+			<div class="portfolio-list">
+				<a target="_blank" href="http://www.himedia.co.kr"><span>원본사이트 : 하이미디어 컴퓨터학원 (http://www.himedia.co.kr)</span></a>
+				<div class="lists">
+				<a href="#"> 
+				<img src="/img/icon/img_portfolio.jpg" alt="" />
+				<img class="pofo_on" src="/img/icon/over.png" alt="" />
+					<div class="portfolio-name">
+						<span class="campus-name">강남캠퍼스</span> 
+						<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+						</span>
+					</div>
+				</a>
+				</div>
+			</div>
+
+			<div class="portfolio-list">
+				<a target="_blank" href="http://www.himedia.co.kr"><span>원본사이트 : 하이미디어 컴퓨터학원 (http://www.himedia.co.kr)</span></a>
+				<div class="lists">
+				<a href="#"> 
+				<img src="/img/icon/img_portfolio.jpg" alt="" />
+				<img class="pofo_on" src="/img/icon/over.png" alt="" />
+					<div class="portfolio-name">
+						<span class="campus-name">강남캠퍼스</span> 
+						<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+						</span>
+					</div>
+				</a>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<a target="_blank" href="http://www.himedia.co.kr"><span>원본사이트 : 하이미디어 컴퓨터학원 (http://www.himedia.co.kr)</span></a>
+				<div class="lists">
+				<a href="#"> 
+				<img src="/img/icon/img_portfolio.jpg" alt="" />
+				<img class="pofo_on" src="/img/icon/over.png" alt="" />
+					<div class="portfolio-name">
+						<span class="campus-name">강남캠퍼스</span> 
+						<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+						</span>
+					</div>
+				</a>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<a target="_blank" href="http://www.himedia.co.kr"><span>원본사이트 : 하이미디어 컴퓨터학원 (http://www.himedia.co.kr)</span></a>
+				<div class="lists">
+				<a href="#"> 
+				<img src="/img/icon/img_portfolio.jpg" alt="" />
+				<img class="pofo_on" src="/img/icon/over.png" alt="" />
+					<div class="portfolio-name">
+						<span class="campus-name">강남캠퍼스</span> 
+						<span class="portfolio-info"> 
+							<span>박정은</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>디지털디자인B</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+						</span>
+					</div>
+				</a>
+				</div>
+			</div>				
+
+						
+			<div class="pagination">
+				<a href="#" class="first">처음</a>
+				<a href="#" class="prev">이전</a> 
+				<span>
+					<a href="#" class="on">1</a> <a href="#">2</a> <a href="#">3</a>
+				</span> <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

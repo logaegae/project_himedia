@@ -1,0 +1,288 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="myInquiry">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a><span>&#183;</span>
+            <span>마이페이지</span><span>&#183;</span>
+            <span class="this-page">1:1 문의</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">My Page</div>
+            <div class="text-box">
+                <h1>1:1 문의</h1>
+                <p>회원님의 소중한 정보입니다.</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+
+        <div class="tab tab-sub">
+            <ul>
+                <li><a href="myInfo.html">회원정보</a></li>
+                <li class="on"><a href="#">1:1 문의</a></li>
+            </ul>
+        </div>
+        <div class="myInquiry_bg">
+            <div class="talbe_wrap">
+                <table class="myInquiry_table wow fadeInUp" data-wow-duration="1s">
+                    <caption class="sr-only"></caption>
+                    <colgroup>
+                        <col style="width:12%">
+                        <col style="width:48%">
+                        <col style="width:15%">
+                        <col style="width:25%">
+                    </colgroup>
+                    <!--검색결과가 없는 경우-->
+                    {% if isExist == 'false' %}
+                        <tr>
+                            <td colspan="4" class="no_result">
+                                문의하신 1:1 상담 내역이 없습니다.
+                            </td>
+                        </tr>
+                    {% else %}
+                        {% for item in list %}
+                            <tr>
+                                <td>
+                                    계정 관련
+                                </td>
+                                <td class="barbg title">
+                                    1:1 문의 신청합니다.
+                                </td>
+                                <td>
+                                    2016.01.01
+                                </td>
+                                <td>
+                                    <button class="modallink inquiry_change" modallink="change">수정</button>
+                                    <button class="delete_btn">삭제</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>
+                                계정 관련
+                            </td>
+                            <td class="barbg title">
+                                1:1 문의 신청합니다.
+                            </td>
+                            <td>
+                                2016.01.01
+                            </td>
+                            <td>
+                                <button class="modallink inquiry_change" modallink="change">수정</button>
+                                <button class="delete_btn">삭제</button>
+                            </td>
+                        </tr>
+                    {% endif%}
+
+                </table>
+                <div class="btn_wrap">
+                    <button class="modallink" modallink="write">1:1 문의 신청하기 <span class="icon arrow red">오른쪽 화살표</span></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- // 본문 -->
+
+    <!-- 팝업창1 -->
+    <div class="modalPopup" style="width:900px;" id="change">
+        <!-- 타이틀 -->
+        <div class="modal-title text-right">
+            <span class="title-box text-left">1:1 문의 수정하기</span>
+            <span class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></span>
+            <div class="clearfix"></div>
+        </div>
+        <!-- 바디 -->
+        <div class="modal-body">
+            <!--컨텐츠-->
+            <div class="inputtable_wrap">
+                <form class="input_fromwrap">
+                    <fieldset class="input_tablewrap">
+                        <legend>1:1 문의 수정하기 테이블입니다.</legend>
+                        <table class="input_table">
+                            <caption>1:1 문의 수정하기</caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        문의 분야
+                                    </th>
+                                    <td class="radio_td">
+                                        <span class="">
+                                            <input type="radio" id="field1" name="field">
+                                            <label for="field1">계정 관련</label>
+                                        </span>
+                                        <span class="">
+                                            <input type="radio" id="field2" name="field">
+                                            <label for="field2"> 수강 관련</label>
+                                        </span>
+                                        <span class="">
+                                            <input type="radio" id="field3" name="field">
+                                            <label for="field3">취업 관련</label>
+                                        </span>
+                                        <span class="">
+                                            <input type="radio" id="field4" name="field">
+                                            <label for="field4">결제 관련</label>
+                                        </span>
+                                        <span class="">
+                                            <input type="radio" id="field5" name="field">
+                                            <label for="field5"> 기타 관련</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        캠퍼스
+                                    </th>
+                                    <td>
+                                        <label for="email_adress" class="text-hide">캠퍼스를 선택해주세요</label>
+                                        <select id="email_adress">
+                                            <option value="" label="강남">강남</option>
+                    		                <option value="" label="종로1">종로1</option>
+                                            <option value="" label="종로2">종로2</option>
+                                            <option value="" label="신촌">신촌</option>
+                                            <option value="" label="구로">구로</option>
+                                            <option value="" label="노원">노원</option>
+                                            <option value="" label="천호">천호</option>
+                                            <option value="" label="안양">안양</option>
+                                            <option value="" label="안산">안산</option>
+                                            <option value="" label="성남">성남</option>
+                                            <option value="" label="수원">수원</option>
+                                            <option value="" label="인천">인천</option>
+                                            <option value="" label="전주">전주</option>
+                                            <option value="" label="구리">구리</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label for="title">제목</label>
+                                    </th>
+                                    <td class="star_wrap">
+                                        <div class="input_wrap" style="width:100%">
+                                            <input id="title" type="text" />
+                                            <button type="button" class="input_del">삭제버튼</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label for="cont">내용</label>
+                                    </th>
+                                    <td class="star_wrap">
+                                        <div class="input_wrap" style="width:100%">
+                                            <textarea id="cont"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btns_wrap">
+                            <input type="submit" class="enter" value="확인">
+                            <input type="reset" class="cancle" value="취소">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+    <!-- 팝업창2 -->
+    <div class="modalPopup" style="width:900px;" id="write">
+        <!-- 타이틀 -->
+        <div class="modal-title text-right">
+            <span class="title-box text-left">1:1 문의 신청하기</span>
+            <span class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></span>
+            <div class="clearfix"></div>
+        </div>
+        <!-- 바디 -->
+        <div class="modal-body">
+            <!--컨텐츠-->
+            <div class="inputtable_wrap">
+                <form class="input_fromwrap" action="contactWrite" method="post">
+                    <fieldset class="input_tablewrap">
+                        <legend>1:1 문의 신청하기 테이블입니다.</legend>
+                        <table class="input_table">
+                            <caption>1:1 문의 신청하기</caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        문의 분야
+                                    </th>
+                                    <td class="radio_td">
+                                        {%for code in codes.FAQ_TYPE.list %}
+                                            <span class="">
+                                                <input type="radio" id="{{code.codeId}}" name="contactType" value="{{code.codeId}}">
+                                                <label for="{{code.codeId}}">{{code.codeName}}</label>
+                                            </span>
+                                        {%endfor%}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        캠퍼스
+                                    </th>
+                                    <td>
+                                        <label for="email_adress" class="text-hide">캠퍼스를 선택해주세요</label>
+                                        <select id="email_adress" name="branchCode">
+                                            <option style="display:none;" selected disabled>캠퍼스를 선택해주세요</option>
+                                            {% for branch in branches %}
+                                                {% if branch.branchCode != 'himedia' %}
+                                                    <option value="{{branch.branchCode}}" label="{{branch.branchName}}">{{branch.branchName}}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label for="title">제목</label>
+                                    </th>
+                                    <td class="star_wrap">
+                                        <div class="input_wrap" style="width:100%">
+                                            <input id="title" type="text" name="title"/>
+                                            <button type="button" class="input_del">삭제버튼</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label for="cont">내용</label>
+                                    </th>
+                                    <td class="star_wrap">
+                                        <div class="input_wrap" style="width:100%">
+                                            <textarea id="cont" name="content"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btns_wrap">
+                            <input type="submit" class="enter" value="확인">
+                            <input type="reset" class="cancle" value="취소">
+                        </div>
+                    </fieldset>
+                    <input type="hidden" name="registUserId" value="{{session.member.userId}}">
+                    <input type="hidden" name="registUserEmail" value="{{session.member.userEmail}}">
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

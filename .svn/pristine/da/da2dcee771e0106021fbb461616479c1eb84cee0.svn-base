@@ -1,0 +1,175 @@
+'use strict';
+
+/**
+ * Config for the router
+ */
+angular.module('app')
+  .run(
+    [          '$rootScope', '$state', '$stateParams','$templateCache', '$cookieStore',
+      function ($rootScope,   $state,   $stateParams, $templateCache, $cookieStore) {
+          $rootScope.$state = $state;
+          $rootScope.$stateParams = $stateParams;        
+  
+          $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams){
+        	  
+        	  
+        	  var currentUser = $cookieStore.get("currentUser");
+        	  
+        	  
+        	  if (toState.authenticate && typeof currentUser === 'undefined') {
+	              // User isn’t authenticated
+	              $state.transitionTo("access.signin");
+	              event.preventDefault(); 
+        	  }
+          });
+      }
+    ]
+  )
+  .config(
+    [          '$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG', 
+      function ($stateProvider,   $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
+          var layout = "tpl/app.html";
+
+          $urlRouterProvider.when('','/access/signin');
+          $urlRouterProvider.otherwise('/access/404');
+          
+          $stateProvider
+	          .state('access', {
+	              url: '/access',
+	              template: '<div ui-view class="fade-in-right-big smooth"></div>'
+	          })
+	          .state('access.signin', {
+	              url: '/signin',
+	              templateUrl: 'tpl/signin.html'
+	          })
+            .state('access.404', {
+                url: '/404',
+                templateUrl: 'tpl/404.html'
+            })          
+            .state('access.500', {
+                url: '/500',
+                templateUrl: 'tpl/500.html'
+            })          
+              .state('app', {
+                  abstract: true,
+                  url: '/app',
+                  templateUrl: layout
+              })
+              .state('app.dashboard', {
+                  url: '/dashboard',
+                  templateUrl: 'tpl/dashboard.html'
+              })
+              .state('app.portfolio', {
+                  url: '/portfolio',
+                  templateUrl: 'tpl/portfolio.html'
+              })
+              .state('app.contact', {
+                  url: '/contact',
+                  templateUrl: 'tpl/contact.html'
+              })
+              .state('app.fcontact', {
+                  url: '/fcontact',
+                  templateUrl: 'tpl/fcontact.html'
+              })
+              
+              /*
+              .state('app.dynamic', {
+            	  url: '/:folerName/:name?/:subname?/:id?',
+                  templateUrl: function ($stateParams){
+                	  alert("");
+                	  if($stateParams.id) {
+                		  alert("A");
+                		  return 'tpl/'+$stateParams.folerName+'/'+$stateParams.name+'_'+$stateParams.subname+'.html'  
+                	  } else if($stateParams.subname) {
+                		  alert("B");
+                		  return 'tpl/'+$stateParams.folerName+'/'+$stateParams.name+'_'+$stateParams.subname+'.html'
+                	  } else if($stateParams.name) {
+                		  alert("C");
+                    	  
+                		  return 'tpl/'+$stateParams.folerName+'/'+$stateParams.name+'.html'
+                	  } else {
+                		  alert("D");
+                		  return 'tpl/'+$stateParams.folerName+'.html'
+                	  }
+                	  
+              	  }
+              })
+              */
+              
+              .state('app.dynamic1', {
+                  url: '/:folerName',
+                  templateUrl: function ($stateParams){
+                	  return 'tpl/'+$stateParams.folerName+'.html'
+              	    
+              	  }
+              })
+              .state('app.dynamic2', {
+                  url: '/:folerName/:name?page&searchText',
+                  templateUrl: function ($stateParams){
+                	  return 'tpl/'+$stateParams.folerName+'/'+$stateParams.name+'.html'
+              	    
+              	  }
+              })
+              .state('app.dynamic3', {
+                  url: '/:folerName/:name/:subname?{query:json}',
+                  templateUrl: function ($stateParams){
+                	  return 'tpl/'+$stateParams.folerName+'/'+$stateParams.name+'_'+$stateParams.subname+'.html'
+              	  }
+              })
+              .state('app.dynamic4', {
+                  url: '/:folerName/:name/:subname/:id?{query:json}',
+                  templateUrl: function ($stateParams){
+                	  return 'tpl/'+$stateParams.folerName+'/'+$stateParams.name+'_'+$stateParams.subname+'.html'
+              	  }
+              })
+              /*
+              .state('app.branch', {
+            	  abstract: true,
+            	  url: '/branch',
+            	  templateUrl: 'tpl/page_template.html'
+              })
+              .state('app.branch.branch', {
+                  url: '/branch',
+                  templateUrl: 'tpl/branch/page_branch_list.html'
+              })
+              .state('app.branch.branch.detail', {
+                  url: '/branch/detail/:userId',
+                  templateUrl: 'tpl/branch/page_branch_detail.html'
+              })
+              */
+	           ;
+          function load(srcs, callback) {
+            return {
+                deps: ['$ocLazyLoad', '$q',
+                  function( $ocLazyLoad, $q ){
+                    var deferred = $q.defer();
+                    var promise  = false;
+                    srcs = angular.isArray(srcs) ? srcs : srcs.split(/\s+/);
+                    if(!promise){
+                      promise = deferred.promise;
+                    }
+                    angular.forEach(srcs, function(src) {
+                      promise = promise.then( function(){
+                        if(JQ_CONFIG[src]){
+                          return $ocLazyLoad.load(JQ_CONFIG[src]);
+                        }
+                        angular.forEach(MODULE_CONFIG, function(module) {
+                          if( module.name == src){
+                            name = module.name;
+                          }else{
+                            name = src;
+                          }
+                        });
+                        return $ocLazyLoad.load(name);
+                      } );
+                    });
+                    deferred.resolve();
+                    return callback ? promise.then(function(){ return callback(); }) : promise;
+                }]
+            }
+          }
+
+
+      }
+    ]
+  );

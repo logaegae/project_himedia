@@ -1,0 +1,196 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="recruitInfo">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">채용 정보</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>채용 정보</h1>
+                <p>하이미디어에서 알려 드리는 채용 정보</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <form class="recruitInfo_form" method="post" action="recruitInfo.html">
+            <fieldset>
+                <legend class="sr-only">채용정보 검색</legend>
+                <div class="button_box">
+                    <dl class="field">
+                        <dt>
+                             모집 분야
+                        </dt>
+                        <dd>
+                            <ul class="search1">
+                                <li class="field_li"><input type="checkbox" id="field1" name="recruitField" value="1"><label for="field1">웹 디자인</label></li>
+                                <li class="field_li"><input type="checkbox" id="field2" name="recruitField" value="0"><label for="field2">시각/편집디자인</label></li>
+                                <li class="field_li"><input type="checkbox" id="field3" name="recruitField" value="5"><label for="field3">세무회계/경리</label></li>
+                                <li class="field_li"><input type="checkbox" id="field4" name="recruitField" value="2"><label for="field4">인테리어/ CAD/MAX</label></li>
+                                <li class="field_li"><input type="checkbox" id="field5" name="recruitField" value="3"><label for="field5">게임/마야/3D</label></li>
+                                <li class="field_li"><input type="checkbox" id="field6" name="recruitField" value="4"><label for="field6">프로그래밍/시스템</label></li>
+                                <li class="field_li"><input type="checkbox" id="field7" name="recruitField" value="6"><label for="field7">기타</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="form">
+                        <dt>
+                             고용 형태
+                        </dt>
+                        <dd>
+                            <ul class="search2">
+                                <li class="employment"><input type="checkbox" id="employment1" value="0" name="recruitType"><label for="employment1">정규직</label></li>
+                                <li class="employment"><input type="checkbox" id="employment2" value="1" name="recruitType"><label for="employment2">인턴직</label></li>
+                                <li class="employment"><input type="checkbox" id="employment3" value="2" name="recruitType"><label for="employment3">계약직</label></li>
+                                <li class="employment"><input type="checkbox" id="employment4" value="3" name="recruitType"><label for="employment4">위촉직</label></li>
+                                <li class="employment"><input type="checkbox" id="employment5" value="4" name="recruitType"><label for="employment5">병역 특례</label></li>
+                                <li class="employment"><input type="checkbox" id="employment6" value="5" name="recruitType"><label for="employment6">아르바이트</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="area">
+                        <dt>
+                             근무 지역
+                        </dt>
+                        <dd>
+                            <ul class="search3">
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="0" id="location1"><label for="location1">서울</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="1" id="location2"><label for="location2">광주</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="2" id="location3"><label for="location3">강원</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="3" id="location4"><label for="location4">전남</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="4" id="location5"><label for="location5">경기</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="5" id="location6"><label for="location6">대구</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="6" id="location7"><label for="location7">충북</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="7" id="location8"><label for="location8">경북</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="8" id="location9"><label for="location9">인천</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="9" id="location10"><label for="location10">울산</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="10" id="location11"><label for="location11">충남</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="11" id="location12"><label for="location12">경남</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="12" id="location13"><label for="location13">대전</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="13" id="location14"><label for="location14">부산</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="14" id="location15"><label for="location15">전북</label></li>
+                                <li class="workArea"><input type="checkbox" name="workAreaCode" value="15" id="location16"><label for="location16">제주</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <div class="btns_wrap">
+                        <input type="submit" class="search" value="조건검색">
+                        <button class="reset">초기화</button>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="recruitInfo_bg">
+                <table class="list_table">
+    		        <caption class="sr-only"></caption>
+    		        <colgroup>
+    		        	<col style="width:6%">
+    		        	<col style="width:17%">
+    		        	<col style="width:35%">
+    		        	<col style="width:11%">
+    		        	<col style="width:9%">
+                        <col style="width:11%">
+                        <col style="width:">
+    		        </colgroup>
+    		        <tbody>
+                        {% for info in infos.rows %}
+        			        <tr>
+        			        	<td>{{info.recruitId}}</td>
+        			        	<td>{{info.companyName}}</td>
+        			        	<td class="text-left cont">
+                                    <a href="recruitInfoView.html?recruitId={{info.recruitId}}&page={{page}}">
+                                        {{info.recruitSubject}}
+                                    </a>
+                                </td>
+        			        	<td>{{info.recruitField}}</td>
+        			        	<td>{{info.recruitType}}</td>
+                                <td>{{info.woraAreaCode}}&nbsp;{{info.workArea}}</td>
+                                <td>{{info.recruitEndDate}}</td>
+        			        </tr>
+                        {% endfor %}
+                        <!-- <tr>
+    			        	<td>{{infos.recuitId}}</td>
+    			        	<td>(주)프리아이브</td>
+    			        	<td class="text-left cont">
+                                <a href="recruitInfoView.html">
+                                    웹 기획 직원채용공고웹 기획 직원채용공고웹 기획 직원채용공고웹 기획 직원채용공고웹 기획 직원채용공고
+                                </a>
+                            </td>
+    			        	<td>웹기획</td>
+    			        	<td>정규직</td>
+                            <td>서울 종로구</td>
+                            <td>상시채용</td>
+    			        </tr> -->
+    		        </tbody>
+    	        </table>
+                <div class="enter_button">
+                    <button type="button" onclick="location.href='register.html'">채용 정보 등록<span class="icon check red">체크(확인)</span></button>
+                </div>
+                <!-- <div class="help_cont">
+                    <p>이 페이지가 도움이 되셨습니까?  <button class="yes" type="button">예</button>/<button class="no" type="button">아니요</button></p>
+                </div> -->
+
+                {% include "./blocks/pagination.html" %}
+
+            </div>
+        </form>
+
+        <form method="get" class="goPage">
+            <input type="hidden" name="page" value="1">
+        </form>
+
+        <script>
+            function goPage(page) {
+                $("input[name='page']").val(page);
+                $(".goPage").submit();
+            }
+        </script>
+    </div>
+    <!-- // 본문 -->
+</div>
+<script>
+    var searched={{JSON.stringify(searched,0,4)}};
+    //체크
+    for( i in searched.recruitField){
+        $('.search1 li').each(function(j,e){
+            $(e).children('input[name=recruitField]').attr('value') == searched.recruitField[i] ? $(e).children('input').attr('checked','true') : '';
+        });
+    }
+    for( i in searched.recruitType){
+        $('.search2 li').each(function(j,e){
+            $(e).children('input[name=recruitType]').attr('value') == searched.recruitType[i] ? $(e).children('input').attr('checked','true') : '';
+        });
+    }
+    for( i in searched.workArea){
+        console.log(searched.workArea);
+        $('.search3 li').each(function(j,e){
+            $(e).children('input[name=workArea]').attr('value') == searched.workArea[i] ? $(e).children('input').attr('checked','true') : '';
+        });
+    }
+
+
+    for(i=0;i<$('.field_li').length;i++){
+        if( i%2 == 1 && i != 0){
+            $('.field_li').eq(i).css('marginRight',0);
+        }
+    }
+
+    for(i=0;i<$('.employment').length;i++){
+        if( i%2 == 1 && i != 0){
+            $('.employment').eq(i).css('marginRight',0);
+        }
+    }
+
+    for(i=0;i<$('.workArea').length;i++){
+        if( i%4 == 3 && i != 0){
+            $('.workArea').eq(i).css('marginRight',0);
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,171 @@
+<script type="text/javascript">
+
+
+angular.module('app').controller('myCtrl', ['$scope', '$rootScope', '$http', '$sce', '$stateParams', '$location',
+	function($scope, $rootScope, $http, $sce, $stateParams, $location) {
+		
+		$scope.searchText	= $stateParams.searchText;
+		$scope.pageSize = $rootScope.pageSize ? $rootScope.pageSize : "10";
+		$scope.branchCodes	= $stateParams.branchCodes ? $stateParams.branchCodes : [];
+		$scope.fieldId	= $stateParams.fieldId;
+		$scope.Math=Math;
+		$scope.basePath = '#'+$location.$$path;
+		
+
+		$scope.loadData = function () {
+			
+			$http({
+				method : "POST",
+				url : "/admin/api/teacher",
+				data : {
+					page : $stateParams.page,
+					pageSize : $scope.pageSize,
+					searchText : $stateParams.searchText,
+					branchCodes : $stateParams.branchCodes,
+					fieldId : $stateParams.fieldId
+				}
+			}).success(function(data) {
+				console.log(data);
+				$scope.data = data;
+			});
+		};
+		
+
+		$scope.search = function () {
+			$location.path($location.$$path).search({json : JSON.stringify({searchText: $scope.searchText, fieldId : $scope.fieldId, branchCodes: $scope.branchCodes})});
+		}
+		
+		$scope.sortableOptions = {
+			containment: '#table-container',
+		    orderChanged: function (event) {
+		    	$scope.orderChanged = true;
+		    }
+		};
+		
+		$scope.saveOrder = function () {
+			
+			$http({
+				method : "POST",
+				url : "/admin/api/teacher/saveOrder",
+				data : $scope.data.list
+			}).success(function(data) {
+				
+				$scope.orderChanged = false;
+				$scope.loadData();
+				
+			});
+			
+		};
+
+
+	}]
+);
+
+
+</script>
+<style>
+.as-sortable-item, .as-sortable-placeholder {
+	display: table-row !important;
+}
+.as-sortable-dragging {
+    display: table !important;
+    border-collapse: collapse; /* bootstrap table styling */
+}
+
+.as-sortable-dragging td {
+    display: table-cell !important;
+    padding: 8px; /* bootstrap table styling */
+    line-height: 1.42857143; /* bootstrap table styling */
+    vertical-align: top; /* bootstrap table styling */
+}
+</style>
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">강사관리</h1>
+</div>
+<div class="wrapper-md">
+	<div class="panel panel-default" ng-controller="myCtrl" ng-init="loadData()">
+		<div class="panel-heading">목록</div>
+		
+		<div class="row wrapper">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left">
+				<div class="input-group">
+					<label class="checkbox-inline i-checks" ng-repeat="branch in branches">
+						<input type="checkbox" checklist-model="branchCodes"  checklist-value="branch.branchCode"><i></i> {{branch.branchName}}
+					</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row wrapper">
+		
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-left">
+				<div class="input-group">
+				
+					<select class="input-sm form-control w-sm inline v-middle" style="min-width:200px;"
+						ng-options="field.fieldId as field.fieldName for field in fields" 
+						ng-selected="fieldId == field.fieldId" 
+						ng-model="fieldId">
+						<option value="">전체</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+				<div class="input-group">
+					<input type="text" class="input-sm form-control" ng-model="searchText"
+						placeholder="검색어를 입력하세요."> <span class="input-group-btn">
+						<button class="btn btn-sm btn-default" type="button" ng-click="search()">검색</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="row wrapper" ng-show="data.totalCount">
+			<div class="col-sm-6 text-left">
+			
+				총 {{data.totalCount}} 건
+			</div>
+			<div class="col-sm-6 text-right">
+
+			</div>
+		</div>
+		<div class="table-responsive">
+
+		
+			<table id="table-container" class="table table-striped b-t b-light">
+			    <thead>
+			    <tr>
+						<th width="10%" class=text-center>No</th>
+						<th width="20%" class=text-left>지점</th>
+						<th width="20%" class=text-left>분야</th>
+						<th width="10%" class=text-left>이름</th>
+						<th width="20%" class=text-left>연락처</th>
+						<th width="20%" class=text-center>등록일시</th>
+			    </tr>
+			    </thead>
+			    <tbody data-ng-model="data.list" as-sortable="sortableOptions">
+			    <tr ng-repeat="item in data.list" as-sortable-item>
+						<td class="text-center" as-sortable-item-handle >{{$index+1}}</td>
+						<td class="text-left"><a href="{{basePath}}/detail/{{item.teacherSeq}}"><span ng-repeat="field in item.BranchTeachers"><span ng-show="$index > 0">,</span>{{branchNames2[field.branchCode]}}</span></a></td>
+						<td class="text-left"><a href="{{basePath}}/detail/{{item.teacherSeq}}">{{fieldNames[item.fieldId]}}</a></td>
+						<td class="text-left"><a href="{{basePath}}/detail/{{item.teacherSeq}}">{{item.name}}</a></td>
+						<td class="text-left"><a href="{{basePath}}/detail/{{item.teacherSeq}}">{{item.phoneNumber}}</a></td>
+						<td class="text-center">{{item.registDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+			    </tr>
+			    </tbody>
+			</table>
+		
+		</div>
+		<div class="row wrapper" ng-show="data.list.length == 0">
+			<div class="col-sm-12 text-center">
+				등록/검색된 데이터가 없습니다.
+			</div>
+		</div>
+		<footer class="panel-footer">
+			<div class="row">
+				<div class="col-sm-12 text-right">
+					<button type="button" ng-click="saveOrder()" class="btn btn-success" ng-show="orderChanged">순서 저장</button>
+				    <a href="{{basePath}}/detail" class="btn btn-primary">등록</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>

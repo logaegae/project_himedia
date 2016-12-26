@@ -1,0 +1,43 @@
+.jobSeeker {
+    .sm-rect-btns-wrapper {
+        margin-bottom: 57px;
+        .sm-rect-btns {
+            width: 32%;
+            font-size: 16px;
+        }
+    }
+
+    .jobSeeker2{
+        .sm-rect-btns-wrapper{
+            margin:57px 0;
+            font-size:0;
+            .sm-rect-btns{
+                width:49%;
+                margin-left:1%;
+                font-size:16px;
+                margin-right:0;
+            }
+            >button.margin{
+                margin-left:0;
+            }
+        }
+        .s-package{
+            >div{
+                display:none;
+            }
+            >div.on{
+                display:block;
+            }
+        }
+    }
+    .subject{
+        font-size:28px;
+    }
+    span.cont{
+        font-size:13px;
+        color:@subject-color;
+        span{
+            color:@content-color;
+        }
+    }
+}

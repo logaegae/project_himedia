@@ -1,0 +1,27 @@
+{% extends "./blocks/layout.html" %} {% block content %}
+<div class="bestCurriculum">
+    <!-- 서브 네비 -->
+    <div class="sub-navi">
+        <a href="#">HOME</a>
+        <span>&gt;</span>
+        <span>웹 디자인</span>
+        <span>&gt;</span>
+        <span class="this-page">NCS 디지털 UI/UX 디자인</span>
+    </div>
+    <div class="bestInfo">
+        <div class="bestImage">
+            <div class="wrap">
+                <div class="whiteCircle"></div>
+                <!--<p>WEB DESIGN</p>-->
+            </div>
+        </div>
+    </div>
+    <div class="title-l">
+        <div class="text-box">
+            <h1>[NCS] 디지털 UI/UX 디자인</h1>
+        </div>
+    </div>
+</div>
+</div>
+<!-- // 서브 네비 -->
+{% endblock %}

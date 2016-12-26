@@ -1,0 +1,214 @@
+.portfolio .title-l {
+    margin-bottom: 70px;
+}
+
+.portfolio-list {
+    margin: 0 auto;
+    width: 1024px;
+    margin-bottom: 60px;
+    a>span {
+        display: block;
+        text-align: right;
+        padding-bottom: 20px;
+        color: @content-color;
+        font-weight: @subject-weight
+    }
+    .lists {
+        position: relative;
+        .modallink > a {
+            text-decoration: none;
+        }
+        .box {
+            display: inline-block;
+            width: auto;
+            padding: 0 8px 0 8px;
+            font-size: @menu-size;
+            text-align: center;
+            line-height: 30px;
+            vertical-align: middle;
+            outline: 1px black solid;
+        }
+    }
+    a:hover {
+        display: block;
+        .pofo_on {
+            display: block;
+        }
+    }
+    .pofo_on {
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+    .portfolio-name {
+        color: @content-color;
+        padding-top: 20px;
+        margin-bottom: 10px;
+        .campus-name {
+            font-size: @summery-size;
+            font-weight: @gnb-weight;
+            text-decoration: none;
+        }
+        .portfolio-info {
+            color: @content-sub-color;
+            float: right;
+            span {
+                font-size: @menu-size;
+            }
+        }
+    }
+}
+
+.portfolio {
+    .pagination {
+        margin: 110px 0 70px;
+    }
+    .modalPopup {
+        height: 602px;
+        .modal-title {
+            div {
+                display: inline-block;
+                line-height: 40px;
+            }
+        }
+        .modal-contents {
+            position: relative;
+            .icon.arrow-slide {
+                position: absolute;
+                top: 225px;
+            }
+            .icon.arrow-slide.left {
+                left: 43px;
+            }
+            .icon.arrow-slide.left:hover {
+                background-position: -124px -149px
+            }
+            .icon.arrow-slide.right:hover {
+                background-position: -174px -149px
+            }
+            .icon.arrow-slide.right {
+                right: 43px;
+            }
+            .modal-body {
+                padding-top: 32px;
+                .modal-main {
+                    width: 679px;
+                    height: 405px;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    margin: 0 auto;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .box {
+            width: 147px;
+            line-height: 30px;
+            outline: 1px black solid;
+            color: black;
+            display: inline-block;
+            position: absolute;
+            text-align: center;
+            font-size: 14px;
+            vertical-align: middle;
+            right: 110px;
+            bottom: 10px;
+        }
+        .box:hover {
+            background-color: @sub-color;
+            color: white;
+        }
+    }
+    span {
+        text-align: center;
+    }
+    .popUp-line {
+        color: red;
+    }
+    .close-box {
+        float: right;
+    }
+}
+
+.modalPupup {
+    border: 2px @sub-color solid;
+    display: none;
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    &.showOn {
+        .inlineblock();
+    }
+    .modal-title {
+        background-color: @sub-color;
+        color: #FFF;
+        padding: 10px 32px;
+        .title-box {
+            font-size: 30px;
+            font-weight: 500;
+            border-bottom: 2px @sub-color solid;
+            float: left
+        }
+        .close-box {
+            .inlineblock();
+            height: 40px;
+            line-height: 40px;
+            a {
+                color: #FFF;
+            }
+        }
+    }
+    .modal-body {
+        font-size: 15px;
+        font-weight: 400;
+        color: #666;
+        line-height: 20px;
+        padding: 70px 70px;
+        strong {
+            font-weight: 600;
+            font-size: 18px;
+            color: #333;
+        }
+        .content-title {
+            position: relative;
+            margin-bottom: 10px;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                .inlineblock();
+                width: 30px;
+                height: 2px;
+                background-color: @main-color;
+            }
+            .sub-title {
+                font-weight: 500;
+                font-size: 18px;
+                color: #333;
+                padding-bottom: 10px;
+            }
+            .name {
+                font-weight: 500;
+                font-size: 30px;
+                color: #333;
+                padding-bottom: 30px;
+            }
+        }
+    }
+}
+
+.modalBlind {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}

@@ -1,0 +1,38 @@
+.qnaView{
+    .notice-wrapper{
+        background:@base-color;
+        padding:70px 0 ;
+    }
+    .view_table{
+        table{
+            tbody{
+    			.view_cont{
+    				padding:30px 50px;
+                    text-align: left;
+    			}
+    		}
+        }
+    }
+    .btns_wrap{
+        width:1024px;
+        text-align: right;
+        color:@white-color;
+        margin:30px auto 0;
+
+        .change{
+            background:@sub-color;
+            border:none;
+            width:80px;
+            height:40px;
+            .inlineblock();
+        }
+        .delete{
+            background:@main-color url('/img/icon/icon_del.png') no-repeat;
+            border:none;
+            width:80px;
+            height:40px;
+            font-size:0;
+            background-position: 50%;
+        }
+    }
+}

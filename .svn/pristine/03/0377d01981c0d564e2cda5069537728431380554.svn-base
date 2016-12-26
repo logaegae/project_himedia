@@ -1,0 +1,30 @@
+var express = require('express');
+var exRouter = express.Router();
+var router = express.Router();
+var models = require('service/models');
+var async = require('async');
+
+exRouter.use("/", router);
+
+
+router.all("/*.html", function(req, res, next){
+
+	models.Branch.findAll({
+		where : {
+			delYn : 'N',
+			showYn : 'Y'
+		},
+		order : "showOrder ASC"
+	})
+	.then(function (result) {
+		res.locals.branches = result;
+		next();
+	})
+	.catch(function (err) {
+		process.nextTick(function () {throw err});
+	});
+
+});
+
+
+module.exports = exRouter;

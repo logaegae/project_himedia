@@ -1,0 +1,14 @@
+.footerEmail{
+    .modalPopup{
+        .modal-title{
+            line-height: 40px;
+            .title-box{
+                font-size:20px;
+            }
+        }
+        .modal-body{
+            font-size:14px;
+            padding: 40px 30px;
+        }
+    }
+}

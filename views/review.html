@@ -1,0 +1,77 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="appraisal">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a><span>&#183;</span>
+            <span>하이커뮤니티</span><span>&#183;</span>
+            <span class="this-page">수강 후기</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Community</div>
+            <div class="text-box">
+                <h1>수강 후기</h1>
+                <p>수강생들이 직접 작성한 리얼 100% 수강 후기!</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="appraisal_tablewrap">
+            <table class="appraisal_table wow fadeInUp" data-wow-duration="1s">
+                <caption></caption>
+                <colgroup>
+                    <col style="width:20%">
+                    <col style="width:80%">
+                </colgroup>
+                <tbody>
+                    {% for review in reviews %}
+                        <tr>
+                            <th>
+                                <div>
+                                    <span class="name star{{review.score}}">{{review.name}}</span>
+                                    <p class="star_wrap_bord">
+                                        <span class="star">1점</span>
+                                        <span class="star">2점</span>
+                                        <span class="star">3점</span>
+                                        <span class="star">4점</span>
+                                        <span class="star">5점</span>
+                                    </p>
+                                    <span class="class">{{review.CourseField.fieldName}}</span>
+                                </div>
+                            </th>
+                            <td style="white-space:pre-wrap;">{{review.content}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="btn-seemore wow fadeIn" data-wow-duration="1s">
+                <button type="button" onclick="location.href='reviewWrite.html'";>수강 후기 작성
+                <span class="icon check red">체크(확인)</span></button>
+            </div>
+
+            <!-- 페이지-->
+			{% include "./blocks/pagination.html" %}
+        </div>
+    </div>
+    <!-- // 본문 -->
+</div>
+<script>
+    //filling stars
+    var data = {{JSON.stringify(reviews,0,4)}};
+    for(i=0; i<$('.appraisal_table tr').length; i++){
+        if($('.appraisal_table tr').eq(i).find('.name').attr('class').split('star')[1]){
+            var starNum = $('.appraisal_table tr').eq(i).find('.name').attr('class').split('star')[1];
+            for(j=0;j<starNum;j++){
+                $('.star_wrap_bord').eq(i).children('.star').eq(j).addClass('on')
+            }
+        }
+    }
+    function goPage(page) {
+        location.href = "review.html?page="+page;
+    }
+</script>
+{% endblock %}

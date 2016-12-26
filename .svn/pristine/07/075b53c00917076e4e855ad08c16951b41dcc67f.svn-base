@@ -1,0 +1,174 @@
+.recruitInfo{
+    .recruitInfo_form{
+
+        .button_box{
+            width:1024px;
+            margin:0 auto 70px;
+            border:1px solid #CCCCCC;
+            background:#F2F2F2;
+            padding:25px;
+            dl{
+                .inlineblock();
+                font-size:0;
+                vertical-align: top;
+                padding:38px 30px; 
+                dt{
+                    font-size:16px;
+                    font-weight: @subject-weight;
+                    text-align: center;
+                    span{
+                        background:@main-color;
+                        height:2px;
+                        width:69px;
+                        display:block;
+                        margin:10px auto;
+                    }
+                }
+                dd{
+                    font-size: 14px;
+                    margin-top:30px;
+                    text-align: center;
+                    ul{
+                        text-align: left;
+                    }
+                    input{
+                        margin:0 4px 0 0;
+                    }
+                    label{
+                        font-weight: @subject-weight;
+                    }
+                    li{
+                        .inlineblock();
+                        margin-right:10px;
+
+                    }
+                }
+            }
+            .field{
+                width:358px
+            }
+            .form{
+                width:257px
+            }
+            .area{
+                width:343px;
+            }
+            .btns_wrap{
+                text-align: center;
+                font-size:0;
+
+                .search{
+                    width:110px;
+                    height:40px;
+                    background:#222;
+                    color:@white-color;
+                    display:inline-block;
+                    *display:inline;
+                    *zoom:1;
+                    border:none;
+                    font-size:14px;
+                    margin-right:10px;
+                }
+                .reset{
+                    width:110px;
+                    height:40px;
+                    border:1px solid #999999;
+                    background:@white-color;
+                    display: inline-block;
+                    color:#222;
+                    font-size:14px;
+                }
+            }
+        }
+        .recruitInfo_bg{
+            background:@base-color;
+            padding:70px 0 0 0;
+            .list_table{
+                tbody{
+                    tr{
+                        height:65px;
+                        border-top: 1px solid @base-color;
+                        &&:first-child{border-top:0;}
+                        td{
+                            padding:0 10px;
+                            font-size:13px;
+                        }
+                        .cont{
+                            font-weight: @gnb-weight;
+                            a{
+                                // width:380px;
+                                // overflow: hidden;
+                				// white-space: nowrap;
+                				// text-overflow: ellipsis;
+                                display:inline-block;
+                                *display:inline;
+                                *zoom:1;
+                                .cont2{
+                                    display:block;
+                                    color:@content-sub-color;
+                                    font-weight: @subject-weight;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .enter_button{
+                width:1024px;
+                margin:0 auto;
+                color:@white-color;
+                text-align: center;
+                height:64px;
+                line-height: 64px;
+                button{
+                    width:100%;
+                    height:100%;
+                    background:@sub-color;
+                    font-size:16px;
+                    span{margin-left:20px;}
+                    &&:hover{
+                        background:@main-color;
+                        span{background-position: -40px -250px;}
+                    }
+                }
+            }
+            .help_cont{
+                width:1024px;
+                margin:40px auto 0;
+                text-align: right;
+                position:relative;
+                overflow: hidden;
+                p{
+                    display:inline-block;
+                    *display:inline;
+                    *zoom:1;
+                    position:relative;
+                    width:274px;
+                    padding:5px 0;
+                    text-align: center;
+                    background:@white-color;
+                    font-size:13px;
+                    button{
+                        border:1px solid @sub-color;
+                        @r:5px;
+                        padding:5px;
+                        margin:0 5px
+                    }
+                }
+            }
+            .pagination{
+                margin:40px 0 70px;
+                span{
+                    a{
+                        background:@white-color;
+                    }
+                    a.on{
+                        background:@main-color;
+                        color:@white-color;
+                    }
+                }
+            }
+        }
+    }
+}

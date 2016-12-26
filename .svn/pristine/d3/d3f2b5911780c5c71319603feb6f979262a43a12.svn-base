@@ -1,0 +1,212 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="search">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span class="this-page">검색결과</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Search</div>
+            <div class="text-box">
+                <h1>검색결과</h1>
+                <p>하이미디어는 고객님이 원하는 정보를 보다 쉽고 빠르게 얻을 수 있도록 최선을 다하겠습니다.</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="serch_box">
+            <img src="/img/site_img/serch_img.png">
+            <p><span>‘퍼블’</span>로 검색하신 결과입니다.</p>
+        </div>
+
+        <!--검색결과가 없을시 block
+        <div class="no_search">
+            <p class="text1">죄송합니다. 검색된 결과가 없습니다.</p>
+            <p class="text2">다른 키워드로 다시 한번 검색해주세요.</p>
+        </div>-->
+
+        <div class="have_search_wrap">
+            <div class="have_search">
+                <p class="serch_title">
+                    <span class="deco">search result</span>
+                    <span><span>학생 및 일반과정</span> 검색결과</span>
+                </p>
+                <ul class="search_list">
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨으로써 가나다라마바사 아자차카타파하 으아아아아아아아아아아</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn-seemore">
+                    <button type="button"><span>2</span>개의 검색결과 더보기<span class="icon plus red"></span></button>
+                </div>
+            </div>
+            <div class="have_search">
+                <p class="serch_title">
+                    <span class="deco">search result</span>
+                    <span><span>직장인 국비지원과정</span> 검색결과</span>
+                </p>
+                <ul class="search_list">
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn-seemore">
+                    <button type="button"><span>17</span>개의 검색결과 더보기<span class="icon plus red"></span></button>
+                </div>
+            </div>
+            <div class="have_search">
+                <p class="serch_title">
+                    <span class="deco">search result</span>
+                    <span><span>실업자 국비지원과정</span> 검색결과</span>
+                </p>
+                <ul class="search_list">
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="title">웹표준퍼블리셔자격증</p>
+                            <span></span>
+                            <p class="cont">
+                                <span class="cont_ex">웹표준화의 정의와 표준기술에 대한 필요성을 이해하면서 웹콘텐츠 접근성 지침을 고려하여 사이트를 기획 설계 합니다. 스마트폰을 비롯한 모바일 기기의 확대됨 ...</span>
+                                <span class="campus">(종로1캠퍼스)</span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn-seemore">
+                    <button type="button"><span>17</span>개의 검색결과 더보기<span class="icon plus red"></span></button>
+                </div>
+            </div>
+            <div style="padding-bottom:70px;"></div>
+        </div>
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

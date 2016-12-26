@@ -1,0 +1,52 @@
+{% extends "./blocks/layout.html" %} 
+{% block content %}
+<div class="mypage">
+    <!-- 서브 네비 -->
+    <div class="sub-navi">
+        <a href="#">HOME</a>
+        <span>&gt;</span>
+        <span class="this-page">마이페이지</span>
+    </div>
+    <!-- // 서브 네비 -->
+
+    <div class="title-l">
+        <div class="bg">
+            <b>My Page</b>
+        </div>
+        <div class="text-box">
+            <h1>마이페이지</h1>
+            <p>회원님의 소중한 정보입니다</p>
+        </div>
+    </div>
+
+    <div class="mypage-contents">
+        <div>
+            <img src="img/site_img/finish_img.jpg" alt="" />
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="/myInfo.html">
+                <span class="info"></span>
+                <p>회원정보</p>
+            </a>
+        </li>
+
+        <li>
+            <a href="/myCourse.html">
+                <span class="list"></span>
+                <p>수강내역</p>
+            </a>
+        </li>
+
+
+        <li>
+            <a href="/myInquiry.html">
+                <span class="qa"></span>
+                <p>1:1 문의</p>
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

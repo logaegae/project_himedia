@@ -1,0 +1,56 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="campusIntro">
+        <!-- 본문 -->
+        <div class="contents">
+            <!-- 서브 네비 -->
+            <div class="sub-navi">
+                <a href="#">HOME</a><span>&gt;</span>
+                <span>하이미디어</span><span>&gt;</span>
+                <span class="this-page">캠퍼스소개</span>
+            </div>
+            <!-- // 서브 네비 -->
+
+            <!-- 대제목 -->
+            <div class="title-l">
+                <div class="bg">Introduce</div>
+                <div class="text-box">
+                    <h1>캠퍼스소개</h1>
+                    <p>하이미디어의 전국 캠퍼스를 소개합니다.</p>
+                </div>
+            </div>
+            <!-- // 대제목 -->
+
+            <div class="tab tab-campus">
+                <ul>
+                    <li class="on"><button type="button">강남</button></li>
+                    <li><button type="button">종로1</button></li>
+                    <li><button type="button">종로2</button></li>
+                    <li><button type="button">신촌</button></li>
+                    <li><button type="button">구로</button></li>
+                    <li><button type="button">노원</button></li>
+                    <li><button type="button">천호</button></li>
+                    <li><button type="button">안양</button></li>
+                    <li><button type="button">안산</button></li>
+                    <li><button type="button">성남</button></li>
+                    <li><button type="button">수원</button></li>
+                    <li><button type="button">인천</button></li>
+                    <li><button type="button">전주</button></li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- // 본문 -->
+</div>
+<script>
+    window.onload = function(){
+        function liWidth(){
+            var num = $('.tab-campus > ul > li').length;
+            var wid = 100 / num;
+
+            $('.tab-campus > ul > li').css('width',wid+'%');
+        }
+        liWidth();
+    }
+</script>
+{% endblock %}

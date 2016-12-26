@@ -1,0 +1,81 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="qnaView">
+        <!-- 본문 -->
+        <div class="contents">
+            <!-- 서브 네비 -->
+            <div class="sub-navi">
+                <a href="#">HOME</a><span>&gt;</span>
+                <span>고객센터</span><span>&gt;</span>
+                <span class="this-page">Q&amp;A</span>
+            </div>
+            <!-- // 서브 네비 -->
+
+            <!-- 대제목 -->
+            <div class="title-l">
+                <div class="bg">Customer</div>
+                <div class="text-box">
+                    <h1>Q&amp;A</h1>
+                    <p>궁금하신 것이 있으시면 언제든지 물어보세요!</p>
+                </div>
+            </div>
+            <!-- // 대제목 -->
+            <div class="tab tab-customer">
+                <ul>
+    		        <li><a href="notice.html">공지사항/<br>이벤트</a></li>
+    		        <li><a href="askCost.html">수강료<br>조회</a></li>
+    		        <li><a href="askTime.html">시간표<br>조회</a></li>
+    		        <li><a href="onlineCounsel.html">온라인<br>상담</a></li>
+    		        <li><a href="onlinePay.html">온라인<br>결제</a></li>
+    		        <li><a href="comFaq.html">FAQ</a></li>
+    		        <li class="on"><a href="qna.html">Q&amp;A</a></li>
+    		    </ul>
+            </div>
+
+            <div class="notice-wrapper">
+                <div class="view_table">
+                    <table class="view_top">
+                        <caption class="sr-only"></caption>
+                        <colgroup>
+                        	<col style="width:10%">
+                        	<col style="width:10%">
+                        	<col style="width:50%">
+                        	<col style="width:20%">
+                        	<col style="width:10%">
+                        </colgroup>
+                        <thead>
+                	      <tr>
+                		      <th>15</th>
+                		      <th>종로</th>
+                		      <th class="text-left">질문하기</th>
+                		      <th>누구</th>
+                		      <th>2016.10.29</th>
+                	      </tr>
+                        </thead>
+                        <tbody>
+                	        <tr>
+                		        <td colspan="5">
+                			        <div class="view_cont">
+                                        하이미디어컴퓨터학원 강남캠퍼스에서 작년 1월달에 수강했던 학생입니다. 다음카페에 온라인 강좌를 신청했는데 안보는 것 같아서 여기로글을 남깁니다. 확인하고 열어주시기 바랍니다. 하이미디어컴퓨터학원 강남캠퍼스에서 작년 1월달에 수강했던 학생입니다. 다음카페에 온라인 강좌를 신청했는데 안보는 것 같아서 여기로 글을 남깁니다. 확인하고 열어주시기 바랍니다.
+                                        하이미디어컴퓨터학원 강남캠퍼스에서 작년 1월달에 수강했던 학생입니다. 다음카페에 온라인 강좌를 신청했는데 안보는 것 같아서 여기로 글을 남깁니다. 확인하고 열어주시기 바랍니다.
+                			        </div>
+                		        </td>
+                	        </tr>
+                        </tbody>
+                    </table>
+                    <div class="view_bottom">
+                        <a class="prev" href=""><span class="icon arrow_left red">왼쪽 화살표</span>이전</a>
+                        <a class="list" href="qna.html">목록<span class="icon list red">리스트(목록)</span></a>
+                        <a class="next" href="">다음<span class="icon arrow red">오른쪽 화살표</span></a>
+                    </div>
+                </div>
+                <div class="btns_wrap">
+                    <input type="button" class="change" value="수정">
+                    <input type="button" class="delete">
+                </div>
+            </div>
+
+        </div>
+        <!-- // 본문 -->
+</div>
+{% endblock %}

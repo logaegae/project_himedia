@@ -1,0 +1,233 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="uxuiDesign">
+        <!-- 본문 -->
+        <div class="contents">
+            <!-- 서브 네비 -->
+            <div class="sub-navi">
+                <a href="#">HOME</a><span>&gt;</span>
+                <span>웹 디자인</span><span>&gt;</span>
+                <span class="this-page">NCS디지털 UX/UI디자인</span>
+            </div>
+            <!-- // 서브 네비 -->
+
+            <div class="class-info">
+                <div class="left-box">
+                    <img src="../img/site_img/uxui_img.jpg" alt="강의이미지">
+                </div>
+                <div class="right-box">
+                    <div class="class-title">
+                        [NCS] 디지털 UI/UX 디자인
+                    </div>
+                    <div class="info_list">
+                        <span class="info_left">교육기간</span>
+                        <span class="info_right">50일 / 40시간</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="info_list">
+                        <span class="info_left">모집인원</span>
+                        <span class="info_right">약 20명</span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="info_list">
+                        <span class="info_left">개강일</span>
+                        <span class="info_right open">
+                            강남캠퍼스 <span class="color-red">/</span> 12월31일<br/>
+                            종로1캠퍼스 <span class="color-red">/</span> 11월31일<br/>
+                            신촌캠퍼스 <span class="color-red">/</span> 11월11일<br/>
+                        </span>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="info_list last">
+                        <span class="info_left">수강문의</span>
+                        <span class="info_right last">
+                            <form action="" class="input_fromwrap">
+                                <fieldset class="select_wrap">
+                                    <select id="campusSelect" name="캠퍼스선택" class="">
+                    				    <option value="">캠퍼스 선택</option>
+                    	                <option value="" label="강남">강남</option>
+                    	                <option value="" label="종로1">종로1</option>
+                                        <option value="" label="종로2">종로2</option>
+                                        <option value="" label="신촌">신촌</option>
+                                        <option value="" label="구로">구로</option>
+                                        <option value="" label="노원">노원</option>
+                                        <option value="" label="천호">천호</option>
+                                        <option value="" label="안양">안양</option>
+                                        <option value="" label="안산">안산</option>
+                                        <option value="" label="성남">성남</option>
+                                        <option value="" label="수원">수원</option>
+                                        <option value="" label="인천">인천</option>
+                                        <option value="" label="전주">전주</option>
+                                        <option value="" label="구리">구리</option>
+                    			    </select>
+                                    <a class="next_btn sub_color" href="#">온라인 상담<span class="icon arrow red">오른쪽 화살표</span></a>
+                                    <a class="next_btn white_color" href="#">시간표 조회<span class="icon arrow red">오른쪽 화살표</span></a>
+                                </fieldset>
+                            </form>
+                        </span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-mid">
+                <img src="../img/site_img/uxui_curi.jpg" alt="강의소개이미지">
+            </div>
+
+            <div class="sm-rect-btns-wrapper">
+                <button class="sm-rect-btns active">과정소개</button>
+                <button class="sm-rect-btns">커리큘럼</button>
+                <button class="sm-rect-btns">수강후기</button>
+                <button class="sm-rect-btns last">강사소개</button>
+            </div>
+
+            <div class="intro-title">
+                <span class="img-wrapper">
+                    <img src="../img/site_img/uxui_title.jpg" alt="강의소개이미지">
+                </span>
+            </div>
+
+            <div class="intro-detail">
+                <span class="detail-subtitle">디지털 UI/UX 디자인이란,</span>
+                <p>
+                스마트기기 디지털 환경에서 제공되는 서비스ㆍ콘텐츠를 사용 목적과 용도에 맞게 최적화하여 사용자 경험과 니즈를 분석하고
+                UI설계, 화면설계, 정보설계를 스마트기기에 적용 가능하도록 서비스를 최적하며,  스마트 기기와 상호작용 되는 디지털 환경을
+                고려한 스마트 기기의 디자인을 효과적으로 구현하기 위해 기획, 설계, 제작, 사후관리 등을 할 수 있다.
+                </p>
+            </div>
+
+            <div class="title-m">
+                <h2>SKILL</h2>
+                <div class="skill">
+                    <img src="../img/site_img/uxui_skills_psd.jpg" alt="PSD">
+                    <img src="../img/site_img/uxui_skills_ai.jpg" alt="AI">
+                    <img src="../img/site_img/uxui_skills_html.jpg" alt="HTML">
+                    <img src="../img/site_img/uxui_skills_css.jpg" alt="CSS">
+                    <img src="../img/site_img/uxui_skills_js.jpg" alt="JS">
+                </div>
+            </div>
+
+            <div class="title-m">
+                <h2>강의대상</h2>
+                <div class="target">
+                    웹 디자인에 관심이 있거나 웹 디자이너로 취업을 원하는
+                    15세이상 미취업자/비진학 고등학교 3학년 재학생/대학(전문대학) 최종학년 재학생으로서 졸업예정자
+                </div>
+            </div>
+
+            <div class="title-m">
+                <h2>수료 후 전망</h2>
+                <div class="prospect">
+                    웹 디자이너, 웹 기획자, 웹 퍼블리셔, 쇼핑몰 디자이너, 모바일 웹 디자이너, IT기업/웹 에이전시 등
+                </div>
+            </div>
+
+            <div class="title-m portfolio">
+                <h2>PORTFOLIO</h2>
+            </div>
+
+            <div class="portfolio-list">
+                <div class="lists modallink" modallink="example">
+                    <a href="#">
+                        <img src="/img/icon/img_portfolio.jpg" alt="">
+                        <img class="pofo_on" src="/img/icon/over.png" alt="">
+                        <div class="portfolio-name">
+                            <span class="campus-name">강남캠퍼스</span>
+                            <span class="portfolio-info">
+    						<span>박정은</span> &nbsp;&nbsp;
+                            <span>|</span>&nbsp;&nbsp;
+                            <span>디지털디자인B</span> &nbsp;&nbsp;
+                            <span>|</span>&nbsp;&nbsp;
+                            <span>개인포트폴리오</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-list">
+                <div class="lists modallink" modallink="example">
+                    <a href="#">
+                        <img src="/img/icon/img_portfolio.jpg" alt="">
+                        <img class="pofo_on" src="/img/icon/over.png" alt="">
+                        <div class="portfolio-name">
+                            <span class="campus-name">강남캠퍼스</span>
+                            <span class="portfolio-info">
+    						<span>박정은</span> &nbsp;&nbsp;
+                            <span>|</span>&nbsp;&nbsp;
+                            <span>디지털디자인B</span> &nbsp;&nbsp;
+                            <span>|</span>&nbsp;&nbsp;
+                            <span>개인포트폴리오</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-list">
+                <div class="lists modallink" modallink="example">
+                    <a href="#">
+                        <img src="/img/icon/img_portfolio.jpg" alt="">
+                        <img class="pofo_on" src="/img/icon/over.png" alt="">
+                        <div class="portfolio-name">
+                            <span class="campus-name">강남캠퍼스</span>
+                            <span class="portfolio-info">
+    						<span>박정은</span> &nbsp;&nbsp;
+                            <span>|</span>&nbsp;&nbsp;
+                            <span>디지털디자인B</span> &nbsp;&nbsp;
+                            <span>|</span>&nbsp;&nbsp;
+                            <span>개인포트폴리오</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center link">
+                <a href="">
+                    포트폴리오 더보기<span class="icon plus red">플러스(더하기)</span>
+                </a>
+            </div>
+
+
+
+        </div>
+        <!-- // 본문 -->
+        <div class="portfolio">
+            <div class="modalPopup" style="width:960px" id="example">
+                <!-- 타이틀 -->
+                <div class="modal-title text-left">
+                    <div>
+                        <span>박정은</span>
+                        <span class="popUp-line">|</span>
+                        <span>디지털디자인B</span>
+                        <span class="popUp-line">|</span>
+                        <span>개인포트폴리오</span>
+                        <span class="popUp-line">|</span>
+                        <span>강남캠퍼스</span>
+                    </div>
+
+                    <div class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></div>
+                </div>
+
+                <div class="modal-contents">
+
+                    <!-- 바디 -->
+                    <div class="modal-body">
+                        <div class="modal-main">
+                            <img src="/img/site_img/img_pfPopup.png" alt="" />
+                        </div>
+                        <button class="icon arrow-slide left">왼쪽으로</button>
+                        <button class="icon arrow-slide right">오른쪽으로</button>
+                    </div>
+
+                    <a href="#">
+                        <div class="box">
+                            <div>
+                                <span>웹 사이트로 보기</span>&nbsp;
+                                <div class="icon arrow small">오른쪽 화살표</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+.onlineCounselFinish{
+    .finishcont{
+        border:1px solid #7e7d87;
+        border-width: 2px 0 2px 0;
+        width:750px;
+        margin: 0 auto;
+        text-align: center;
+        padding:70px 0;
+        line-height:23px;
+        >img{
+            margin-bottom:40px;
+        }
+        .title{
+            font-size:@summery-size;
+            line-height:30px;
+            span{
+                font-weight: @gnb-weight;
+            }
+        }
+        .sub_title{
+            font-size:@menu-size;
+        }
+        .call{
+            margin-top:20px;
+            font-size:@summery-size;
+            img{margin-right:9px}
+        }
+    }
+    .btns_wrap{
+        text-align: center;
+        padding:70px 0 40px;
+        font-size:0;
+        a{
+            display:inline-block;
+            *display:inline;
+            *zoom:1;
+            padding:0 21px;
+            line-height:40px;
+            height:40px;
+            color:@white-color;
+            background:@sub-color;
+            font-size:16px;
+        }
+        a.main{
+            background:@main-color;
+            margin-right:10px;
+        }
+    }
+}

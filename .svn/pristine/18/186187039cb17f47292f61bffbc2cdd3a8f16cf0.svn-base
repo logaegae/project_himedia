@@ -1,0 +1,38 @@
+.join{
+    .bottom_checkbox{
+        margin-top:70px;
+    }
+    .step_wrap{
+        padding-top:0;
+    }
+    .btns_wrap{
+        text-align: center;
+        margin:40px 0 70px;
+        font-size:0;
+        .join_btn{
+            height:40px;
+            background:@main-color;
+            color:@white-color;
+            border:none;
+            width:80px;
+            margin-bottom:10px;
+            .inlineblock();
+            line-height:40px;
+            margin-right:10px;
+            font-size:16px;
+            font-weight: @gnb-weight;
+        }
+        .cancle_btn{
+            height:40px;
+            background:@sub-color;
+            color:@white-color;
+            border:none;
+            margin-bottom:10px;
+            width:80px;
+            .inlineblock();
+            line-height:40px;
+            font-size:16px;
+            font-weight: @gnb-weight;
+        }
+    }
+}

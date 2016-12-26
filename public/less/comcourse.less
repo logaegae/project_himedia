@@ -1,0 +1,114 @@
+.comcourse{
+    .sm-rect-btns-wrapper{
+        margin-bottom:57px;
+        font-size:0;
+        .sm-rect-btns{
+            width:49%;
+            margin-left:1%;
+            font-size:16px;
+            margin-right:0;
+        }
+        >button.margin{
+            margin-left:0;
+        }
+    }
+
+    .type-cont{
+        text-align: center;
+        .title-m{
+            >p{
+                font-size:@menu-size;
+                line-height:@summery-size;
+                color:@subject-color;
+                font-weight: @gnb-weight;
+                span{
+                    color:@content-color;
+                }
+            }
+        }
+        .img_banner{
+            margin:70px 0 0;
+        }
+    }
+    .inner_tab_cont,.inner_tab_cont2{
+        >div{
+            display: none;
+        }
+        >div.on{
+            display:block;
+        }
+    }
+    .type{
+        clear:both;
+        >div{
+            margin:0 0 70px 0;
+        }
+    }
+    .type2{
+        .inner_cont3{
+            vertical-align: middle;
+            margin-bottom:70px;
+        }
+    }
+}
+@media (max-width: 1023px){
+    .worker{
+        padding:0 3%;
+        .sm-rect-btns-wrapper{
+            .sm-rect-btns{
+                width:48%;
+                margin-right:2%;
+            }
+            >button.margin{
+                margin-right:0;
+            }
+        }
+        .type{
+            .type1{
+                .type_top{
+                    width:100%;
+                    .img_banner{
+                        img{
+                            width:100%;
+                        }
+                    }
+                    .inner_tab_cont{
+                        .inner_cont3{
+                            .innerstep_wrap{
+                                .offline{
+                                    .offlie_step{
+                                        width:100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .field_Wrap{
+                    width:100%;
+                }
+            }
+            > div{
+                table{
+                    font-size:12px;
+                    tr{
+                        height:45px;
+                        th{
+                            font-size:13px
+                        }
+                    }
+                }
+                .inner_tab{
+                    ul{
+                        li{
+                            width:30%;
+                            width: 31%;
+                            margin-left:3.5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

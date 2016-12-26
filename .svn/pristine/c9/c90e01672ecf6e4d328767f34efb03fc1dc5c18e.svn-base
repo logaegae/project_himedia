@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import url(variable.less);
+@import url(mixin.less);
+@import url(common.less);
+@import url(gnb.less); //민철
+@import url(guide.less);
+@import url(main.less); //리영
+
+//하이미디어
+@import url(intro.less);//지은
+@import url(history.less);//지은
+@import url(identity.less);//지은
+@import url(franchise.less);//범영
+@import url(recruit.less);//범영
+@import url(allTeacher.less);//범영
+@import url(campusIntro.less);//범영
+// //교육과정
+//
+// //포트폴리오
+@import url(portfolio.less);//준석
+//
+// //취업지원센터
+//
+// //하이커뮤니티
+//
+// //고객센터
+@import url(notice.less);//지은
+@import url(noticeView.less);//지은
+@import url(askCost.less);//지은

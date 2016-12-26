@@ -1,0 +1,243 @@
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside/nav/HEADER">Navigation</span>
+  </li>
+  <li>
+    <a href="#/app/dashboard">
+      <span class="font-bold">대시보드</span>
+    </a>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <span class="font-bold">지점관리</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>지점관리</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/branch/branch">
+          <span>지점정보</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/branch/bestCourse">
+          <span>베스트과정</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/branch/teacher">
+          <span>직원/강사</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/branch/popup">
+          <span>팝업</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/branch/slide">
+          <span>메인 슬라이드</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <span class="font-bold">고객관리</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>고객관리</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/member/member">
+          <span>회원</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/member/courseMember">
+          <span>수강생</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/member/contact">
+          <span>1:1문의</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <span class="font-bold">과정 관리</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>과정 관리</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/course/type">
+          <span>유형</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/course/field">
+          <span>분야</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/course/source">
+          <span>원천과정</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/course/course">
+          <span>지점별 과정</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <span class="font-bold">취업지원센터 관리</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>취업지원센터 관리</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/job/consultant">
+          <span>컨설턴트</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/job/faq">
+          <span>FAQ</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/job/recruit">
+          <span>채용정보</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/job/interview">
+          <span>취업인터뷰</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/job/condition">
+          <span>취업현황</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <span class="font-bold">하이커뮤니티 관리</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>하이커뮤니티 관리</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/community/review">
+          <span>수강후기</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/community/courseInterview">
+          <span>학생인터뷰</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/community/teacherInterview">
+          <span>강사인터뷰</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/community/toon">
+          <span>하설루</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <span class="font-bold">고객센터 관리</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>고객센터 관리</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/center/board">
+          <span>공지사항/이벤트</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/center/faq">
+          <span>FAQ</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/app/center/qa">
+          <span>Q&A</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#/app/portfolio">
+      <span class="font-bold">포트폴리오 관리</span>
+    </a>
+  </li>
+  <li>
+    <a href="#/app/contact">
+      <span class="font-bold">제휴 문의</span>
+    </a>
+  </li>
+  <li>
+    <a href="#/app/fcontact">
+      <span class="font-bold">프렌차이즈 모집 문의</span>
+    </a>
+  </li>
+</ul>
+<!-- / list -->

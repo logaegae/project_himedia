@@ -1,0 +1,170 @@
+.register{
+    .cont{
+        width:1024px;
+        margin:0 auto;
+        caption{
+            width:0;
+            height:0;
+            padding:0;
+            margin:0;
+        }
+        .register_top{
+            text-align: center;
+            background:@sub-color;
+            color:@white-color;
+            line-height:50px;
+            font-size:16px;
+            font-weight: @gnb-weight;
+        }
+        .register_table{
+            border-bottom:2px solid #7E7D87;
+            width:100%;
+            margin:0 0 70px 0;
+            font-size:13px;
+            tr{
+                height:65px;
+                border-top:1px solid #7E7D87;
+                &&:first-child{border-top:0}
+            }
+            td{
+                div{
+                    position:relative;
+                    display:inline-block;
+                    *display:inline;
+                    *zoom:1;
+                    label{
+                        font-size:0;
+                        text-indent: -9999px;
+                        position:absolute;
+                    }
+                    input{
+                        border:1px solid #8c9093;
+                        height:26px;
+                        width:100%;
+                        padding:0 9px;
+                        &&:focus{
+                            ~button.input_del{
+                                display:block
+                            }
+                        }
+
+                    }
+                    .input_del{
+                        background: url('/img/site_img/input_del.jpg') no-repeat 50% 50%;
+                        z-index:2;
+                        width: 21px;
+                        height: 100%;
+                        font-size: 0;
+                        text-indent: -9999px;
+                        position: absolute;
+                        right: 9px;
+                        top: 0;
+                        display:none;
+                        &&:focus,&&:hover{
+                            display:block;
+                        }
+                    }
+                }
+                span{
+                    input{
+                        margin:0 10px;
+                    }
+                    label{
+                        position:relative;
+                        text-indent: 0;
+                        font-size:13px;
+                        font-weight: @subject-weight;
+                    }
+                }
+            }
+        }
+        div{
+            textarea{
+                width:100%;
+                height:245px;
+                padding:10px;
+                resize:none;
+            }
+        }
+        .button_wrap{
+            text-align: left;
+            margin:40px 0 70px;
+            .enter{
+                width:180px;
+                height:40px;
+                color:@white-color;
+                background: @sub-color;
+                span{
+                    margin-left:20px;
+                }
+                &&:hover{
+                    background:@main-color;
+                }
+            }
+            .btns_wrap{
+                float:right;
+                color:@white-color;
+                button,input{
+                    margin-left:10px;
+                }
+                .change{
+                    background:@main-color;
+                    border:none;
+                    width:80px;
+                    height:40px;
+                }
+                .delete{
+                    background:@main-color url('/img/icon/icon_del.png') no-repeat;
+                    border:none;
+                    width:80px;
+                    height:40px;
+                    font-size:0;
+                    background-position: 50%;
+                }
+                .list{
+                    background:@sub-color;
+                    border:none;
+                    width:80px;
+                    height:40px;
+                }
+            }
+        }
+    }
+    .recruitInfo_footer{
+        background:@base-color;
+        padding:70px;
+        >div{
+            width:1024px;
+            margin:0 auto;
+            .info{
+                display:inline-block;
+                *display:inline;
+                *zoom:1;
+                text-align: center;
+                font-size:0;
+                width:49%;
+                padding:0 85px;
+                .info1{
+                    font-size:@menu-size;
+                }
+                .info2{
+                    font-size:@subject-size;
+                    font-weight:@title-weight
+                }
+                .red_bar{
+                    display:block;
+                    margin:15px auto 10px;
+                    background: @main-color;
+                    width:31px;
+                    height:2px;
+                }
+                .info3{
+                    font-size:13px;
+                    line-height:20px;
+                    color:@subject-color;
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.bestCurriculum {
+    .bestInfo {
+        .bestImage {
+            display: table;
+            position: relative;
+            width: 384px;
+            height: 350px;
+            background-color: @sub-color;
+            .wrap {
+                width: 186px;
+                height: auto;
+                display: table-cell;
+                vertical-align: middle;
+                position: relative;
+                .whiteCircle {
+                    width: 160px;
+                    height: 160px;
+                    background: url('/img/icon/icon_lnb1.png') no-repeat 40px 40px;
+                    position: absolute;
+                    background-color: white;
+                    .radius(50%);
+                }
+                p {
+                    color: white;
+                    font-size: @subject-size;
+                    font-weight: @gnb-weight;
+                }
+            }
+        }
+        .title-l {
+            position: relative;
+            bottom: 0;
+        }
+    }
+}
+
+
+}

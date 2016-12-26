@@ -1,0 +1,87 @@
+.appraisal{
+    .appraisal_bg{
+        text-align: center;
+        padding:40px 0;
+        background:@base-color;
+        font-size: @menu-size;
+        p{
+            color:@subject-color;
+            span{
+                color:@content-color;
+            }
+        }
+        .red_bar{
+            display: block;
+            width:31px;
+            height:2px;
+            margin:20px auto;
+            background:@main-color;
+        }
+        .btn{
+            display:block;
+            margin:0 auto;
+            padding:0;
+            line-height: 45px;
+            width:243px;
+            height:45px;
+            color: @white-color;
+            background:@sub-color;
+            border-radius: 0;
+            font-size:16px;
+            font-weight: @gnb-weight;
+            span{
+                margin-left:20px
+            }
+            &&:hover{
+                background:@main-color;
+                span{
+                    background-position: -80px 0;
+                }
+            }
+        }
+    }
+    .appraisal_tablewrap{
+        margin:70px auto 0;
+        width:1024px;
+        caption{
+            width:0;
+            height:0;
+        }
+        .appraisal_table{
+            border:2px solid #7E7D87;
+            border-width:2px 0;
+            width:100%;
+            tr{
+                border-top:1px solid #7E7D87;
+                &&:first-child{
+                    border-top:0;
+                }
+                th{
+                    text-align: center;
+                    font-weight: @subject-weight;
+                    .star_wrap_bord{
+                        line-height: 20px;
+                        span{
+                            display:inline-block;
+                            *display:inline;
+                            *zoom:1;
+                            width:18px;
+                            height:18px;
+                            background:url('/img/site_img/star1.png') no-repeat;
+                            text-indent:-9999px;
+                            font-size:0;
+                        }
+                        span.on{
+                            background:url('/img/site_img/star2.png') no-repeat;
+                        }
+                    }
+                }
+                td{
+                    padding:20px;
+                    font-size:13px;
+                    color:@content-color;
+                }
+            }
+        }
+    }
+}

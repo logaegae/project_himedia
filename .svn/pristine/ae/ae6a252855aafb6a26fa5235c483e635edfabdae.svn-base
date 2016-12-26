@@ -1,0 +1,108 @@
+{% extends "./blocks/layout.html" %} {% block content %}
+<div class="haseolru">
+    <!-- 서브 네비 -->
+    <div class="sub-navi">
+        <a href="#">HOME</a>
+        <span>&gt;</span>
+        <a href="#">하이커뮤니티</a>
+        <span>&gt;</span>
+        <span class="this-page">하설루</span>
+    </div>
+    <!-- // 서브 네비 -->
+
+    <div class="title-l">
+        <div class="bg">
+            <b>Community</b>
+        </div>
+        <div class="text-box">
+            <h1>하설루</h1>
+            <p><b>하</b>이의 <b>설</b>레는 <b>하</b>루, 하이미디어人의 이야기를 들려 드립니다</p>
+        </div>
+    </div>
+    <div class="gray_bg">
+        <div class="view_table">
+            <table class="view_top">
+                <caption></caption>
+                <colgroup>
+                    <col style="width:8%">
+                        <col style="width:55%">
+                            <col style="width:14%">
+                                <col style="width:14%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>5화</th>
+                        <th class="text-left">취업지원시스템</th>
+                        <th>2016.10.29</th>
+                        <th>999 </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5">
+                            <div class="view_cont">
+                                <img src="/img/site_img/haseolru_detail.jpg" alt="새해복많이받으세요">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="view_bottom">
+                <a class="prev" href=""><span class="icon arrow_left red">왼쪽 화살표</span>이전</a>
+                <a class="list" href="haseolru.html">목록<span class="icon list red">리스트(목록)</span></a>
+                <a class="next" href="">다음<span class="icon arrow red">오른쪽 화살표</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_checkbox">
+        <p>댓글 쓰기</p>
+        <div class="cont">
+            하이미디어 로그인 후 댓글을 작성하실 수 있습니다.
+        </div>
+        <div class="text-center btns">
+            <input type="submit" value="등록">
+        </div>
+    </div>
+
+    <div class="haseolru_comment">
+
+        <div class="comment_box">
+            <span>홍길동</span>
+            <span class="redline"></span>
+            <span>2016.12.12</span>
+            <div><button class="icon delete red2"></button></div>
+            <p>재밌고 유익한 내용이네요 ㅎㅎ</p>
+        </div>
+
+        <div class="comment_box">
+            <span>홍길동</span>
+            <span class="redline"></span>
+            <span>2016.12.12</span>
+            <div><button class="icon delete red2"></button></div>
+            <p>재밌고 유익한 내용이네요 ㅎㅎ</p>
+        </div>
+
+        <div class="comment_box">
+            <span>홍길동</span>
+            <span class="redline"></span>
+            <span>2016.12.12</span>
+            <div><button class="icon delete red2"></button></div>
+            <p>재밌고 유익한 내용이네요 ㅎㅎ</p>
+        </div>
+
+        <div class="comment_box">
+            <span>홍길동</span>
+            <span class="redline"></span>
+            <span>2016.12.12</span>
+            <div><button class="icon delete red2"></button></div>
+            <p>재밌고 유익한 내용이네요 ㅎㅎ</p>
+        </div>
+        <div class="comment_box">
+            <span>홍길동</span>
+            <span class="redline"></span>
+            <span>2016.12.12</span>
+            <div><button class="icon delete red2"></button></div>
+            <p>재밌고 유익한 내용이네요 ㅎㅎ</p>
+        </div>
+    </div>
+    {% endblock %}

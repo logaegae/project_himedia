@@ -1,0 +1,210 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="condition">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">취업 후기</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>취업 현항</h1>
+                <p>하이미디어에서 알려 드리는 취업 현황</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <!-- <div class="tab tab-sub">
+            <ul>
+                <li><a href="postscript.html">취업생 인터뷰</a></li>
+                <li class="on"><a href="#">취업 현황</a></li>
+            </ul>
+        </div> -->
+        <p class="himedia">HIMEDIA<p>
+        <p class="title">2016년 9월 하이미디어 전 지점 취업자</p>
+        <p class="cong">CONGRATULATIONS!</p>
+        <p class="num">118</p>
+        <p class="accumulate">누적 취업자는 총 XXXXX명입니다.</p>
+        <form>
+            <fieldset>
+                <div class="condition_top">
+                    <label for="campus_select" class="text-hide">캠퍼스 선택</label>
+                    <select id="campus_select" class="campus" name="branchCode">
+                        <option selected="" style="display:none;" disabled="true" selected="true">캠퍼스 선택</option>
+                        <option value="전체">전체</option>
+                        {% for branch in branches %}
+                            {% if branch.branchCode != 'himedia'%}
+                                <option value="{{branch.branchCode}}">{{branch.branchName}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="year_select" class="text-hide">년도 선택</label>
+                    <select id="year_select">
+                        <option value="캠퍼스 선택">년도 선택</option>
+                        <option selected="" value="2016">2016년</option>
+                        <option value="2015년">2015년</option>
+                        <option value="2014년">2014년</option>
+                        <option value="2013년">2013년</option>
+                        <option value="2012년">2012년</option>
+                        <option value="2011년">2011년</option>
+                    </select>
+                    <label for="year_month" class="text-hide">월별 선택</label>
+                    <select id="year_month">
+                        <option value="월별 선택">월별 선택</option>
+                        <option selected="" value="01월">01월</option>
+                        <option value="02월">02월</option>
+                        <option value="03월">03월</option>
+                        <option value="04월">04월</option>
+                        <option value="05월">05월</option>
+                        <option value="06월">06월</option>
+                        <option value="07월">07월</option>
+                        <option value="08월">08월</option>
+                        <option value="09월">09월</option>
+                        <option value="10월">10월</option>
+                        <option value="11월">11월</option>
+                        <option value="12월">12월</option>
+                    </select>
+                </div>
+                <div class="condition_bg">
+                    <table class="condition_table">
+                        <caption>
+                            </catpion>
+                            <colgroup>
+                                <col>
+                                    <col>
+                                        <col>
+                                            <col>
+                                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>캠퍼스</th>
+                                    <th>제목</th>
+                                    <th>수료과정명</th>
+                                    <th>취업일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in list %}
+                                    <tr class="lists modallink" modallink="example1">
+                                            <td>{{totalCount - (page - 1)*pageSize - loop.index + 1}}</td>
+                                            <td>{{item.Branch.branchName}}</td>
+                                            <td>{{item.title}}</td>
+                                            <td>{{item.content}}</td>
+                                            <td>{{jobDate.registDate | date('Y-m-d')}}</td>
+                                    </tr>
+                                {% endfor %}
+                                <!--
+                                <tr class="lists modallink" modallink="example1">
+                                    <td>45</td>
+                                    <td>안산</td>
+                                    <td>박*화님의 취업현황입니다.</td>
+                                    <td>실무에필요한전산세무회계</td>
+                                    <td>2016.09.01</td>
+                                </tr> -->
+                            </tbody>
+                    </table>
+
+                    {% include "./blocks/pagination.html" %}
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- // 본문 -->
+    <div class="modalPopup" style="width:960px" id="example1">
+        <!-- 타이틀 -->
+        <div class="modal-title text-left">
+            <div>
+                <span>김*이님의 취업현황입니다.</span>
+            </div>
+
+            <div class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></div>
+        </div>
+
+        <!-- 바디 -->
+        <div class="modal-body">
+            <div class="inputtable_wrap">
+                <form class="input_fromwrap">
+                    <fieldset class="input_tablewrap">
+                        <legend>취업현황 테이블입니다.</legend>
+                        <table class="input_table">
+                            <caption>취업현황으로 이름,회사,취업일,수료캠프 수료과정,교육기간이있습니다.
+                            </caption>
+                            <colgroup>
+                                <col style="width:10%">
+                                    <col style="width:40%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <span>이름</span>
+                                    </th>
+                                    <td>
+                                        <span>김*이</span>
+                                    </td>
+                                    <th>
+                                        <span>수료캠퍼스</span>
+                                    </th>
+                                    <td>
+                                        <span class="inputCampus">노원캠퍼스</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>회사명</span>
+                                    </th>
+                                    <td>
+                                        <span class="inputCompany">삼화전자공업(주)</span>
+                                    </td>
+                                    <th>
+                                        <span>수료과정</span>
+                                    </th>
+                                    <td>
+                                        <span class="inputClass">전산세무회계취업반(회계1급+세무2급)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>취업일</span>
+                                    </th>
+                                    <td>
+                                        <span class="inputJobdate">2016.11</span>
+                                    </td>
+                                    <th>
+                                        <span>교육기간</span>
+                                    </th>
+                                    <td>
+                                        <span class="inputPeriod">2016.00.00 ~ 2016.00.00</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="comment text-center">
+                            <span class="inputCampus">노원캠퍼스</span> <span class="inputName">김*이님</span>의 취업을 축하드립니다.
+                        </div>
+                            <div class="text-center btns">
+                                <input type="reset" value="닫기" class="modal-closeBtn">
+                            </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var data = {{JSON.stringify(list,0,4)}};
+    console.log(data);
+    $('.lists').click(function(){
+
+    })
+</script>
+{% endblock %}

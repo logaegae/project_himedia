@@ -1,0 +1,371 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="register">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">채용 정보</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>채용 정보</h1>
+                <p>하이미디어에서 알려 드리는 채용 정보</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <form class="cont input_fromwrap">
+            <fieldset>
+                <div class="register_top">기업정보</div>
+                <table class="register_table">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:40%">
+                        <col style="width:10%">
+                        <col style="width:40%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><label for="company_name">회사명</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:90%">
+                                    <input id="company_name" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="ceo">대표자</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:40%">
+                                    <input id="ceo" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="type">업종</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:40%">
+                                    <input id="type" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="staff_num">사원수</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:20%">
+                                    <input id="staff_num" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                                명
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="adress">주소</label></th>
+                            <td colspan="3">
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="adress" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <div class="register_top">모집요강</div>
+                <table class="register_table">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:40%">
+                        <col style="width:10%">
+                        <col style="width:40%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><label for="register_title">채용제목</label></th>
+                            <td colspan="3">
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_title" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_field">모집분야</label></th>
+                            <td>
+                                <select id="register_field">
+                                    <option value="모집 분야를 선택하세요.">모집 분야를 선택하세요.</option>
+                                    <option value="웹 디자인">웹 디자인</option>
+                                    <option value="웹 퍼블리싱">웹 퍼블리싱</option>
+                                    <option value="웹 개발">웹 개발</option>
+                                    <option value="편집 디자인">편집 디자인</option>
+                                    <option value="회계/세무">회계/세무</option>
+                                    <option value="인테리어">인테리어</option>
+                                    <option value="캐드">캐드</option>
+                                    <option value="영상">영상</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </td>
+                            <th><label for="register_num">모집인원</label></th>
+                            <td>
+                                <select id="register_num">
+                                    <option value="1명">1명</option>
+                                    <option value="2명">2명</option>
+                                    <option value="3명">3명</option>
+                                    <option value="4명">4명</option>
+                                    <option value="5명">5명</option>
+                                    <option value="6명 ">6명 </option>
+                                    <option value="7명">7명</option>
+                                    <option value="8명">8명</option>
+                                    <option value="9명">9명</option>
+                                    <option value="10명">10명</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_employment">고용형태</label></th>
+                            <td>
+                                <select id="register_employment">
+                                    <option selected="" value="고용 형태를 선택하세요.">고용 형태를 선택하세요.</option>
+                                    <option value="정규직">정규직</option>
+                                    <option value="계약직">계약직</option>
+                                    <option value="병역 특례">병역 특례</option>
+                                    <option value="인턴직">인턴직</option>
+                                    <option value="위촉직">위촉직</option>
+                                    <option value="아르바이트">아르바이트</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </td>
+                            <th><label for="register_career">경력</label></th>
+                            <td>
+                                <select id="register_career">
+                                    <option selected="" value="경력사항를 선택하세요.">경력사항를 선택하세요.</option>
+                                    <option value="신입">신입</option>
+                                    <option value="신입/경력">신입/경력</option>
+                                    <option value="경력">경력</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_area">근무지역</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_area" type="text" placeholder="상세 지역 ex. 강남구"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="register_sex">성별</label></th>
+                            <td>
+                                <select id="register_sex">
+                                    <option selected="" value="성별을 선택하세요.">성별을 선택하세요.</option>
+                                    <option value="성별무관">성별무관</option>
+                                    <option value="남성">남성</option>
+                                    <option value="여성">여성</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_age">나이제한</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_age" type="text"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="register_academic">최종학력</label></th>
+                            <td>
+                                <select id="register_academic">
+                                    <option value="최종학력을 선택하세요.">최종학력을 선택하세요.</option>
+                                    <option value="학력무관">학력무관</option>
+                                    <option value="중학교졸업이상">중학교졸업이상</option>
+                                    <option value="고등학교졸업이상">고등학교졸업이상</option>
+                                    <option value="대학졸업(2,3년)이상">대학졸업(2,3년)이상</option>
+                                    <option value="대학교졸업(4년)이상">대학교졸업(4년)이상</option>
+                                    <option value="대학원졸업이상">대학원졸업이상</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_houer">근무시간</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_houer" type="text" placeholder="ex. 주 5일(월~금) 오전 9시~오후6시"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="register_preferential">우대조건</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_preferential" type="text"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_welfare">복리후생</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_welfare" type="text"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="register_license">자격증</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="register_license" type="text"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_closingdate">마감일</label></th>
+                            <td colspan="3">
+                                <p class="input_wrap" style="width:35%">
+                                    <input id="register_closingdate" type="text"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_cont">상세요강</label></th>
+                            <td colspan="3">
+                                <textarea rows="5" cols="134" id="register_cont" style="width:100%;">
+상세 내용을 기입해주세요.
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_adress">오시는길 (주소)</label></th>
+                            <td colspan="3">
+                                <p class="input_wrap" style="width:35%">
+                                    <input id="register_adress" type="text"/>
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="register_file">첨부파일</label></th>
+                            <td colspan="3">
+                                <input type="file" id="register_file">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <div class="register_top">담당자 정보</div>
+                <table class="register_table">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:40%">
+                        <col style="width:10%">
+                        <col style="width:40%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><label for="charge_name">담당자명</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:40%">
+                                    <input id="charge_name" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="charge_department">담당부서</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:40%">
+                                    <input id="charge_department" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="charge_tell">연락처</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:40%">
+                                    <input id="charge_tell" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="charge_fax">팩스번호</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:40%">
+                                    <input id="charge_fax" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="charge_email">이메일</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="charge_email" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="charge_site">홈페이지</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="charge_site" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="charge_papers">제출서류</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="charge_papers" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                            <th><label for="charge_method">접수방법</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:80%">
+                                    <input id="charge_method" type="text" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <div class="register_top">비밀번호</div>
+                <table class="register_table">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:90%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th><label for="pw">비밀번호</label></th>
+                            <td>
+                                <p class="input_wrap" style="width:20%">
+                                    <input id="pw" type="password" />
+                                    <button type="button" class="input_del">삭제버튼</button>
+                                </p>
+                                <span class="notice">* 차후 채용정보 수정 시 필요합니다.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <div class="btns_wrap">
+                <input type="submit" value="채용공고등록">
+                <input type="reset" value="취소">
+            </div>
+        </form>
+
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+.saramin{
+    .tab-saramin{
+        text-align: center;
+        font-size:0;
+        li{
+            display:inline-block;
+            *display:inline;
+            *zoom:1;
+            width:170px;
+            height: 40px;
+            border:1px solid #242D33;
+            font-size:@menu-size;
+            font-weight: @title-weight;
+            margin-left:10px;
+            &&:first-child{
+                margin-left:0;
+            }
+            button{
+                width:100%;
+                height:100%;
+            }
+        }
+        li:hover{
+            border:1px solid @main-color;
+            color:@main-color;
+        }
+        li.on{
+            background:@main-color;
+            color:@white-color;
+            border:1px solid @main-color;
+        }
+    }
+    .saramin_bg{
+        background:@base-color;
+        padding:40px 0 0;
+        .saramin_tablewrap{
+            width:1024px;
+            margin:0 auto;
+            p{
+                color:@content-sub-color;
+                font-size:14px;
+                margin: 0 0 20px 10px;
+                span{
+                    color:@content-color;
+                }
+                .total_num{
+                    color:@main-color;
+                }
+            }
+            .list_table{
+                tbody{
+                    tr{
+                        height:80px;
+                        border-top: 1px solid @base-color;
+                        &&:first-child{border-top:0;}
+                        td{
+                            padding:0;
+                            font-size:13px;
+                        }
+                        .cont{
+                            font-weight: @gnb-weight;
+                            a{
+                                width:380px;
+                                overflow: hidden;
+                				white-space: nowrap;
+                				text-overflow: ellipsis;
+                                display:inline-block;
+                                *display:inline;
+                                *zoom:1;
+                                .cont2{
+                                    display:block;
+                                    color:@content-sub-color;
+                                    font-weight: @subject-weight;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .pagination{
+                span{
+                    a{
+                        background:@white-color;
+                    }
+                    a.on{
+                        background:@main-color;
+                        color:@white-color;
+                    }
+                }
+            }
+        }
+    }
+}

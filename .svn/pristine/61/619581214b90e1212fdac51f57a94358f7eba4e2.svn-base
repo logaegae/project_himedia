@@ -1,0 +1,234 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="jobFaq">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">FAQ</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>FAQ</h1>
+                <p>취업지원센터를 이용하신 분들의 베스트 질문!</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="notice-wrapper">
+            <div class="notice-box">
+                <table class="list_table">
+                    <caption class="sr-only"></caption>
+                    <colgroup>
+                        <col style="width:8%">
+                        <col style="width:84%">
+                        <col style="width:8%">
+                    </colgroup>
+                    <tbody>
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">취업지원절차는 어떻게 되나요?</td>
+                            <td><span class="icon arrowUp red">위쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box in">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                취업특강 - 이력서접수 - 이력서클리닉 - 1:1취업상담 - 취업알선 - 취업성공 - 취업확인<br>
+                                <br>
+                                하이미디어에서는 훈련분야에 특화된 취업특강을 통해 채용시장의 흐름에 맞는 구직전략을 함께 찾아드립니다. <br>
+                                훈련을 받으시는 동안 1:1 맞춤형 상담을 통해 구직서류준비가 이루어지고, 훈련종료 시점에는 적극적인 취업알선으로 구직을 도와드립니다. 취업에 성공하시고 나면 간단한 취업확인서류 접수를 끝으로 취업지원이 마무리 됩니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">취업지원은 언제까지 해주나요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                취업지원은 과정 수료 후 6개월까지 진행됩니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">취업지원실을 이용하는 데 수수료가 있나요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                그렇지 않습니다.<br>
+                                하이미디어 취업지원실은 수료생의 취업에 도움을 드리고자 비영리적으로 운영되고 있습니다. 따라서 일체의 수수료 없이 취업추천을 해 드리고 있으니 수료생분들과 구인기업 담당자분들 모두 적극적으로 이용해 주시기 바랍니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">입사지원서 클리닉은 어떤 방식으로 진행되나요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                입사지원서 클리닉은 수강생과의 1:1상담을 통해 나온 구직지표와 지원분야 등을 고려하여 메모 첨삭 형식으로 진행되고 있습니다. 또한 해당분야에 취업알선 경험이 많은 전문 커리어매니저가 클리닉을 담당하여 서류합격률을 높이는데 일조하고 있습니다. 단, 취업지원실에 입사지원서 첫 제출 시, 이력서는 최신이력으로 업데이트 해주시고, 자소서는 최대한 가이드에 충실히 작성하여 보내주시면 보다 효과적인 첨삭이 가능하오니 참고 바랍니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">개인정보 동의서는 꼭 써야하나요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                개인정보수집 및 활용동의서는 수강생의 개인정보보호를 위해 작성하는 것이므로, 취업지원을 원하는 수강생이라면 작성이 선행되어야 합니다. 이력서클리닉과 취업알선을 진행하는 과정에서 수강생의 이력서 내에 있는 개인정보를 다루거나 활용하게 되는데, 그 범위와 용도를 취업지원에 국한하는 조항으로 수강생의 개인정보를 보호하고 있으니 참고 바랍니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">취업확인은 왜 해야하는 건가요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                국비지원으로 수강하는 수강생분들은 해당 과정 수료 후 6개월 내에 취업을 한 사실을 노동부에 고지하는 필수절차가 있습니다. 이를 증빙하는 취·창업확인서류(재직증명서, 근로계약서, 취업확인서, 사업자등록증 중 택1)를 HRD 전산에 등록해드리는 업무를 취업지원실에서 진행하고 있으며, 고용센터 취성패 담당자에게 취업확인서를 전송한 수강생분들 역시 본 훈련기관측에도 따로 확인해주셔야 하는 점 꼭 양지해주시길 바랍니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">경력이 없는데 취업할 수 있을까요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                훈련기관 수강생의 상당수가 신입이거나, 관련경력이 없는 경우가 많습니다. 그렇지만 본 훈련기관에서 관련 수강을 통해 실무를 대비함으로 1차 경쟁력을 쌓고, 관련 자격증 취득 및 포트폴리오 제작을 통해 2차 경쟁력을 쌓게 됩니다. 이 과정과 결과를 지원서류 내에 효과적으로 배치하여 같은 신입이어도 '준비된 신입'으로서 차별화될 수 있으니 적극적으로 도전해보시기 바랍니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">관련 전공이 아닌데 원하는 곳에 취업할 수 있나요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                관련 전공이 아니더라도 훈련수강을 통해 채용조건에 부합하는 역량을 배양하게 될 예정이므로 취업이 가능합니다. 물론 전공자라면 더욱 유리한 상황일 수 있겠지만, 최근 채용기준은 학력중심에서 실무중심으로 바뀌는 추세이기때문에 실무역량을 배양할 수 있는 훈련과정을 통해 이를 잘 준비하고 피력한다면 원하는 곳에 취업하실 수 있습니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">나이가 많아도 취업이 가능한가요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                청년층에 비해 장년층, 고령층의 사무직 등용문이 좁은 것은 사실이나, 단계별 전략을 잘 세우고 수강생의 적극성이 수반된다면 충분히 가능합니다.
+                                장년, 고령자 취업은 구인처 확보가 가장 중요한 사항인데, 하이미디어 취업지원실에서는 이에 대비하여 구인처를 관리하는 전문인력을 두고 현재도 구인처개발에 매진하고 있습니다.<br>
+                                추가로, 유관 경력직을 제외한 재취업자분들은 새로운 분야에서 리스타트하는 마인드가 매우 중요하므로, 처음부터 목표를 타이트하게 잡는 것 보다는 단계별 진입을 권장합니다
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">육아를 하는동안 경력이 단절되었는데 취업이 가능한가요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                연공서열 중심의 기업문화가 자리한 국내 실정 상 경력단절 재취업자의 채용시장 첫 진입이 녹록치 않은 것은 사실입니다. 그러나 수강생의 경력 단절 기간 및 기존 커리어의 직무관련성을 체크하여 본 훈련이수내역을 발판삼아 전략적으로 구직활동을 한다면 충분히 가능합니다. 또한 젊은층의 잦은 이직률에 지친 중소기업에서 업무적응도가 높고 장기적인 근무가 기대되는 경단 재취업자를 찾는 수요가 점차 늘어나고 있는 추세이기 때문에 긍정적으로 구직활동에 임하셔도 좋을 것 같습니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">제가 원하는 곳에도 지원이 가능한가요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                물론 가능합니다.<br>
+                                저희 취업지원실에서는 기본적으로 지원분야에 맞춘 '그룹매칭'을 진행하고 있으며 면접이 확정되면 개별 연락을 드리고 있습니다. 여기에 수강생분이 원하는 기업의 모집공고 url을 따로 저희 측에 이메일로 보내주시면 개인지원도 병행하여 채용확률을 더욱 높일 수 있으니 적극적인 요청바랍니다
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">훈련과정 관련 분야만 지원해주시는 건가요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                그렇지 않습니다.
+                                수강생 중심으로 개별목표에 따라 지원을 해드리고 있기 때문에 훈련과정과 다른 분야라 하더라도 그에 맞춰 지원해드리고 있습니다. 단, 지원분야가 저희 하이미디어에서 진행하는 훈련직종과 전혀 무관한 분야일 경우에는 수강생과의 공조를 통한 개인지원을 통해 도와드리는 점 참고 바랍니다.
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">포트폴리오가 꼭 나와야 취업이 되나요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                포트폴리오가 없어도 프로그램 툴 능숙도 위주로 선별하는 구인처로의 취업은 가능합니다.<br>
+                                그러나 포트폴리오 제작이 포함된 과정은 실무중심 직종이기 때문에 서류심사 시 포트폴리오를 필수적으로 보는 경우가 대부분입니다. 일반 사무직은 입사지원서로 역량을 보여주는데 반해, 본 분야는 실무능력을 여실히 평가할 수 있는 '포트폴리오'가 서류지원의 중심이 되기 때문입니다. 그렇기에 포트폴리오는 수강 중에 잘 준비하시어 입사지원의 폭을 넓히시길 권장합니다
+                            </td>
+                        </tr>
+
+                        <tr class="question">
+                            <td>Q</td>
+                            <td class="text-left">정기적으로 채용정보를 제공받고 싶은데 가능한가요?</td>
+                            <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+                        </tr>
+                        <tr class="answer-box">
+                            <td>A</td>
+                            <td colspan="2" class="text-left text-box">
+                                네 가능합니다.<br>
+                                취업지원 기간 내 요청하시는 경우는 전화, 문자, 이메일, 카카오톡을 통해 지원분야 관련 채용정보를 보내드리고 있으며, 취업지원 기간 이후에도 하이미디어 홈페이지로 구인의뢰 들어오는 채용정보를 언제든 확인하실 수 있으니 적극적인 열람 바랍니다.<br>
+                                <br>
+                                ※열람경로: 하이미디어 홈페이지 > 취업지원센터 > 채용정보
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- // 본문 -->
+</div>
+<script>
+    $('.question').click(function(){
+        if($(this).next('tr').attr('class').indexOf('in') != -1){
+            $(this).next('tr').removeClass('in').hide().prev().find('.arrowUp').removeClass('arrowUp').addClass('arrowDown');
+        }else{
+            var idx = $('.in').index();
+            if(idx >= 0){
+                $('.notice-box .list_table tr').eq(idx).removeClass('in').hide().prev().find('.arrowUp').removeClass('arrowUp').addClass('arrowDown');
+                $(this).next('tr').show("slow").addClass('in').prev().find('.arrowDown').removeClass('arrowDown').addClass('arrowUp');
+            }else{
+                $(this).next('tr').show("slow").addClass('in').prev().find('.arrowDown').removeClass('arrowDown').addClass('arrowUp');;
+            }
+        }
+    })
+</script>
+{% endblock %}

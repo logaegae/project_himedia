@@ -1,0 +1,170 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="appraisal">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>하이커뮤니티</span><span>&gt;</span>
+            <span class="this-page">수강 후기</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Community</div>
+            <div class="text-box">
+                <h1>수강 후기</h1>
+                <p>수강생들이 직접 작성한 리얼 100% 수강 후기!</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="appraisal_bg">
+            <p>수강평 작성은 <span>로그인 후 마이페이지 > '수강 내역'</span>에서 작성 가능합니다.</p>
+            <span class="red_bar"></span>
+            <a class="btn" href="myCourse.html">수강 내역 페이지 바로가기 <span class="icon arrow red">오른쪽 화살표</span> </a>
+        </div>
+        <div class="appraisal_tablewrap">
+            <table class="appraisal_table">
+                <caption></caption>
+                <colgroup>
+                    <col style="width:13%">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>
+                            <span>박희수</span>
+                            <p class="star_wrap_bord">
+                                <span class="star on">1점</span>
+                                <span class="star on">2점</span>
+                                <span class="star on">3점</span>
+                                <span class="star on">4점</span>
+                                <span class="star on">5점</span>
+                            </p>
+                        </th>
+                        <td>
+                            안양 하이미디어 캠퍼스 전산세무회계 (회계1급+세무2급), (전산세무1급 법인세 )수업 들었습니다ㅎㅎ<br>
+                            아무것도 모르고 처음 수업들으며 할수 있을지 걱정이 많았는데 하이미디어 학원에서 자격증부터 실무 취업까지 하나하나 신경써주셔서<br>
+                            자격증도 다 따고 취업도움도 받고 있습니다<br>
+                            수업도 이해하기 쉽게 너무 잘 설명해주시고 잘챙겨주셔서 다니는 동안 너무 좋았어요 >_<<br>
+                            특히 상훈샘 ㅠㅠ 진짜 끝까지 이끌어 주셔서 너무 감사합니다.<br>
+                            학과장님듀요 ㅠㅠ<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>송지혜</span>
+                            <p class="star_wrap_bord">
+                                <span class="star on">1점</span>
+                                <span class="star on">2점</span>
+                                <span class="star on">3점</span>
+                                <span class="star on">4점</span>
+                                <span class="star on">5점</span>
+                            </p>
+                        </th>
+                        <td>
+                            안양 하이미디어에서 NCS 전산 회계 1급, 전산 세무 2급 수업 들었습니다<br>
+                            처음에는 생소한 과목이라 많이 걱정했는데<br>
+                            약 두 달여간 담당 선생님께서 차근 차근 세심하게 가르쳐주신 덕분에<br>
+                            회계와 세무에 대한 기초 지식을 잡고 자격증 시험 합격에 대해서도 긍정적으로 바라보게 되었습니다.<br>
+                            수업을 시작하기 전까지 컴퓨터 전원 끄는것 말고는 정말 아무것도 모르는 상태였는데<br>
+                            이렇게 가르쳐주신 선생님께 정말 감사합니다.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>박희수</span>
+                            <p class="star_wrap_bord">
+                                <span class="star on">1점</span>
+                                <span class="star on">2점</span>
+                                <span class="star on">3점</span>
+                                <span class="star on">4점</span>
+                                <span class="star on">5점</span>
+                            </p>
+                        </th>
+                        <td>
+                            안양 하이미디어 캠퍼스 전산세무회계 (회계1급+세무2급), (전산세무1급 법인세 )수업 들었습니다ㅎㅎ<br>
+                            아무것도 모르고 처음 수업들으며 할수 있을지 걱정이 많았는데 하이미디어 학원에서 자격증부터 실무 취업까지 하나하나 신경써주셔서<br>
+                            자격증도 다 따고 취업도움도 받고 있습니다<br>
+                            수업도 이해하기 쉽게 너무 잘 설명해주시고 잘챙겨주셔서 다니는 동안 너무 좋았어요 >_<<br>
+                            특히 상훈샘 ㅠㅠ 진짜 끝까지 이끌어 주셔서 너무 감사합니다.<br>
+                            학과장님듀요 ㅠㅠ<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>송지혜</span>
+                            <p class="star_wrap_bord">
+                                <span class="star on">1점</span>
+                                <span class="star on">2점</span>
+                                <span class="star on">3점</span>
+                                <span class="star on">4점</span>
+                                <span class="star on">5점</span>
+                            </p>
+                        </th>
+                        <td>
+                            안양 하이미디어에서 NCS 전산 회계 1급, 전산 세무 2급 수업 들었습니다<br>
+                            처음에는 생소한 과목이라 많이 걱정했는데<br>
+                            약 두 달여간 담당 선생님께서 차근 차근 세심하게 가르쳐주신 덕분에<br>
+                            회계와 세무에 대한 기초 지식을 잡고 자격증 시험 합격에 대해서도 긍정적으로 바라보게 되었습니다.<br>
+                            수업을 시작하기 전까지 컴퓨터 전원 끄는것 말고는 정말 아무것도 모르는 상태였는데<br>
+                            이렇게 가르쳐주신 선생님께 정말 감사합니다.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>박희수</span>
+                            <p class="star_wrap_bord">
+                                <span class="star on">1점</span>
+                                <span class="star on">2점</span>
+                                <span class="star on">3점</span>
+                                <span class="star on">4점</span>
+                                <span class="star on">5점</span>
+                            </p>
+                        </th>
+                        <td>
+                            안양 하이미디어컴퓨터학원에서 세무2급 수업을 들었습니다. 사실 여기서 수업을 들었던 이유는 아는곳이 여기 밖에 없어서 였는데 생각보다 선생님이 너무 잘 알려주셔서 훨신 쉽게 배울 수 있었습니다. 감사합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>송지혜</span>
+                            <p class="star_wrap_bord">
+                                <span class="star on">1점</span>
+                                <span class="star on">2점</span>
+                                <span class="star on">3점</span>
+                                <span class="star on">4점</span>
+                                <span class="star on">5점</span>
+                            </p>
+                        </th>
+                        <td>
+                            안양 하이미디어 학원 선생님이 너무 꼼꼼하셔서 좋았습니다.<br>
+                            수업내용도 매우 좋았습니다.<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <a href="#" class="first">처음</a><a href="#" class="prev">이전</a>
+                <span>
+                    <a href="#" class="on">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                </span>
+                <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+            </div>
+        </div>
+    </div>
+    <!-- // 본문 -->
+</div>
+{% endblock %}

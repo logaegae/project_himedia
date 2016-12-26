@@ -1,0 +1,89 @@
+.jobFaq{
+    .notice-wrapper{
+        width:100%;
+        background-color: @base-color;
+        padding:70px;
+
+        .class-box{
+            margin-bottom: 30px;
+
+            .list_table{
+                font-weight: @subject-weight;
+                font-size:@menu-size;
+                color:@content-sub-color;
+
+                tr{
+                    cursor:pointer;
+
+                    td:hover{
+                        color:@main-color;
+                    }
+                }
+
+                .on{
+                    background-color: @sub-color;
+                    color:@white-color;
+                    &&:hover{
+                        color:@white-color;
+                    }
+                }
+
+            }
+        }
+        .notice-box{
+            .list_table{
+                .question{
+                    cursor:pointer;
+                    td:first-child{
+                        color:@main-color;
+                    }
+                }
+
+                .answer-box{
+                    background-color: @sub-color;
+                    color:@white-color;
+
+                    .apoint{
+                        font-weight: @title-weight;
+                        color: @main-color;
+                        text-transform: uppercase;
+                        margin-right:6px;
+                    }
+                    .line{
+                        width: 9px;
+                        height: 9px;
+                        .inlineblock();
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: @white-color;
+                        border-right:none;
+                        border-top:none;
+                        margin-right: 10px;
+                    }
+                    .text-box{
+                        padding:10px;
+                    }
+                }
+                .answer-box{
+                    display: none;
+                    td{height:0}
+                    &.in{
+                        display:table-row;
+
+                        td.text-box{
+                            height:auto;
+                            padding: 20px 25px;
+                        }
+                    }
+
+                    td.text-box{
+                        -webkit-transition: height 2s; /* Safari */
+                        transition: height 2s;
+                        overflow: hidden;
+                    }
+                }
+
+            }
+        }
+    }
+}

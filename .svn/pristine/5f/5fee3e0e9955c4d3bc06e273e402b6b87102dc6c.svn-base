@@ -1,0 +1,12 @@
+.notice{
+	.notice_bg{
+		background:@base-color;
+		padding-top:70px;
+		
+		.tab{
+			margin-bottom:30px;
+		}
+	}
+	
+}
+

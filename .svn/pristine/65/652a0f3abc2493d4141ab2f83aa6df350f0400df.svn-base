@@ -1,0 +1,16 @@
+function ScriptEngineMinorVersion(){
+   if( navigator.appName.indexOf("Microsoft") > -1 ){         //  IE 인지 우선 확인
+      if(navigator.appVersion.indexOf("MSIE 8") > -1){  // IE 8버전 이면..
+           console.log("IE 8");
+           $('.video_banner').remove();
+           $('.ie8_first').addClass('active');
+           $('.carousel-indicators li:last-child').remove();
+           $('.main_banner').carousel({
+              interval: 3000
+            })
+      }
+  }
+}
+$(window).load(function() {
+   ScriptEngineMinorVersion()
+});

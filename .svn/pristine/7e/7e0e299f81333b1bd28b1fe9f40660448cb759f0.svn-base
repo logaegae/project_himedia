@@ -1,0 +1,158 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+	<div class="portfolio">
+		<div class="contents">
+			<!-- 서브 네비 -->
+			<div class="sub-navi">
+				<a href="#">HOME</a> 
+				<span>&gt;</span> 
+				<span>포트폴리오</span> 
+				<span>&gt;</span>
+				<span class="this-page">출판/편집 디자인</span>
+			</div>
+			<!-- // 서브 네비 -->
+	
+			<div class="title-l">
+				<div class="bg">
+					<b>Portfolio</b>
+				</div>
+				<div class="text-box">
+					<h1>편집/출판 디자인</h1>
+					<p>Himedia Computer Design Institute DTP Design Portfolio</p>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists modallink" modallink="example">
+					<a href="#"> 
+					<img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>한다솜</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털 퍼블리싱</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists modallink" modallink="example">
+					<a href="#"> 
+					<img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>한다솜</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털 퍼블리싱</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>			
+
+			<div class="portfolio-list">
+				<div class="lists modallink" modallink="example">
+					<a href="#"> 
+					<img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>한다솜</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털 퍼블리싱</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			
+			<div class="portfolio-list">
+				<div class="lists modallink" modallink="example">
+					<a href="#"> 
+					<img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>한다솜</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털 퍼블리싱</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>	
+
+			<div class="portfolio-list">
+				<div class="lists modallink" modallink="example">
+					<a href="#"> 
+					<img src="/img/icon/img_portfolio.jpg" alt="" /> 
+					<img class="pofo_on" src="/img/icon/over.png" alt="" />
+						<div class="portfolio-name">
+							<span class="campus-name">강남캠퍼스</span>
+							<span class="portfolio-info"> 
+							<span>한다솜</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp;
+							<span>디지털 퍼블리싱</span> &nbsp;&nbsp; 
+							<span>|</span>&nbsp;&nbsp; 
+							<span>개인포트폴리오</span>
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>	
+							
+			<div class="pagination">
+				<a href="#" class="first">처음</a> <a href="#" class="prev">이전</a> <span>
+					<a href="#" class="on">1</a> <a href="#">2</a> <a href="#">3</a>
+				</span> <a href="#" class="next">다음</a><a href="#" class="last">마지막</a>
+			</div>
+		</div>
+
+	
+	<div class="modalPopup" style="width:900px;" id="example">
+	    <!-- 타이틀 -->
+	    <div class="modal-title text-left">
+	    	<div>
+		        <span>박정은</span>
+		        <span class="popUp-line">|</span>
+		        <span>디지털디자인B</span>
+		        <span class="popUp-line">|</span>
+		        <span>개인포트폴리오</span>
+		        <span class="popUp-line">|</span>
+		        <span>강남캠퍼스</span>
+	        </div>
+	        <span class="close-box"><a href="#" class="modal-closeBtn">close<i class="icon close-x red"></i></a></span>
+	    </div>    
+		
+		<div class="modal-contents">
+
+		    <!-- 바디 -->
+		    <div class="modal-body">
+						<div class="modal-main">
+							<img src="/img/site_img/img_pfPopup.png" alt="" />
+						</div>	
+			</div>
+			<button class="icon arrow-slide left">왼쪽으로</button>
+			<button class="icon arrow-slide right">오른쪽으로</button>
+			<a href="#"><div class="box">웹 사이트로 보기 &nbsp;&nbsp;<span class="icon arrow red">오른쪽 화살표</span></div></a>
+		</div>	
+	</div>
+</div>
+	
+{% endblock %}

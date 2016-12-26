@@ -1,0 +1,73 @@
+.myInquiry{
+    .myInquiry_bg{
+        background:@base-color;
+        padding:70px 0;
+    }
+    .talbe_wrap{
+        width:1024px;
+        margin: 0 auto;
+        .myInquiry_table{
+            width:100%;
+            background:@white-color;
+            tr{
+                border-top:1px solid @base-color;
+                td{
+                    height:80px;
+                    text-align: center;
+                    padding:0;
+                    color:@content-color;
+                    &&.title{
+                        color:@content-color;
+                        font-weight: @gnb-weight;
+                    }
+                    span{display:block;}
+                }
+                .barbg{
+                    background:url('/img/site_img/red_bar2.png') no-repeat 0 50%;
+                    text-align: left;
+                    padding-left:35px;
+                }
+                .no_result{
+                    color:@content-color;
+                    font-weight: @gnb-weight;
+                }
+            }
+        }
+    }
+    .btn_wrap{
+        text-align: center;
+        margin-top:40px;
+        button{
+            width:213px;
+            height:40px;
+            &&:hover{
+                background:@main-color;
+                span{
+                    background-position: -80px 0;
+                }
+            }
+        }
+    }
+    .modalPopup{
+        .radio_td{
+            span{
+                .inlineblock();
+                font-size:13px;
+                line-height:20px;
+                margin-right:20px;
+                input{
+                    margin:-2px 4px 0 0;
+                }
+                label{
+                    margin:0;
+                    font-weight: @subject-weight;
+                    color:@content-color;
+                }
+            }
+        }
+        .btns_wrap{
+            text-align: center;
+            font-size:0;
+        }
+    }
+}

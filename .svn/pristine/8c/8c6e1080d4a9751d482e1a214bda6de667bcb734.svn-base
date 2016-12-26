@@ -1,0 +1,155 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="recruitInfoView">
+    <!-- 본문 -->
+    <div class="contents">
+        <!-- 서브 네비 -->
+        <div class="sub-navi">
+            <a href="#">HOME</a><span>&gt;</span>
+            <span>취업지원센터</span><span>&gt;</span>
+            <span class="this-page">채용정보</span>
+        </div>
+        <!-- // 서브 네비 -->
+
+        <!-- 대제목 -->
+        <div class="title-l">
+            <div class="bg">Job Center</div>
+            <div class="text-box">
+                <h1>채용 안내</h1>
+                <p>하이미디어와 함께할 인재를 모십니다.</p>
+            </div>
+        </div>
+        <!-- // 대제목 -->
+        <div class="recruitInfoView_top">
+            <p class="title">명품 수입 아이웨어 대표기업 상세페이지 포토샵 가능한 신입을 모집합니다.</p>
+            <p class="company">(주)트리시클로</p>
+            <span class="red_bar"></span>
+            <p class="short_intro">대표자 : 차성미 / 업종 : 제조업 / 사원수 : 35명</p>
+            <p class="short_intro">주소 : 서울특별시 강남구 도산대로8길 15 (논현동, 논현빌딩 3층)</p>
+        </div>
+        <div class="cont">
+            <div class="cont_head">모집요강</div>
+            <table class="recruit_table1">
+                <caption></caption>
+                <colgroup>
+                    <col style="width:10%">
+                    <col style="width:40%">
+                    <col style="width:10%">
+                    <col style="width:40%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>모집분야</th>
+                        <td>웹기획</td>
+                        <th>모집인원</th>
+                        <td>0명</td>
+                    </tr>
+                    <tr>
+                        <th>고용형태</th>
+                        <td>정규직</td>
+                        <th>경력</th>
+                        <td>경력무관</td>
+                    </tr>
+                    <tr>
+                        <th>채용직급</th>
+                        <td>사원</td>
+                        <th>급여조건</th>
+                        <td>연봉 1800만원</td>
+                    </tr>
+                    <tr>
+                        <th>근무지역</th>
+                        <td>강남구 논현동</td>
+                        <th>성별</th>
+                        <td>성별무관</td>
+                    </tr>
+                    <tr>
+                        <th>나이제한</th>
+                        <td>30세 이하</td>
+                        <th>최종학력</th>
+                        <td>고등학교졸업이상</td>
+                    </tr>
+                    <tr>
+                        <th>근무시간</th>
+                        <td>AM 9시 30 분 ~ PM 7시</td>
+                        <th>우대조건</th>
+                        <td>포토샵 능통자, 유관업무 경험자</td>
+                    </tr>
+                    <tr>
+                        <th>복리후생</th>
+                        <td>주5일근무,연차,경조사휴가,노동절휴가,워크샵,석식제공</td>
+                        <th>자격증</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>마감일</th>
+                        <td colspan="3">채용시까지</td>
+                    </tr>
+                    <tr>
+                        <th>상세요강</th>
+                        <td colspan="3">
+                            모집분야 : 웹디자이너<br>
+                            <br>
+                            담당업무 : 종합몰,오픈마켓,소셜커머스 배너/기획전이미지/상세이미지 작업
+                            기타 이미지 관련업무<br>
+                            <br>
+                            자격요건 : 고등학교 졸업 이상<br>
+                            신입 및 경력 1 ~ 2년차<br>
+                            <br>
+                            - 포토샵, 유관업무 경험자(인턴, 알바)<br>
+                            - 소셜커머스/종합몰/기타 마켓 상세페이지 경험자<br>
+                            <br>
+                            고용형태 : 정규직 (6개월 수습 기간후 정규직 전환)<br>
+                            아르바이트 희망자는 최소 6개월 이상 장기근속이 가능한자만 채용<br>
+                            <br>
+                            기타 유의사항<br>
+                            - 경력직읜경우 한곳의 근속년수와 이직 사유등을 중점적으로 보게 됩니다.<br>
+                            - 서류 전형시 필히 이 사항을 상세 기술하여 주셔야 채용 가능성이 높습니다.<br>
+                            - 허의사실이 발견될 경우 채용이 취소될수 있습니다.<br>
+                            - 최소한의 근로볍에 대한 숙지후 입사를 희망 합니다.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>오시는길 (주소)</th>
+                        <td colspan="3">서울특별시 강남구 도산대로8길 15 (논현동, 논현빌딩 3층) / 신사역 1번출구 500M 근처</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="button_wrap">
+                <button type="button" onclick="location.href='register.html'" class="enter">채용정보등록<span class="icon arrow red">오른쪽 화살표</span></button>
+                <span class="notice_hide">'채용정보 등록'을 원하시는 업체는 좌측버튼을 클릭하여 등록해주세요.</span>
+                <div class="btns_wrap">
+                    <input type="button" class="change" value="수정"></input>
+                    <input type="button" class="delete"></input>
+                    <button type="button" onclick="location.href='recruitInfo.html'" class="list">목록</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recruitInfo_footer">
+            <div>
+                <div class="info">
+                    <p class="info1">전화문의</p>
+                    <p class="info2">02-2671-8264</p>
+                    <span class="red_bar"></span>
+                    <p class="info3">하이미디어 잡매칭 전문 컨설턴트가 본 공고 지원과 관련한 자세한 안내와 상담을 진행해드립니다.</p>
+                </div>
+                <div class="info">
+                    <p class="info1">이메일문의</p>
+                    <p class="info2">findurjob@himedia.co.kr</p>
+                    <span class="red_bar"></span>
+                    <p class="info3">이메일을 통해서도 지원문의가 가능하니, 검토 후 빠른 답변 드리도록 하겠습니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 본문 -->
+</div>
+<script>
+    $('.enter').mouseenter(function(){
+        $('.notice_hide').css({'display':'inline-block'})
+    })
+    $('.enter').mouseleave(function(){
+        $('.notice_hide').css({'display':'none'})
+    })
+</script>
+{% endblock %}

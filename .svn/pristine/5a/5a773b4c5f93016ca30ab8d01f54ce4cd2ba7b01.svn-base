@@ -1,0 +1,242 @@
+{% extends "./blocks/layout.html" %}
+{% block content %}
+<div class="comFaq">
+        <!-- 본문 -->
+        <div class="contents">
+            <!-- 서브 네비 -->
+            <div class="sub-navi">
+                <a href="#">HOME</a><span>&gt;</span>
+                <span>고객센터</span><span>&gt;</span>
+                <span class="this-page">FAQ</span>
+            </div>
+            <!-- // 서브 네비 -->
+
+            <!-- 대제목 -->
+            <div class="title-l">
+                <div class="bg">Customer</div>
+                <div class="text-box">
+                    <h1>FAQ</h1>
+                    <p>가장 궁금해하는 질문들을 모아 답변해보았습니다</p>
+                </div>
+            </div>
+            <!-- // 대제목 -->
+            <div class="tab tab-customer">
+                <ul>
+    		        <li><a href="notice.html">공지사항/<br>이벤트</a></li>
+    		        <li><a href="askCost.html">수강료<br>조회</a></li>
+    		        <li><a href="askTime.html">시간표<br>조회</a></li>
+    		        <li><a href="onlineCounsel.html">온라인<br>상담</a></li>
+    		        <li><a href="onlinePay.html">온라인<br>결제</a></li>
+    		        <li class="on"><a href="comFaq.html">FAQ</a></li>
+    		        <li><a href="qna.html">Q&amp;A</a></li>
+    		    </ul>
+            </div>
+
+            <div class="notice-wrapper">
+                <div class="class-box">
+                    <table class="list_table">
+                        <caption class="sr-only"></caption>
+                        <colgroup>
+        		        	<col width="16.666%">
+        		        	<col width="16.666%">
+                            <col width="16.666%">
+                            <col width="16.666%">
+                            <col width="16.666%">
+                            <col width="16.666%">
+        		        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="on">전체</td>
+                                <td>계정 관련</td>
+                                <td>수강 관련</td>
+                                <td>취업 관련</td>
+                                <td>결제 관련</td>
+                                <td>기타 관련</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="notice-box">
+                    <table class="list_table">
+        		        <caption class="sr-only"></caption>
+        		        <colgroup>
+        		        	<col style="width:8%">
+        		        	<col style="width:9%">
+        		        	<col style="width:72%">
+        		        	<col style="width:9%">
+        		        </colgroup>
+        		        <tbody>
+                            <tr class="question">
+        			        	<td>10</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowUp red">위쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box in">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+                            <tr class="question">
+        			        	<td>9</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+                                <td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+                            <tr class="question">
+        			        	<td>8</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+                            <tr class="question">
+        			        	<td>7</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+                            <tr class="question">
+        			        	<td>6</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+        			        <tr class="question">
+        			        	<td>5</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+        			        <tr class="question">
+        			        	<td>4</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+        			        <tr class="question">
+        			        	<td>3</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+        			        <tr class="question">
+        			        	<td>2</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+
+        			        <tr class="question">
+        			        	<td>1</td>
+        			        	<td>계정관련</td>
+        			        	<td class="text-left">질문합니다</td>
+        			        	<td><span class="icon arrowDown red">아래쪽 화살표</span></td>
+        			        </tr>
+                            <tr class="answer-box">
+        			        	<td></td>
+        			        	<td></td>
+        			        	<td colspan="2" class="text-left text-box"><span class="line"></span><span class="apoint">A.</span>
+                                    로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다<br>
+                                    답변이 노출되는 영역입니다. 로그인 창 아래쪽 아이디/비밀번호 찾기 버튼을 클릭하신 후 아이핀 또는 안심체크로 본인 인증을 받으시면 본인 아이디 정보가 나옵니다.
+                                </td>
+        			        </tr>
+        		        </tbody>
+        	        </table>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- // 본문 -->
+</div>
+<script>
+    $('.question').click(function(){
+        if($(this).next('tr').attr('class').indexOf('in') != -1){
+            $(this).next('tr').removeClass('in').hide().prev().find('.arrowUp').removeClass('arrowUp').addClass('arrowDown');
+        }else{
+            var idx = $('.in').index();
+            if(idx >= 0){
+                $('.notice-box .list_table tr').eq(idx).removeClass('in').hide().prev().find('.arrowUp').removeClass('arrowUp').addClass('arrowDown');
+                $(this).next('tr').show("slow").addClass('in').prev().find('.arrowDown').removeClass('arrowDown').addClass('arrowUp');
+            }else{
+                $(this).next('tr').show("slow").addClass('in').prev().find('.arrowDown').removeClass('arrowDown').addClass('arrowUp');;
+            }
+        }
+    })
+</script>
+{% endblock %}
